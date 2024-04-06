@@ -1,0 +1,129 @@
+.username-and-search-segment {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+
+    .left-top-of-dishes {
+
+        display: flex;
+        flex-direction: column;
+
+        .username-of-hello {}
+
+        .username-of-hello-color {}
+
+        .today-date {}
+    }
+
+    .search-bar-of-dishes {
+        width: 220px;
+        height: 48px;
+
+        gap: 8px;
+        border-radius: 8px;
+        border: 1px solid #979797;
+        color: #ABBBC2;
+        background-color: #2D303E;
+        padding-left: 35px;
+
+
+    }
+}
+
+.search-bar-container {
+    position: relative;
+
+    .search-icon-logo {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-70%);
+        width: 25px;
+    }
+}
+
+.dishes-main {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+
+    .top-segment-for-dishes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .dishes-title {
+            font-family: "Barlow", sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            line-height: 28px;
+
+            color: #FFFFFF;
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+
+        .options-for-dishes {
+            width: 126px;
+            height: 48px;
+            font-family: "Barlow", sans-serif;
+            padding: 14px;
+            gap: 10px;
+            border-radius: 8px;
+            border: 1px solid #979797;
+            background-color: #1F1D2B;
+            color: white;
+        }
+    }
+}
+
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 66px;
+    /* Gerekli diğer stiller */
+}
+
+.dish-image {
+    width: 132px;
+    position: relative;
+    top: -35px;
+}
+
+.dish-name {
+    display: flex;
+    text-align: center;
+    width: 70%;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-align: center;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+
+}
+
+.dish-price {
+    //styleName: Body / Normal - Regular ;
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1D2B;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
