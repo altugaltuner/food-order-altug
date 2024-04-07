@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "/src/pages/SettingsSidebar/SettingsSidebar.scss";
+import "./SettingsSidebar.scss";
 
 function SettingsSidebar() {
 
@@ -25,7 +25,7 @@ function SettingsSidebar() {
             });
 
             // Tıklanan '.sidebar-div' öğesinin arkaplanını turuncu yap
-            targetDiv.style.backgroundColor = '#EA7C6942';
+            targetDiv.style.backgroundColor = 'rgb(171 44 5)';
         }
 
 
