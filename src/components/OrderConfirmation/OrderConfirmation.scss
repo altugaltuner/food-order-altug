@@ -1,0 +1,56 @@
+.only-labels {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.payment-photo-options {
+    display: flex;
+    flex-direction: column;
+    width: 101px;
+    height: 64px;
+    font-size: 14px;
+    height: 60px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 10px;
+    border-color: #6f6f6f;
+    //styleName: Body / Normal - Medium;
+    font-family: "Barlow", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-align: center;
+}
+
+
+.payment-photo-options.selected {
+    border-color: rgb(255, 255, 255); // Seçili olan öğenin border rengi
+}
+
+.input-type-radio[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.input-type-radio[type="radio"]+label {
+    cursor: pointer;
+}
+
+
+/* Seçilen durum için özel stiller */
+.input-type-radio[type="radio"]:checked+label::before {
+    content: '\2022';
+    /* Yuvarlak işareti temsil eden Unicode karakteri */
+    font-size: 16px;
+    color: #007bff;
+    /* Seçilen durumda renk */
+    margin-right: 5px;
+}
