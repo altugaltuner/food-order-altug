@@ -144,12 +144,23 @@
                 align-items: center;
                 border: 2px solid #EA7C69;
                 background-color: #1F1D2B;
+                cursor: pointer;
+
+
 
                 .reset-button-conf-img {
                     width: 20px;
                     height: 20px;
 
                 }
+            }
+
+            .reset-button-conf:hover {
+                background-color: #37334b;
+            }
+
+            .reset-button-conf:active {
+                background-color: #111018;
             }
         }
     }
