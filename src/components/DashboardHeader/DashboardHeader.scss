@@ -4,7 +4,7 @@
     width: 720px;
     height: 143px;
     gap: 24px;
-    background-color: #3d3952;
+    background-color: #252836;
 
     .dashboard-part {
         display: flex;
@@ -70,10 +70,13 @@
 
 @media screen and (max-width: 860px) {
     .dashboard-header-main {
-        width: 100%;
+        width: 260px;
         gap: 0;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         height: 100%;
+        padding-top: 20px;
 
         .dashboard-part {
             width: 230px;
