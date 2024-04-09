@@ -71,7 +71,7 @@
                 flex-direction: row;
                 margin-bottom: 10px;
 
-                .bitmiyor {
+                .conf-pic-and-name-and-price-2 {
                     display: flex;
                     flex-direction: row;
                     gap: 5px;
@@ -183,9 +183,29 @@
     }
 }
 
-
-
 .adding-button-class {
     width: 50px;
     height: 50px;
+}
+
+@media screen and (max-width: 525px) {
+    .order-conf-main {
+        width: 100%;
+
+        .order-conf-body {
+            display: flex;
+            flex-direction: column;
+            border-bottom: solid 1px #ABBBC2;
+
+
+            .conf-right-order-part {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+
 }

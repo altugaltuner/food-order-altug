@@ -3,30 +3,57 @@ import "./OrderConfirmation.scss";
 
 function OrderConfirmation() {
 
-    let [choosedTotalPieces, setChoosedTotalPieces] = useState({});
-    let [priceOfOrder, setpriceOfOrder] = useState(0);
+    let discountPercentage = 20;
 
     // foodItems artık bir state
     const [foodItems, setFoodItems] = useState([
-        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0 },
-        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0 },
-        { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0 },
-        { id: 4, name: "Healthy noodle with spinach leaf", price: 3.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0 },
+        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
+        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
+        { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
+        { id: 4, name: "Healthy noodle with spinach leaf", price: 3.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
     ]);
 
-    // Bu ifadeyle, kullanıcının girdiği value değerinin boş bir string olup olmadığı ya da sadece sayılardan mı oluştuğu kontrol edilir.
-    // Eğer value boş bir stringse veya sadece sayılardan oluşuyorsa, value'yu sayıya çevirir (parseInt(value, 10)). Değilse, miktarı 0 olarak ayarlar.
-    // Bu, yalnızca geçerli miktarların kaydedilmesini sağlar.
+    // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
+    // ! operatörü, isNaN fonksiyonunun sonucunu tersine çevirir. Yani, eğer parsedQuantity NaN değilse, !isNaN(parsedQuantity) ifadesi true olur.
     const handlePieceChange = (id, value) => {
         setFoodItems(foodItems.map(item => {
             if (item.id === id) {
-                const quantity = value === '' || (/^\d+$/).test(value) ? parseInt(value, 10) : 0;
+                const parsedQuantity = parseInt(value, 10);
+                const quantity = !isNaN(parsedQuantity) ? parsedQuantity : 0;
                 return { ...item, quantity, totalPrice: quantity * item.price };
-                // Mevcut item objesinin bir kopyası alınır (...item), ve quantity ile totalPrice özellikleri yeni hesaplanan değerlerle güncellenir.
             }
             return item;
-            // Eğer mevcut item'ın idsi fonksiyona verilen id ile eşleşmiyorsa, item herhangi bir değişiklik yapılmadan direkt olarak dönülür.
         }));
+    };
+
+    function subTotal() {
+        let total = 0;
+        for (const element of foodItems) {
+            total += element.totalPrice;
+        }
+        let discountMoney = 100 - discountPercentage;
+        total = (total * (discountMoney / 100));
+        return total;
+    };
+
+    function discountedMoney() {
+        let total = 0;
+        for (const element of foodItems) {
+            total += element.totalPrice;
+        }
+        let discountMoney = total * (discountPercentage / 100);
+        return discountMoney;
+    };
+
+    const handleCustomerNoteChange = (id, note) => {
+        setFoodItems(foodItems.map(item => {
+            if (item.id === id) {
+                return { ...item, OrderNote: note };
+            }
+            return item;
+        }));
+        console.log(foodItems);
+        //burada notedaki sıkıntı son harfi almıyor!!!
     };
 
     // Silme işlevi : DeleteMeal Fonksiyonu: deleteMeal fonksiyonu, aldığı id değerine göre hangi yemeğin silineceğini anlar. Fonksiyon, filter metoduyla foodItems dizisinde dolaşır ve her bir öğenin id değeri ile fonksiyona argüman olarak verilen id değerini karşılaştırır. Eşleşmeyen (yani silinmesi gerekmeyen) öğeler yeni bir dizi oluşturmak üzere kullanılır. Eşleşen öğe (silinmesi gereken yemek) bu yeni dizide yer almaz.
@@ -38,8 +65,6 @@ function OrderConfirmation() {
 
     const addingButtonImg = "../src/assets/adding-button.png";
     const dustbin = "../src/assets/dustbin-logo.png";
-    const food1 = "../src/assets/food1.png";
-
 
 
     return (
@@ -63,7 +88,7 @@ function OrderConfirmation() {
 
                         <div className="conf-left-order-part">
                             <div className="conf-pic-and-name-and-price">
-                                <div className="bitmiyor">
+                                <div className="conf-pic-and-name-and-price-2">
                                     <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
                                     <div className="name-and-price">
                                         <p className="name-and-price-p">{foodItem.name}</p>
@@ -76,7 +101,8 @@ function OrderConfirmation() {
 
                             </div>
 
-                            <input type="text" className="food-customer-note" placeholder="Order note..." />
+
+                            <input type="text" onChange={(e) => handleCustomerNoteChange(foodItem.id, e.target.value)} className="food-customer-note" placeholder="Order note..." value={foodItem.OrderNote} />
                         </div>
 
                         {/* OnClick Olayı: Çöp kutusu butonuna tıklandığında tetiklenen onClick olayında, deleteMeal(foodItem.id) ifadesi kullanılır. Bu ifade, tıklanan butonun ait olduğu foodItem öğesinin id değerini deleteMeal fonksiyonuna argüman olarak geçirir. */}
@@ -93,12 +119,12 @@ function OrderConfirmation() {
 
                 <div className="discount-subtotal-div">
                     <div className="discount-subtotal-div-line">
-                        <p className="discount-subtotal-p">Discount</p>
-                        <p className="discount-subtotal-p">$ 0.00</p>
+                        <p className="discount-subtotal-p">Discount : %{discountPercentage}</p>
+                        <p className="discount-subtotal-p">-$ {discountedMoney()}</p>
                     </div>
                     <div className="discount-subtotal-div-line">
-                        <p className="discount-subtotal-p">Sub total</p>
-                        <p className="discount-subtotal-p">$ 21.43</p>
+                        <p className="discount-subtotal-p">Sub total :</p>
+                        <p className="discount-subtotal-p">$ {subTotal().toFixed(2)}</p>
                     </div>
                 </div>
 
