@@ -1,0 +1,85 @@
+.dashboard-header-main {
+    display: flex;
+    flex-direction: row;
+    width: 720px;
+    height: 143px;
+    gap: 24px;
+    background-color: #3d3952;
+
+    .dashboard-part {
+        display: flex;
+        flex-direction: column;
+        background-color: #1F1D2B;
+        gap: 5px;
+        padding: 16px;
+        border-radius: 8px;
+        width: 30%;
+
+        .logos-dashboard {
+            height: 33%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            .icon-dolar {
+                width: 38px;
+                height: 38px;
+                gap: 10px;
+                border-radius: 8px;
+            }
+
+            .percentage-dashboard-text {
+                font-family: "Barlow", sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 16.8px;
+                text-align: left;
+
+            }
+
+            .icon-up-arrow {
+                width: 14px;
+                height: 14px;
+
+            }
+        }
+
+        .price-of-dashboard {
+            //styleName: Heading/H1;
+            font-family: "Barlow", sans-serif;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 39.2px;
+            text-align: left;
+
+            height: 33%;
+        }
+
+        .dashboard-text {
+            height: 33%;
+            font-family: Barlow;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18.2px;
+            text-align: left;
+            color: #ABBBC2;
+        }
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .dashboard-header-main {
+        width: 100%;
+        gap: 0;
+        flex-direction: column;
+        height: 100%;
+
+        .dashboard-part {
+            width: 230px;
+            gap: 0;
+            padding: 16px 24px;
+            margin-bottom: 24px;
+        }
+    }
+}
