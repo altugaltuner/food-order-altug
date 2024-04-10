@@ -1,7 +1,7 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
-import OrderReports from "../OrderReports/OrderReports";
+import OrderReports from "../../components/OrderReports/OrderReports";
 
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
