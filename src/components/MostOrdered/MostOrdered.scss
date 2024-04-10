@@ -32,18 +32,8 @@
                 line-height: 39.2px;
                 text-align: left;
                 margin-bottom: 10px;
+                margin-right: 110px;
             }
-
-            .button-order {
-                width: 95px;
-                height: 45px;
-                padding: 14px;
-                border-radius: 8px;
-                border: 1px solid #393C49;
-                color: white;
-                background-color: #1F1D2B;
-            }
-
         }
     }
 
@@ -200,7 +190,7 @@
 }
 
 .view-all-orders {
-    width: 324px;
+    width: 100%;
     height: 48px;
     padding: 14px;
     border-radius: 8px;
@@ -218,7 +208,17 @@
     background-color: #565172;
 }
 
-@media screen and (max-width: 525px) {
+.blabla {
+    width: 95px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px;
+    background-color: rgba(31, 29, 43, 1);
+    color: white;
+}
+
+@media screen and (max-width: 512px) {
     .order-conf-main {
         width: 100%;
 
@@ -255,6 +255,21 @@
                             width: 75%;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 502px) {
+    .order-conf-main {
+        .title-order-conf {
+            .part-of-title-conf {
+                display: flex;
+                flex-direction: column;
+
+                .h1-order-conf {
+                    margin-right: 0px;
                 }
             }
         }

@@ -3,6 +3,7 @@ import "./MostOrdered.scss";
 
 function MostOrdered() {
 
+    const downArrow = "../src/assets/down-arrow.png";
 
     // foodItems artık bir state
     const [foodItems, setFoodItems] = useState([
@@ -20,7 +21,15 @@ function MostOrdered() {
                     <div class="part-of-title-conf">
                         <h1 class="h1-order-conf">Most Ordered</h1>
 
-                        <button class="button-order">asasas</button>
+
+                        <select name="order-types" id="order-types" className="blabla">
+                            <option value="" >Select a period...</option>
+                            <option value="dine-in" selected>Today</option>
+                            <option value="dine-out">On Week</option>
+                            <option value="dine-on">On Month</option>
+                            <option value="dine-under">On Year</option>
+                        </select>
+
                     </div>
                 </div>
 
