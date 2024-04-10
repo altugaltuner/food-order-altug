@@ -7,6 +7,7 @@ import photo3 from "../../assets/food3.png";
 import photo4 from "../../assets/food4.png";
 import photo5 from "../../assets/food5.png";
 
+import filterPhoto from "../../assets/Filter.png";
 
 
 function ProductsManagement() {
@@ -46,12 +47,15 @@ function ProductsManagement() {
             <div className="left-top-of-dishes">
                 <h2 className="username-of-hello">Products Management</h2>
 
-                <select name="" id="" className="options-for-dishes">
-                    <option value="dine-in">Dine In</option>
-                    <option value="dine-out">Dine Out</option>
-                    <option value="dine-on">Dine On</option>
-                    <option value="dine-up">Dine Up</option>
-                </select>
+                <div className="filter-order-btn">
+                    <img className="filter-order-btn-img" src={filterPhoto} alt="filter-icon" />
+                    <select className="filter-order-select">
+                        <option value="">Manage Categories</option>
+                        <option value="highest">Highest Payment</option>
+                        <option value="lowest">Lowest Payment</option>
+                        <option value="status">Status</option>
+                    </select>
+                </div>
 
             </div>
         </div>
