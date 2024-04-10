@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./OrderConfirmation.scss";
+import "./MostOrdered.scss";
 
-function OrderConfirmation() {
+function MostOrdered() {
 
     let discountPercentage = 20;
 
@@ -10,7 +10,6 @@ function OrderConfirmation() {
         { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
         { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
         { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
-        { id: 4, name: "Healthy noodle with spinach leaf", price: 3.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
     ]);
 
     // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
@@ -133,4 +132,4 @@ function OrderConfirmation() {
     );
 }
 
-export default OrderConfirmation;
+export default MostOrdered;
