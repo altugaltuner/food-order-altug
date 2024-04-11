@@ -192,20 +192,32 @@
     .order-conf-main {
         width: 100%;
 
-        .order-conf-body {
-            display: flex;
-            flex-direction: column;
-            border-bottom: solid 1px #ABBBC2;
+        .title-order-conf {
+            .part-of-title-conf {
+                .h1-order-conf {
+                    font-size: 24px;
+                }
 
+                .h3-order-conf {
+                    font-size: 16px;
+                }
+            }
 
-            .conf-right-order-part {
+            .order-conf-body {
                 display: flex;
-                flex-direction: row;
-                gap: 20px;
-                margin-bottom: 10px;
+                flex-direction: column;
+                border-bottom: solid 1px #ABBBC2;
+
+
+                .conf-right-order-part {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    margin-bottom: 10px;
+                }
             }
         }
+
+
     }
-
-
 }

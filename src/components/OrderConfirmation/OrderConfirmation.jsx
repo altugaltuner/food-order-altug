@@ -95,7 +95,7 @@ function OrderConfirmation() {
                                         <p className="name-and-price-p">${foodItem.price.toFixed(2)}</p>
                                     </div>
                                 </div>
-                                <input type="text" className="total-piece-of-food" onChange={(e) => handlePieceChange(foodItem.id, e.target.value)}
+                                <input type="text" placeholder="0" className="total-piece-of-food" onChange={(e) => handlePieceChange(foodItem.id, e.target.value)}
                                     value={foodItem.quantity || ''}
                                 />
 
