@@ -1,7 +1,7 @@
 .dashboard-header-main {
     display: flex;
     flex-direction: row;
-    width: 720px;
+    width: 600px;
     height: 143px;
     gap: 24px;
     background-color: #252836;
@@ -13,7 +13,7 @@
         gap: 5px;
         padding: 16px;
         border-radius: 8px;
-        width: 30%;
+        width: 33%;
 
         .logos-dashboard {
             height: 33%;
@@ -68,21 +68,40 @@
     }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 710px) {
     .dashboard-header-main {
-        width: 260px;
-        gap: 0;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        padding-top: 20px;
+        width: 100%;
+        gap: 3px;
 
         .dashboard-part {
-            width: 230px;
-            gap: 0;
-            padding: 16px 24px;
-            margin-bottom: 24px;
+            width: 33%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dashboard-header-main {
+        width: 100%;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+
+
+        .dashboard-part {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+
+            .price-of-dashboard {
+                font-size: 16px;
+            }
+
+            .logos-dashboard {
+                .icon-dolar {
+                    transform: translate(10px, 10px);
+                }
+            }
         }
     }
 }
