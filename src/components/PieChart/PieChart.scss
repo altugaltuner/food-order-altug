@@ -14,6 +14,7 @@
 
         .top-donut-h2 {
             color: #fff; // Başlık rengini ayarlamak için
+            font-size: 32px;
         }
 
         .most-type-of-order-button {
@@ -37,6 +38,12 @@
     .chart-container {
         width: 100%;
         height: 350px;
+
+        .top-donut {
+            .top-donut-h2 {
+                font-size: 25px;
+            }
+        }
     }
 }
 
@@ -44,5 +51,11 @@
     .chart-container {
         width: 100%;
         height: 250px;
+
+        .top-donut {
+            .top-donut-h2 {
+                font-size: 15px;
+            }
+        }
     }
 }
