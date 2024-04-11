@@ -1,21 +1,20 @@
 import "./ProductsManagement.scss";
 import React, { useState, useEffect } from 'react';
 
-import photo1 from "../../assets/food1.png"
-import photo2 from "../../assets/food2.png";
-import photo3 from "../../assets/food3.png";
+
 import photo4 from "../../assets/food4.png";
 import photo5 from "../../assets/food5.png";
 
 import filterPhoto from "../../assets/Filter.png";
+import plusLogo from "../../assets/plus.png";
 
 
 function ProductsManagement() {
 
     const dishes = [
-        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo1, coldDish: false, soup: false },
-        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.70, imageSrc: photo2, coldDish: false, soup: true },
-        { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo3, coldDish: true, soup: false },
+        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo5, coldDish: false, soup: false },
+        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.70, imageSrc: photo5, coldDish: false, soup: true },
+        { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo4, coldDish: true, soup: false },
         { id: 4, name: "Healthy noodle with spinach leaf", price: 3.20, imageSrc: photo4, coldDish: false, soup: true },
         { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo5, coldDish: false, soup: false },
 
@@ -43,22 +42,22 @@ function ProductsManagement() {
 
     return (<div>
 
-        <div className="username-and-search-segment">
-            <div className="left-top-of-dishes">
-                <h2 className="username-of-hello">Products Management</h2>
 
-                <div className="filter-order-btn">
-                    <img className="filter-order-btn-img" src={filterPhoto} alt="filter-icon" />
-                    <select className="filter-order-select">
-                        <option value="">Manage Categories</option>
-                        <option value="highest">Highest Payment</option>
-                        <option value="lowest">Lowest Payment</option>
-                        <option value="status">Status</option>
-                    </select>
-                </div>
+        <div className="left-top-of-dishes">
+            <h2 className="username-of-hello">Products Management</h2>
 
+            <div className="filter-order-btn">
+                <img className="filter-order-btn-img" src={filterPhoto} alt="filter-icon" />
+                <select className="filter-order-select">
+                    <option value="">Manage Categories</option>
+                    <option value="highest">Highest Payment</option>
+                    <option value="lowest">Lowest Payment</option>
+                    <option value="status">Status</option>
+                </select>
             </div>
+
         </div>
+
 
         <div className="category-tabs-dishes">
             <div className="category-tabs">
@@ -76,17 +75,27 @@ function ProductsManagement() {
             <div className="dishes-container">
                 {/* dishes.filter(filterDishes): dishes dizisindeki her bir dish öğesini filterDishes
                 fonksiyonuna gönderir. filterDishes fonksiyonu, aktif tab'a göre bir yemeğin koşulları karşılayıp karşılamadığını kontrol eder.Koşulları karşılayan (true dönen) yemekler yeni bir dizi içinde bir araya getirilir.  .map(dish => { ... }): Filtrelenmiş dizi üzerinde iterasyon yaparak, her bir dish öğesi için JSX kod bloğu oluşturur. Oluşturulan bu JSX kod blokları, kullanıcı arayüzünde ilgili yemeklerin gösterilmesini sağlar. */}
+
+                <div className="dish-card-adding-segment">
+                    <img src={plusLogo} alt="plus logo" />
+                    <p className="segment-p-new-dish">Add New Dish</p>
+                </div>
                 {
                     dishes.filter(filterDishes).map(dish => (
                         <div className="dish-card" key={dish.id}>
                             <img className="dish-image" src={dish.imageSrc} alt={dish.name} />
                             <h3 className="dish-name">{dish.name}</h3>
                             <p className="dish-price">${dish.price}</p>
+                            <button className="edit-dish-btn">Edit Dish</button>
                         </div>
                     ))
                 }
             </div>
 
+        </div>
+        <div className="discard-or-save-changes">
+            <button className="discard-changes-btn">Discard Changes</button>
+            <button className="save-changes-btn">Save Changes</button>
         </div>
 
     </div>);
