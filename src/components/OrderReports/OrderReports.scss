@@ -145,3 +145,34 @@
     background-color: #37334d;
 
 }
+
+@media (max-width: 700px) {
+    .order-report-container {
+        padding: 10px;
+
+        .order-reports-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .filter-order-btn {
+            display: flex;
+
+            .filter-order-btn-img {
+                position: relative;
+                top: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .order-report-container {
+        .order-report-header {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
