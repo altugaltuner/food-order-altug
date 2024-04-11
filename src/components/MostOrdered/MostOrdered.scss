@@ -208,12 +208,12 @@
     background-color: #565172;
 }
 
-.blabla {
+.order-types-period {
     width: 95px;
     height: 45px;
     padding: 5px;
     border-radius: 8px;
-    border: 1px;
+    border: 1px solid #737373;
     background-color: rgba(31, 29, 43, 1);
     color: white;
 }
@@ -222,10 +222,23 @@
     .order-conf-main {
         width: 100%;
 
+        .title-order-conf {
+            display: flex;
+
+            border-bottom: solid 1px #555555;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            justify-content: center;
+
+            .part-of-title-conf {
+                align-items: center;
+            }
+        }
+
         .order-conf-body {
             display: flex;
             flex-direction: column;
-            border-bottom: solid 1px #ABBBC2;
+
 
 
             .conf-right-order-part {

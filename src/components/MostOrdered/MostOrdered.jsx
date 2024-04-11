@@ -22,7 +22,7 @@ function MostOrdered() {
                         <h1 class="h1-order-conf">Most Ordered</h1>
 
 
-                        <select name="order-types" id="order-types" className="blabla">
+                        <select name="order-types" id="order-types" className="order-types-period">
                             <option value="" >Select a period...</option>
                             <option value="dine-in" selected>Today</option>
                             <option value="dine-out">On Week</option>
