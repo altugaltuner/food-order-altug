@@ -470,3 +470,13 @@
         }
     }
 }
+
+@media (max-width: 505px) {
+    .order-payment {
+        .buttons-div {
+            .confirm-button {
+                padding: 0px;
+            }
+        }
+    }
+}
