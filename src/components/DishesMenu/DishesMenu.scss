@@ -1,0 +1,212 @@
+.username-and-search-segment {
+    display: flex;
+    width: 820px;
+    justify-content: space-between;
+
+    .left-top-of-dishes {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-bar-of-dishes {
+        width: 220px;
+        height: 48px;
+        gap: 8px;
+        border-radius: 8px;
+        border: 1px solid #979797;
+        color: #ABBBC2;
+        background-color: #2D303E;
+        padding-left: 35px;
+    }
+}
+
+.search-bar-container {
+    position: relative;
+    height: fit-content;
+
+    .search-icon-logo {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-70%);
+        width: 25px;
+        z-index: 1;
+    }
+}
+
+.dishes-main {
+    display: flex;
+    flex-direction: column;
+    width: 820px;
+
+    .top-segment-for-dishes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .dishes-title {
+            font-family: "Barlow", sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            line-height: 28px;
+
+            color: #FFFFFF;
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+
+        .options-for-dishes {
+            width: 126px;
+            height: 48px;
+            font-family: "Barlow", sans-serif;
+            padding: 14px;
+            gap: 10px;
+            border-radius: 8px;
+            border: 1px solid #979797;
+            background-color: #1F1D2B;
+            color: white;
+        }
+    }
+}
+
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 66px;
+    /* Gerekli diğer stiller */
+}
+
+.dish-image {
+    width: 132px;
+    position: relative;
+    top: -35px;
+}
+
+.dish-name {
+    display: flex;
+    text-align: center;
+    width: 70%;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-align: center;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+}
+
+.dish-price {
+    //styleName: Body / Normal - Regular ;
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+
+    align-items: center;
+    background-color: #1F1D2B;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
+
+.category-tabs-dishes {
+    display: flex;
+    flex-direction: row;
+    width: 820px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    .category-tabs button {
+        background-color: #393C49;
+        color: white;
+
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-bottom: 2px solid #7e7e7e;
+    }
+
+    .category-tabs button.active {
+        color: #ff6a07;
+        border-bottom: 2px solid #ff6a07;
+    }
+
+}
+
+
+@media screen and (max-width: 975px) {
+
+    .dishes-main {
+        width: 100%;
+    }
+
+    .username-and-search-segment {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .category-tabs-dishes {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+    .dish-image {
+        width: 80%;
+        position: relative;
+        top: -15px;
+    }
+
+    .dish-card {
+        width: 43%;
+    }
+
+    .username-and-search-segment {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .search-bar-of-dishes {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: flex-end;
+            position: relative;
+            left: 12px;
+        }
+    }
+
+    .search-bar-container .search-icon-logo {
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dish-name {
+        font-size: 12px;
+    }
+
+    .dishes-main {
+        .top-segment-for-dishes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+}
