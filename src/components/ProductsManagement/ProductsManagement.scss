@@ -1,0 +1,398 @@
+.left-top-of-dishes {
+    display: flex;
+    width: 820px;
+    justify-content: space-between;
+    background-color: #1F1D2B;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .username-of-hello {
+        display: flex;
+        font-size: 40px;
+        justify-content: center;
+    }
+
+    .options-for-dishes {
+        width: 126px;
+        height: 48px;
+        font-family: "Barlow", sans-serif;
+        padding: 14px;
+        gap: 10px;
+        border-radius: 8px;
+        border: 1px solid #979797;
+        background-color: #1F1D2B;
+        color: white;
+    }
+}
+
+.search-bar-of-dishes {
+    width: 220px;
+    height: 48px;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    color: #ABBBC2;
+    background-color: #2D303E;
+    padding-left: 35px;
+}
+
+
+.search-bar-container {
+    position: relative;
+    height: fit-content;
+
+    .search-icon-logo {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-70%);
+        width: 25px;
+        z-index: 1;
+    }
+}
+
+.dishes-main {
+    display: flex;
+    flex-direction: column;
+    width: 820px;
+
+    .top-segment-for-dishes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .dishes-title {
+            font-family: "Barlow", sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            line-height: 28px;
+
+            color: #FFFFFF;
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+
+    }
+}
+
+.dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: #1F1D2B;
+    /* Gerekli diğer stiller */
+}
+
+.dish-image {
+    width: 132px;
+    padding-bottom: 20px;
+}
+
+.dish-name {
+    display: flex;
+    text-align: center;
+    width: 70%;
+    font-family: "Barlow", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-align: center;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+}
+
+.edit-dish-btn {
+    font-family: "Barlow", sans-serif;
+    border-radius: 10px;
+    width: 100%;
+    color: #ffdada;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 0 0 15px 15px;
+    background-color: #ba7027;
+
+    &:hover {
+        background-color: darken(#ba7027, 10%);
+    }
+
+    &:active {
+        background-color: darken(#ba7027, 20%);
+    }
+
+}
+
+.dish-price {
+    //styleName: Body / Normal - Regular ;
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dish-card-adding-segment {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    align-items: center;
+    background-color: #1F1D2B;
+    border-radius: 15px;
+    border: 1px dotted orange;
+    border-style: dashed;
+    justify-content: center;
+    gap: 20px;
+    color: orange;
+
+    .segment-p-new-dish {
+        text-align: center;
+    }
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    padding-top: 20px;
+    align-items: center;
+    background-color: #1F1D2B;
+    border-radius: 15px;
+    border: 1px solid #474747;
+}
+
+.category-tabs-dishes {
+    display: flex;
+    flex-direction: row;
+    width: 820px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #1F1D2B;
+    padding-left: 20px;
+
+    .category-tabs button {
+        background-color: #393C49;
+        color: white;
+        background-color: #1F1D2B;
+
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-bottom: 2px solid #7e7e7e;
+    }
+
+    .category-tabs button.active {
+        color: #ff6a07;
+        border-bottom: 2px solid #ff6a07;
+    }
+}
+
+.filter-order-btn {
+    background: none;
+    font-family: "Barlow", sans-serif;
+    border-radius: 10px;
+    color: wheat;
+    cursor: pointer;
+    border: 1px solid #8D8D8D;
+
+    .filter-order-select {
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+        border: none;
+        background-color: #1F1D2B;
+        margin: 3px;
+    }
+
+    .filter-order-btn-img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 2px;
+        left: 15px;
+        margin-right: 9px;
+    }
+
+    &:hover {
+        background-color: darken(rgb(141, 141, 141), 10%);
+    }
+
+    &:active {
+        background-color: darken(rgb(141, 141, 141), 20%);
+    }
+}
+
+.discard-or-save-changes {
+    display: flex;
+    justify-content: center;
+    width: 820px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #1F1D2B;
+    padding-left: 10px;
+
+    .discard-changes-btn {
+        background: none;
+        font-family: "Barlow", sans-serif;
+        border-radius: 8px;
+        color: #EA7C69;
+        cursor: pointer;
+        border: 1px solid #EA7C69;
+        padding: 10px 20px;
+        margin-right: 10px;
+
+        &:hover {
+            background-color: darken(#EA7C69, 10%);
+            color: white;
+        }
+
+        &:active {
+            background-color: darken(#EA7C69, 20%);
+            color: white;
+        }
+    }
+
+    .save-changes-btn {
+        display: flex;
+        background: none;
+        font-family: "Barlow", sans-serif;
+        border-radius: 8px;
+        cursor: pointer;
+        width: Fixed (172px)px;
+        height: 48px;
+        padding: 20px;
+        border: 1px solid #EA7C69;
+        background-color: #EA7C69;
+        color: white;
+        box-shadow: 0px 8px 24px 0px #EA7C6966;
+        align-items: center;
+
+
+        &:hover {
+            background-color: darken(#EA7C69, 10%);
+        }
+
+        &:active {
+            background-color: darken(#EA7C69, 20%);
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 975px) {
+    .left-top-of-dishes {
+        width: 100%;
+
+        .filter-order-btn {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            justify-content: center;
+
+            .filter-order-btn-img {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                top: 15px;
+            }
+        }
+    }
+
+
+
+    .category-tabs-dishes {
+        width: 100%;
+    }
+
+    .dishes-main {
+        width: 100%;
+    }
+
+    .username-and-search-segment {
+        width: 100%;
+    }
+
+    .discard-or-save-changes {
+        width: 100%;
+
+        .discard-changes-btn {
+            padding: 0px 10px
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .category-tabs-dishes {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+
+
+    .left-top-of-dishes {
+        display: flex;
+        flex-direction: column;
+
+        .username-of-hello {
+            display: flex;
+            font-size: 30px;
+            justify-content: center;
+        }
+    }
+
+    .dish-image {
+        width: 80%;
+        position: relative;
+        top: -15px;
+    }
+
+    .dish-card {
+        width: 43%;
+    }
+
+    .username-and-search-segment {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .search-bar-of-dishes {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: flex-end;
+            position: relative;
+            left: 12px;
+        }
+    }
+
+    .search-bar-container .search-icon-logo {
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dish-name {
+        font-size: 12px;
+    }
+
+    .dishes-main {
+        .top-segment-for-dishes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+}
