@@ -1,7 +1,8 @@
-import Sidebar from "@/components/Sidebar/Sidebar";
+
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
-
+import OrderPaymentPage from "../../components/OrderPaymentPage/OrderPaymentPage";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
@@ -59,10 +60,12 @@ function HomePage() {
     <div>
 
       <Sidebar />
+
       <div className="mainRoot">
         <Navbar />
         <DishesMenu />
         <OrderConfirmation />
+        <OrderPaymentPage />
 
       </div>
     </div>
