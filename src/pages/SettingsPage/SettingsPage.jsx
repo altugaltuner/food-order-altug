@@ -1,9 +1,11 @@
 import "./SettingsPage.scss";
+import "../../components/ProductsManagement/ProductsManagement";
+import ProductsManagement from "../../components/ProductsManagement/ProductsManagement";
 
 function SettingsPage() {
   return (
     <main className="settings-page">
-      <h1>Settings Page</h1>
+      <ProductsManagement />
     </main>
   );
 }
