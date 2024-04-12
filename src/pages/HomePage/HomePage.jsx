@@ -8,6 +8,16 @@ import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
 
+
+// şimdilik
+import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
+import OrderReports from "../../components/OrderReports/OrderReports";
+
+
+import MostOrdered from "../../components/MostOrdered/MostOrdered";
+import PieChart from "../../components/PieChart/PieChart";
+//şimdilik son
+
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
@@ -62,10 +72,15 @@ function HomePage() {
       <Sidebar />
 
       <div className="mainRoot">
-        <Navbar />
+        {/*<Navbar />
         <DishesMenu />
         <OrderConfirmation />
-        <OrderPaymentPage />
+        <OrderPaymentPage /> */}
+        <Navbar />
+        <DashboardHeader />
+        <OrderReports orders={orders} />
+        <MostOrdered />
+        <PieChart />
 
       </div>
     </div>

@@ -14,51 +14,51 @@ function MostOrdered() {
 
 
     return (
-        <div>
-            <div className="order-conf-main">
 
-                <div className="title-order-conf">
-                    <div class="part-of-title-conf">
-                        <h1 class="h1-order-conf">Most Ordered</h1>
+        <div className="order-conf-main">
+
+            <div className="title-order-conf">
+                <div class="part-of-title-conf">
+                    <h1 class="h1-order-conf">Most Ordered</h1>
 
 
-                        <select name="order-types" id="order-types" className="order-types-period">
-                            <option value="" >Select a period...</option>
-                            <option value="dine-in" selected>Today</option>
-                            <option value="dine-out">On Week</option>
-                            <option value="dine-on">On Month</option>
-                            <option value="dine-under">On Year</option>
-                        </select>
+                    <select name="order-types" id="order-types" className="order-types-period">
+                        <option value="" >Select a period...</option>
+                        <option value="dine-in" selected>Today</option>
+                        <option value="dine-out">On Week</option>
+                        <option value="dine-on">On Month</option>
+                        <option value="dine-under">On Year</option>
+                    </select>
 
-                    </div>
                 </div>
+            </div>
 
-                {foodItems.map((foodItem) => (
-                    <div className="order-conf-body" key={foodItem.id}>
+            {foodItems.map((foodItem) => (
+                <div className="order-conf-body" key={foodItem.id}>
 
-                        <div className="conf-left-order-part">
-                            <div className="conf-pic-and-name-and-price">
-                                <div className="conf-pic-and-name-and-price-2">
-                                    <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
-                                    <div className="name-and-price">
-                                        <p className="name-and-price-p">{foodItem.name}</p>
-                                        <p className="name-and-price-p-p">${foodItem.price.toFixed(2)}</p>
-                                    </div>
+                    <div className="conf-left-order-part">
+                        <div className="conf-pic-and-name-and-price">
+                            <div className="conf-pic-and-name-and-price-2">
+                                <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
+                                <div className="name-and-price">
+                                    <p className="name-and-price-p">{foodItem.name}</p>
+                                    <p className="name-and-price-p-p">${foodItem.price.toFixed(2)}</p>
                                 </div>
-
                             </div>
 
                         </div>
 
                     </div>
-                ))}
 
-                <button className="view-all-orders">View All</button>
+                </div>
+            ))}
 
-                <div className="discount-subtotal-div-line"></div>
+            <button className="view-all-orders">View All</button>
 
-            </div>
+            <div className="discount-subtotal-div-line"></div>
+
         </div>
+
     );
 }
 

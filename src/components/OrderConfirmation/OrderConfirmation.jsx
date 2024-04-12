@@ -68,68 +68,68 @@ function OrderConfirmation() {
 
 
     return (
-        <div>
-            <div className="order-conf-main">
 
-                <div className="title-order-conf">
-                    <div className="part-of-title-conf">
-                        <h1 className="h1-order-conf">Confirmation</h1>
-                        <h3 className="h3-order-conf">Orders #34562</h3>
-                    </div>
-                    <div className="part-of-title-conf">
-                        <img src={addingButtonImg} alt="" srcset="" className="adding-button-class" />
-                    </div>
+        <div className="order-conf-main">
+
+            <div className="title-order-conf">
+                <div className="part-of-title-conf">
+                    <h1 className="h1-order-conf">Confirmation</h1>
+                    <h3 className="h3-order-conf">Orders #34562</h3>
                 </div>
-
-                {/* Map Metodu: foodItems.map(...) kullandığınızda, foodItems dizisindeki her bir öğe için bir döngü oluşturursunuz. Bu döngü içinde, her öğenin kendine ait bir div bloğu (ve içinde çöp kutusu butonu) oluşturulur. Her bir div ve içerdiği buton, o anki döngüdeki öğenin (foodItem) verileriyle (özellikle id değeriyle) ilişkilendirilmiş olur. */}
-
-                {foodItems.map((foodItem) => (
-                    <div className="order-conf-body" key={foodItem.id}>
-
-                        <div className="conf-left-order-part">
-                            <div className="conf-pic-and-name-and-price">
-                                <div className="conf-pic-and-name-and-price-2">
-                                    <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
-                                    <div className="name-and-price">
-                                        <p className="name-and-price-p">{foodItem.name}</p>
-                                        <p className="name-and-price-p">${foodItem.price.toFixed(2)}</p>
-                                    </div>
-                                </div>
-                                <input type="text" placeholder="0" className="total-piece-of-food" onChange={(e) => handlePieceChange(foodItem.id, e.target.value)}
-                                    value={foodItem.quantity || ''}
-                                />
-
-                            </div>
-
-
-                            <input type="text" onChange={(e) => handleCustomerNoteChange(foodItem.id, e.target.value)} className="food-customer-note" placeholder="Order note..." value={foodItem.OrderNote} />
-                        </div>
-
-                        {/* OnClick Olayı: Çöp kutusu butonuna tıklandığında tetiklenen onClick olayında, deleteMeal(foodItem.id) ifadesi kullanılır. Bu ifade, tıklanan butonun ait olduğu foodItem öğesinin id değerini deleteMeal fonksiyonuna argüman olarak geçirir. */}
-
-                        <div className="conf-right-order-part">
-                            <p className="price-of-order-conf">${foodItem.totalPrice.toFixed(2)}</p>
-                            <button type="reset" className="reset-button-conf" onClick={() => deleteMeal(foodItem.id)}><img src={dustbin} alt="Reset" className="reset-button-conf-img" /></button>
-                        </div>
-                    </div>
-                ))}
-
-
-                <div className="discount-subtotal-div-line"></div>
-
-                <div className="discount-subtotal-div">
-                    <div className="discount-subtotal-div-line">
-                        <p className="discount-subtotal-p">Discount : %{discountPercentage}</p>
-                        <p className="discount-subtotal-p">-$ {discountedMoney()}</p>
-                    </div>
-                    <div className="discount-subtotal-div-line">
-                        <p className="discount-subtotal-p">Sub total :</p>
-                        <p className="discount-subtotal-p">$ {subTotal().toFixed(2)}</p>
-                    </div>
+                <div className="part-of-title-conf">
+                    <img src={addingButtonImg} alt="" srcset="" className="adding-button-class" />
                 </div>
-
             </div>
+
+            {/* Map Metodu: foodItems.map(...) kullandığınızda, foodItems dizisindeki her bir öğe için bir döngü oluşturursunuz. Bu döngü içinde, her öğenin kendine ait bir div bloğu (ve içinde çöp kutusu butonu) oluşturulur. Her bir div ve içerdiği buton, o anki döngüdeki öğenin (foodItem) verileriyle (özellikle id değeriyle) ilişkilendirilmiş olur. */}
+
+            {foodItems.map((foodItem) => (
+                <div className="order-conf-body" key={foodItem.id}>
+
+                    <div className="conf-left-order-part">
+                        <div className="conf-pic-and-name-and-price">
+                            <div className="conf-pic-and-name-and-price-2">
+                                <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
+                                <div className="name-and-price">
+                                    <p className="name-and-price-p">{foodItem.name}</p>
+                                    <p className="name-and-price-p">${foodItem.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="0" className="total-piece-of-food" onChange={(e) => handlePieceChange(foodItem.id, e.target.value)}
+                                value={foodItem.quantity || ''}
+                            />
+
+                        </div>
+
+
+                        <input type="text" onChange={(e) => handleCustomerNoteChange(foodItem.id, e.target.value)} className="food-customer-note" placeholder="Order note..." value={foodItem.OrderNote} />
+                    </div>
+
+                    {/* OnClick Olayı: Çöp kutusu butonuna tıklandığında tetiklenen onClick olayında, deleteMeal(foodItem.id) ifadesi kullanılır. Bu ifade, tıklanan butonun ait olduğu foodItem öğesinin id değerini deleteMeal fonksiyonuna argüman olarak geçirir. */}
+
+                    <div className="conf-right-order-part">
+                        <p className="price-of-order-conf">${foodItem.totalPrice.toFixed(2)}</p>
+                        <button type="reset" className="reset-button-conf" onClick={() => deleteMeal(foodItem.id)}><img src={dustbin} alt="Reset" className="reset-button-conf-img" /></button>
+                    </div>
+                </div>
+            ))}
+
+
+            <div className="discount-subtotal-div-line"></div>
+
+            <div className="discount-subtotal-div">
+                <div className="discount-subtotal-div-line">
+                    <p className="discount-subtotal-p">Discount : %{discountPercentage}</p>
+                    <p className="discount-subtotal-p">-$ {discountedMoney()}</p>
+                </div>
+                <div className="discount-subtotal-div-line">
+                    <p className="discount-subtotal-p">Sub total :</p>
+                    <p className="discount-subtotal-p">$ {subTotal().toFixed(2)}</p>
+                </div>
+            </div>
+
         </div>
+
     );
 }
 

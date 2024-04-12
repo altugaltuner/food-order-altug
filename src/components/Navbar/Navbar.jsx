@@ -24,29 +24,29 @@ function Navbar() {
     };
 
     return (
-        <div>
 
-            <nav className='mainnet-logo-second'>
 
-                <li className='logo-nav'><img src={logoNav} alt="" /></li>
+        <nav className='mainnet-logo-second'>
 
-                {navItems.map(item => (
-                    <li
-                        key={item.id}
-                        className="single-nav"
-                        id={item.id}
-                        onClick={() => handleNavClick(item.id)}>
-                        <div className={`parent-inner-container-for-nav ${activeNavId === item.id ? 'active' : ''}`}>
-                            <div className={`inner-container-for-nav ${activeNavId === item.id ? 'active' : ''}`}>
-                                <a href={item.href} className='a-logo-nav-photo' role="button" tabIndex="0">
-                                    <img src={item.logo} alt="" className='other-nav-logo' />
-                                </a>
-                            </div>
+            <li className='logo-nav'><img src={logoNav} alt="" /></li>
+
+            {navItems.map(item => (
+                <li
+                    key={item.id}
+                    className="single-nav"
+                    id={item.id}
+                    onClick={() => handleNavClick(item.id)}>
+                    <div className={`parent-inner-container-for-nav ${activeNavId === item.id ? 'active' : ''}`}>
+                        <div className={`inner-container-for-nav ${activeNavId === item.id ? 'active' : ''}`}>
+                            <a href={item.href} className='a-logo-nav-photo' role="button" tabIndex="0">
+                                <img src={item.logo} alt="" className='other-nav-logo' />
+                            </a>
                         </div>
-                    </li>
-                ))}
-            </nav>
-        </div>
+                    </div>
+                </li>
+            ))}
+        </nav>
+
     );
 }
 

@@ -40,7 +40,7 @@ function ProductsManagement() {
         return true;
     }
 
-    return (<div>
+    return (<div className="products-managements-main">
 
 
         <div className="left-top-of-dishes">

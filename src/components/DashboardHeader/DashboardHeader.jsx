@@ -12,41 +12,41 @@ function DashboardHeader() {
 
     // toplam değerlere kod yazılacak...Henüz bitmedi.
     return (
-        <div>
 
-            <div className="dashboard-header-main">
 
-                <div className="dashboard-part">
-                    <div className="logos-dashboard">
-                        <img className="icon-dolar" src={iconDolar} alt="logo" />
-                        <p className="percentage-dashboard-text">+32.40%</p>
-                        <img className="icon-up-arrow" src={iconUpArrow} alt="" />
-                    </div>
-                    <h3 className="price-of-dashboard">$10,243.00</h3>
-                    <p className="dashboard-text">Total Revenue</p>
+        <div className="dashboard-header-main">
+
+            <div className="dashboard-part">
+                <div className="logos-dashboard">
+                    <img className="icon-dolar" src={iconDolar} alt="logo" />
+                    <p className="percentage-dashboard-text">+32.40%</p>
+                    <img className="icon-up-arrow" src={iconUpArrow} alt="" />
                 </div>
+                <h3 className="price-of-dashboard">$10,243.00</h3>
+                <p className="dashboard-text">Total Revenue</p>
+            </div>
 
-                <div className="dashboard-part">
-                    <div className="logos-dashboard">
-                        <img className="icon-dolar" src={iconCard} alt="logo" />
-                        <p className="percentage-dashboard-text">-12.40%</p>
-                        <img className="icon-up-arrow" src={iconDownArrow} alt="" />
-                    </div>
-                    <h3 className="price-of-dashboard">23,456</h3>
-                    <p className="dashboard-text">Total Dish Ordered</p>
+            <div className="dashboard-part">
+                <div className="logos-dashboard">
+                    <img className="icon-dolar" src={iconCard} alt="logo" />
+                    <p className="percentage-dashboard-text">-12.40%</p>
+                    <img className="icon-up-arrow" src={iconDownArrow} alt="" />
                 </div>
+                <h3 className="price-of-dashboard">23,456</h3>
+                <p className="dashboard-text">Total Dish Ordered</p>
+            </div>
 
-                <div className="dashboard-part">
-                    <div className="logos-dashboard">
-                        <img className="icon-dolar" src={iconPeople} alt="logo" />
-                        <p className="percentage-dashboard-text">+2.40%</p>
-                        <img className="icon-up-arrow" src={iconUpArrow} alt="" />
-                    </div>
-                    <h3 className="price-of-dashboard">1,234</h3>
-                    <p className="dashboard-text">Total Customer</p>
+            <div className="dashboard-part">
+                <div className="logos-dashboard">
+                    <img className="icon-dolar" src={iconPeople} alt="logo" />
+                    <p className="percentage-dashboard-text">+2.40%</p>
+                    <img className="icon-up-arrow" src={iconUpArrow} alt="" />
                 </div>
+                <h3 className="price-of-dashboard">1,234</h3>
+                <p className="dashboard-text">Total Customer</p>
             </div>
         </div>
+
     );
 }
 
