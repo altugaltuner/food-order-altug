@@ -3,4 +3,7 @@
 .mainRoot {
   @extend %main-container;
   position: relative;
+  display: flex;
+  flex-direction: row;
+
 }

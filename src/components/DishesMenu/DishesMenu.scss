@@ -7,6 +7,11 @@
 
         display: flex;
         flex-direction: column;
+        gap: 10px;
+
+        .today-date {
+            color: #ABBBC2
+        }
     }
 
     .search-bar-of-dishes {
