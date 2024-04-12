@@ -1,9 +1,11 @@
+import DashboardPage from "./pages/DashBoardPage/DashBoardPage";
 import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
     <>
-      <HomePage />
+
+      <DashboardPage />
     </>
   );
 }
