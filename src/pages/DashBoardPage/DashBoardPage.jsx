@@ -1,8 +1,9 @@
 import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
-
+import OrderReports from "../../components/OrderReports/OrderReports";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "./DashboardPage.scss";
 import { useAuth } from "../../components/AuthProvider";
+import MostOrdered from "../../components/MostOrdered/MostOrdered";
 
 function DashboardPage() {
     const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
@@ -12,7 +13,7 @@ function DashboardPage() {
             <div className="mainRoot">
                 <DashboardHeader />
                 <OrderReports orders={orders} />
-
+                <MostOrdered />
             </div>
         </div>
     );
