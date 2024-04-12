@@ -1,7 +1,7 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
-import OrderReports from "../../components/OrderReports/OrderReports";
+
 import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
@@ -62,6 +62,7 @@ function HomePage() {
         <Navbar />
         <DishesMenu />
         <OrderConfirmation />
+
       </div>
     </div>
 
