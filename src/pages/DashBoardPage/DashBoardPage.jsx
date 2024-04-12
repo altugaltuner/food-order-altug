@@ -11,7 +11,7 @@ function DashboardPage() {
             <Sidebar />
             <div className="mainRoot">
                 <DashboardHeader />
-
+                <OrderReports orders={orders} />
 
             </div>
         </div>
