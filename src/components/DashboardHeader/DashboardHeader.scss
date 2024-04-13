@@ -1,10 +1,44 @@
 .dashboard-header-main {
     display: flex;
-    flex-direction: row;
-    width: 600px;
-    height: 143px;
-    gap: 24px;
-    background-color: #252836;
+    flex-direction: column;
+    width: 876px;
+    height: max-content;
+    gap: 15px;
+    background-color: #393C49;
+    padding-bottom: 20px;
+
+    .dashboards-parts-all {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .top-header-dashboard {
+        .dashboard-h1 {
+            font-family: "Barlow", sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 39.2px;
+            text-align: left;
+
+            width: fit-content;
+            padding: 10px;
+            padding-left: 20px;
+        }
+
+        .dashboard-p {
+            font-family: "Barlow", sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 39.2px;
+            text-align: left;
+
+            width: fit-content;
+            padding: 5px;
+            padding-left: 20px;
+            color: #ABBBC2;
+        }
+    }
 
     .dashboard-part {
         display: flex;

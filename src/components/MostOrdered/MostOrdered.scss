@@ -1,11 +1,13 @@
 .order-conf-main {
     display: flex;
-    width: 400px;
+
     flex-direction: column;
     height: min-content;
     padding: 15px;
     font-family: "Barlow", sans-serif;
     background-color: #1F1D2B;
+    margin-left: 30px;
+    margin-bottom: 20px;
 
 
     .title-order-conf {
@@ -41,7 +43,7 @@
         display: flex;
         height: 100%;
         gap: 10px;
-        margin-bottom: 20px;
+
 
         .conf-left-order-part {
             display: flex;
@@ -72,6 +74,8 @@
                     flex-direction: row;
                     gap: 5px;
                     width: 100%;
+                    margin: 0;
+                    padding: 0;
                 }
 
 

@@ -69,19 +69,14 @@ function HomePage() {
   return (
     <div>
 
-      <Sidebar />
+
 
       <div className="mainRoot">
-        {/*<Navbar />
+        <Sidebar />
+        <Navbar />
         <DishesMenu />
         <OrderConfirmation />
-        <OrderPaymentPage /> */}
-        <Navbar />
-        <DashboardHeader />
-        <OrderReports orders={orders} />
-        <MostOrdered />
-        <PieChart />
-
+        {/* <OrderPaymentPage /> */}
       </div>
     </div>
 

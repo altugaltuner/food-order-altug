@@ -65,7 +65,7 @@ function DishesMenu() {
         return true;
     }
 
-    return (<div>
+    return (<div className="Dishes-All">
 
         <div className="username-and-search-segment">
             <div className="left-top-of-dishes">

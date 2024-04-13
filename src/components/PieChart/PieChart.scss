@@ -1,9 +1,11 @@
 .chart-container {
-    width: 500px;
-    height: 500px; // Canvas'ın boyutlarıyla uyumlu olmalı
+    width: 400px;
+    height: 450px;
     padding: 20px;
     background-color: #1F1D2B;
-    position: relative; // Pozisyonlamayı iyileştirmek için
+    position: relative;
+    margin-left: 30px;
+    border-radius: 20px;
 
     .top-donut {
         width: 100%;
