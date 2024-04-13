@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./OrderConfirmation.scss";
 
 function OrderConfirmation() {
+    const addingButtonImg = "../src/assets/adding-button.png";
+    const dustbin = "../src/assets/dustbin-logo.png";
 
     let discountPercentage = 20;
 
@@ -62,10 +64,12 @@ function OrderConfirmation() {
         setFoodItems(newFoodItems);
     };
 
-
-    const addingButtonImg = "../src/assets/adding-button.png";
-    const dustbin = "../src/assets/dustbin-logo.png";
-
+    const addFoodItem = (newItem) => {
+        setFoodItems(prevItems => [
+            ...prevItems,
+            { ...newItem, quantity: 1, totalPrice: newItem.price } // Başlangıçta quantity 1 kabul edilmiştir.
+        ]);
+    };
 
     return (
 

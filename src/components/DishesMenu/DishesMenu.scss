@@ -67,7 +67,7 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            margin-top: 66px;
+            margin-top: 30px;
             background-color: #393C49;
             /* Gerekli diğer stiller */
         }
@@ -101,6 +101,7 @@
                 border: 1px solid #979797;
                 background-color: #1F1D2B;
                 color: white;
+                margin-right: 10px;
             }
         }
     }
@@ -140,12 +141,18 @@
         display: flex;
         flex-direction: column;
         width: 31%;
-
+        cursor: pointer;
         align-items: center;
         background-color: #1F1D2B;
         margin-bottom: 40px;
         border-radius: 15px;
+
+        &:hover {
+            box-shadow: 0px 0px 20px 0px #1F1D2B;
+        }
     }
+
+
 
     .category-tabs-dishes {
         display: flex;

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
@@ -24,56 +25,35 @@ import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 
-const orders = [
-  // ...sipariş verileriniz burada olmalı...
-  {
-    customerName: "Eren Jaegar",
-    customerAvatar: avatar1,
-    menu: "Spicy seasoned seafood noodles ",
-    totalPayment: 125,
-    status: "Completed",
-  },
-  {
-    customerName: "Reiner Braunn",
-    customerAvatar: avatar2,
-    menu: "Salted Pasta with mushroom sauce",
-    totalPayment: 145,
-    status: "Preparing",
-  },
-  {
-    customerName: "Levi Ackerman",
-    customerAvatar: avatar3,
-    menu: "Beef dumpling in hot and sour soup",
-    totalPayment: 105,
-    status: "Pending",
-  },
-  {
-    customerName: "Historia Reiss",
-    customerAvatar: avatar4,
-    menu: "Hot spicy fried rice with omelet",
-    totalPayment: 45,
-    status: "Completed",
-  },
-  {
-    customerName: "Hanji Zoe",
-    customerAvatar: avatar5,
-    menu: "Sichuan hot pot mixed seafood",
-    totalPayment: 245,
-    status: "Completed",
-  },
-];
-
 
 function HomePage() {
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
+
+  const [orders, setOrders] = useState([]);
+  console.log("orders", orders);
+  console.log("auth.user", auth.user);
+
+
+  const handleAddToOrder = (dish) => {
+    console.log("Siparişe eklenecek yemek:", dish);
+    setOrders(prevOrders => {
+      console.log("Mevcut siparişler:", prevOrders);
+      console.log("Eklenen yeni sipariş:", dish);
+      const newOrders = [...prevOrders, dish];
+      console.log("Yeni sipariş listesi:", newOrders);
+      return newOrders;
+    });
+  };
+
   return (
+
     <div>
       <div className="mainRoot">
         <Sidebar />
-        {/* <Navbar />
-        <DishesMenu />
-        <OrderConfirmation />
-        <OrderPaymentPage /> */}
+        <Navbar />
+        <DishesMenu addToOrder={handleAddToOrder} />
+        <OrderConfirmation foodItems={orders} />
+        <OrderPaymentPage />
       </div>
     </div>
 

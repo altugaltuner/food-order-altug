@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import photo1 from "../../assets/food1.png";
 import photo2 from "../../assets/food2.png";
 import photo3 from "../../assets/food3.png";
+import photo4 from "../../assets/food4.png";
+import photo5 from "../../assets/food5.png";
 import searchlogo from "../../assets/search.png";
 
 
@@ -14,10 +16,10 @@ function DishesMenu() {
         { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.71, imageSrc: photo2, coldDish: false, soup: true },
         { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo3, coldDish: true, soup: false },
         { id: 4, name: "Healthy noodle with spinach leaf", price: 3.28, imageSrc: photo2, coldDish: false, soup: true },
-        { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo1, coldDish: false, soup: false },
-        { id: 6, name: "Spicy instant noodle with special omelette", price: 5.85, imageSrc: photo3, coldDish: false, soup: false },
+        { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo4, coldDish: false, soup: false },
+        { id: 6, name: "Spicy instant noodle with special omelette", price: 5.85, imageSrc: photo5, coldDish: false, soup: false },
         { id: 7, name: "Garlic Butter Shrimp Pasta", price: 4.52, imageSrc: photo3, coldDish: false, soup: true },
-        { id: 8, name: "Rosemary Citrus Roasted Chicken", price: 4.85, imageSrc: photo1, coldDish: true, soup: false },
+        { id: 8, name: "Rosemary Citrus Roasted Chicken", price: 4.85, imageSrc: photo2, coldDish: true, soup: false },
         { id: 9, name: "Smoky Barbecue Beef Brisket", price: 4.19, imageSrc: photo1, coldDish: true, soup: true },
         // Diğer yemeklerin bilgileri...
     ];
@@ -60,10 +62,17 @@ function DishesMenu() {
         } else if (activeTab === 'appetizer') {
             return !dish.coldDish && dish.soup;
         } else if (activeTab === 'dessert') {
-            return !dish.coldDish || dish.coldDish;
+            return dish.coldDish && !dish.soup;
         }
         return true;
     }
+
+
+    const addToOrder = (dish) => {
+        console.log(dish.id);
+        return dish;
+    };
+
 
     return (<div className="Dishes-All">
 
@@ -105,7 +114,7 @@ function DishesMenu() {
                 fonksiyonuna gönderir. filterDishes fonksiyonu, aktif tab'a göre bir yemeğin koşulları karşılayıp karşılamadığını kontrol eder.Koşulları karşılayan (true dönen) yemekler yeni bir dizi içinde bir araya getirilir.  .map(dish => { ... }): Filtrelenmiş dizi üzerinde iterasyon yaparak, her bir dish öğesi için JSX kod bloğu oluşturur. Oluşturulan bu JSX kod blokları, kullanıcı arayüzünde ilgili yemeklerin gösterilmesini sağlar. */}
                 {
                     dishes.filter(filterDishes).map(dish => (
-                        <div className="dish-card" key={dish.id}>
+                        <div className="dish-card" key={dish.id} onClick={() => addToOrder(dish)}>
                             <img className="dish-image" src={dish.imageSrc} alt={dish.name} />
                             <h3 className="dish-name">{dish.name}</h3>
                             <p className="dish-price">${dish.price}</p>
