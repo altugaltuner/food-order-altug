@@ -68,15 +68,12 @@ function HomePage() {
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
   return (
     <div>
-
-
-
       <div className="mainRoot">
         <Sidebar />
-        <Navbar />
+        {/* <Navbar />
         <DishesMenu />
         <OrderConfirmation />
-        {/* <OrderPaymentPage /> */}
+        <OrderPaymentPage /> */}
       </div>
     </div>
 
