@@ -31,35 +31,16 @@ function HomePage() {
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
 
   const [orders, setOrders] = useState([]);
-  console.log("orders", orders);
-  console.log("auth.user", auth.user);
-
 
   const handleAddToOrder = (dish) => {
     console.log("handleAddToOrder çalıştı, eklenen yemek:", dish);
     setOrders(prevOrders => {
       const newOrders = [...prevOrders, dish];
       console.log("Yeni siparişler:", newOrders);
+      console.log("Önceki siparişler:", prevOrders);
       return newOrders;
     });
   };
-
-  const UpdatedOrders = [
-    { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-    { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-    { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-  ]
-
-  const as = (dish) => {
-    console.log("as çalıştı, eklenen yemek:", dish);
-    setOrders(prevOrders => {
-      const newOrders = [...prevOrders, dish];
-      console.log("Yeni siparişler:", newOrders);
-      return newOrders;
-    });
-  };
-
-
 
   return (
 
@@ -68,7 +49,7 @@ function HomePage() {
         <Sidebar />
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation as={as} />
+        <OrderConfirmation incomingFoodItems={orders} />
         <OrderPaymentPage />
       </div>
     </div>

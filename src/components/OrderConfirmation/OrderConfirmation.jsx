@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import "./OrderConfirmation.scss";
-import { useEffect } from "react";
 
-function OrderConfirmation({ as }) {
+
+function OrderConfirmation({ incomingFoodItems }) {
+
+    const [localFoodItems, setLocalFoodItems] = useState([]);
+
+    useEffect(() => {
+        console.log('Yeni food items alındı:', incomingFoodItems);
+        setLocalFoodItems(incomingFoodItems);
+        // setFoodItems(prevItems => [...prevItems, incomingFoodItems]);
+        if (incomingFoodItems && incomingFoodItems.length > 0) {
+            // Assuming incomingFoodItems is an array of food items
+            setFoodItems(incomingFoodItems);
+        }
+
+    }, [incomingFoodItems]);
+
     const addingButtonImg = "../src/assets/adding-button.png";
     const dustbin = "../src/assets/dustbin-logo.png";
 
@@ -16,12 +30,6 @@ function OrderConfirmation({ as }) {
         { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
     ]);
 
-    function as() {
-        console.log("foodItems", foodItems);
-        const againNewFoodItems = foodItems.map(() => {
-            return { againNewFoodItems }
-        });
-    };
 
 
     // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
@@ -99,7 +107,7 @@ function OrderConfirmation({ as }) {
                                 <img src={foodItem.imageSrc} alt="" className="food-photos-order-conf" />
                                 <div className="name-and-price">
                                     <p className="name-and-price-p">{foodItem.name}</p>
-                                    <p className="name-and-price-p">${foodItem.price.toFixed(2)}</p>
+                                    <p className="name-and-price-p">${foodItem.price}</p>
                                 </div>
                             </div>
                             <input type="text" placeholder="0" className="total-piece-of-food" onChange={(e) => handlePieceChange(foodItem.id, e.target.value)}
@@ -115,7 +123,7 @@ function OrderConfirmation({ as }) {
                     {/* OnClick Olayı: Çöp kutusu butonuna tıklandığında tetiklenen onClick olayında, deleteMeal(foodItem.id) ifadesi kullanılır. Bu ifade, tıklanan butonun ait olduğu foodItem öğesinin id değerini deleteMeal fonksiyonuna argüman olarak geçirir. */}
 
                     <div className="conf-right-order-part">
-                        <p className="price-of-order-conf">${foodItem.totalPrice.toFixed(2)}</p>
+                        <p className="price-of-order-conf">${foodItem.totalPrice}</p>
                         <button type="reset" className="reset-button-conf" onClick={() => deleteMeal(foodItem.id)}><img src={dustbin} alt="Reset" className="reset-button-conf-img" /></button>
                     </div>
                 </div>
@@ -127,10 +135,10 @@ function OrderConfirmation({ as }) {
             <div className="discount-subtotal-div">
                 <div className="discount-subtotal-div-line">
                     <p className="discount-subtotal-p">Discount : %{discountPercentage}</p>
-                    <p className="discount-subtotal-p">-$ {discountedMoney()}</p>
+                    <p className="discount-subtotal-p">-$ {discountedMoney().toFixed(2)}</p>
                 </div>
                 <div className="discount-subtotal-div-line">
-                    <p className="discount-subtotal-p" onClick={as()}>Sub total :</p>
+                    <p className="discount-subtotal-p">Sub total :</p>
                     <p className="discount-subtotal-p">$ {subTotal().toFixed(2)}</p>
                 </div>
             </div>
