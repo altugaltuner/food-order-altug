@@ -9,7 +9,7 @@ import photo5 from "../../assets/food5.png";
 import searchlogo from "../../assets/search.png";
 
 
-function DishesMenu() {
+function DishesMenu({ addToOrder }) {
 
     const dishes = [
         { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo1, coldDish: false, soup: false },
@@ -67,11 +67,6 @@ function DishesMenu() {
         return true;
     }
 
-
-    const addToOrder = (dish) => {
-        console.log(dish.id);
-        return dish;
-    };
 
 
     return (<div className="Dishes-All">

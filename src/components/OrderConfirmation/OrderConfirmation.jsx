@@ -1,19 +1,28 @@
 import { useState } from "react";
 import "./OrderConfirmation.scss";
+import { useEffect } from "react";
 
-function OrderConfirmation() {
+function OrderConfirmation({ as }) {
     const addingButtonImg = "../src/assets/adding-button.png";
     const dustbin = "../src/assets/dustbin-logo.png";
 
     let discountPercentage = 20;
 
+
     // foodItems artık bir state
     const [foodItems, setFoodItems] = useState([
-        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
-        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
-        { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
-        { id: 4, name: "Healthy noodle with spinach leaf", price: 3.29, imageSrc: "../src/assets/food1.png", quantity: 0, totalPrice: 0, OrderNote: "" },
+        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
+        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
+        { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
     ]);
+
+    function as() {
+        console.log("foodItems", foodItems);
+        const againNewFoodItems = foodItems.map(() => {
+            return { againNewFoodItems }
+        });
+    };
+
 
     // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
     // ! operatörü, isNaN fonksiyonunun sonucunu tersine çevirir. Yani, eğer parsedQuantity NaN değilse, !isNaN(parsedQuantity) ifadesi true olur.
@@ -64,12 +73,6 @@ function OrderConfirmation() {
         setFoodItems(newFoodItems);
     };
 
-    const addFoodItem = (newItem) => {
-        setFoodItems(prevItems => [
-            ...prevItems,
-            { ...newItem, quantity: 1, totalPrice: newItem.price } // Başlangıçta quantity 1 kabul edilmiştir.
-        ]);
-    };
 
     return (
 
@@ -127,7 +130,7 @@ function OrderConfirmation() {
                     <p className="discount-subtotal-p">-$ {discountedMoney()}</p>
                 </div>
                 <div className="discount-subtotal-div-line">
-                    <p className="discount-subtotal-p">Sub total :</p>
+                    <p className="discount-subtotal-p" onClick={as()}>Sub total :</p>
                     <p className="discount-subtotal-p">$ {subTotal().toFixed(2)}</p>
                 </div>
             </div>

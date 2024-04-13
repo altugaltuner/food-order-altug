@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useEffect } from "react";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
 import OrderPaymentPage from "../../components/OrderPaymentPage/OrderPaymentPage";
@@ -24,6 +24,7 @@ import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
+import { set } from "firebase/database";
 
 
 function HomePage() {
@@ -35,15 +36,30 @@ function HomePage() {
 
 
   const handleAddToOrder = (dish) => {
-    console.log("Siparişe eklenecek yemek:", dish);
+    console.log("handleAddToOrder çalıştı, eklenen yemek:", dish);
     setOrders(prevOrders => {
-      console.log("Mevcut siparişler:", prevOrders);
-      console.log("Eklenen yeni sipariş:", dish);
       const newOrders = [...prevOrders, dish];
-      console.log("Yeni sipariş listesi:", newOrders);
+      console.log("Yeni siparişler:", newOrders);
       return newOrders;
     });
   };
+
+  const UpdatedOrders = [
+    { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
+    { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
+    { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
+  ]
+
+  const as = (dish) => {
+    console.log("as çalıştı, eklenen yemek:", dish);
+    setOrders(prevOrders => {
+      const newOrders = [...prevOrders, dish];
+      console.log("Yeni siparişler:", newOrders);
+      return newOrders;
+    });
+  };
+
+
 
   return (
 
@@ -52,7 +68,7 @@ function HomePage() {
         <Sidebar />
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation foodItems={orders} />
+        <OrderConfirmation as={as} />
         <OrderPaymentPage />
       </div>
     </div>
