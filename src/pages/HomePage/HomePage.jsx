@@ -48,9 +48,11 @@ function HomePage() {
       <div className="mainRoot">
         <Sidebar />
         <Navbar />
-        <DishesMenu addToOrder={handleAddToOrder} />
+        {/* <DishesMenu addToOrder={handleAddToOrder} />
         <OrderConfirmation incomingFoodItems={orders} />
-        <OrderPaymentPage />
+        <OrderPaymentPage /> bunlar homepagede bulunması gereken elementler */}
+        <DashboardHeader />
+
       </div>
     </div>
 

@@ -4,6 +4,22 @@ import filterPhoto from "../../assets/Filter.png";
 
 const OrderReports = ({ orders }) => {
 
+    const orders = [
+        { id: 1, customerAvatar: "Spicy seasoned seafood noodles", customerName: 2.29, menu: photo1, coldDish: false, soup: false, quantity: 1 },
+        { id: 2, customerAvatar: "Salted Pasta with mushroom sauce", customerName: 2.71, menu: photo2, coldDish: false, soup: true, quantity: 1 },
+        { id: 3, customerAvatar: "Beef dumpling in hot and sour soup", customerName: 2.96, menu: photo3, coldDish: true, soup: false, quantity: 1 },
+        { id: 4, customerAvatar: "Healthy noodle with spinach leaf", customerName: 3.28, menu: photo2, coldDish: false, soup: true, quantity: 1 },
+        { id: 5, customerAvatar: "Hot spicy fried rice with omelet", customerName: 3.05, menu: photo4, coldDish: false, soup: false, quantity: 1 },
+        { id: 6, customerAvatar: "Spicy instant noodle with special omelette", customerName: 5.85, menu: photo5, coldDish: false, soup: false, quantity: 1 },
+        { id: 7, customerAvatar: "Garlic Butter Shrimp Pasta", customerName: 4.52, menu: photo3, coldDish: false, soup: true, quantity: 1 },
+        { id: 8, customerAvatar: "Rosemary Citrus Roasted Chicken", customerName: 4.85, menu: photo2, coldDish: true, soup: false, quantity: 1 },
+        { id: 9, customerAvatar: "Smoky Barbecue Beef Brisket", customerName: 4.19, menu: photo1, coldDish: true, soup: true, quantity: 1 },
+        // Diğer yemeklerin bilgileri...
+    ];
+
+
+
+
     const [sortedOrders, setSortedOrders] = useState(orders);
 
     const statusClass = (status) => {
