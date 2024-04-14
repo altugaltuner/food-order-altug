@@ -1,0 +1,10 @@
+.mainRoot {
+    display: flex;
+    flex-direction: row;
+    background-color: #242836;
+
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+    }
+}

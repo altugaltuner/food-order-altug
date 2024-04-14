@@ -5,8 +5,14 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  background-color: #242836;
 
   .mainRoot-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainContent {
     display: flex;
     flex-direction: column;
   }

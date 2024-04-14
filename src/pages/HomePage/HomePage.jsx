@@ -13,7 +13,8 @@ import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmat
 // şimdilik
 import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
 import OrderReports from "../../components/OrderReports/OrderReports";
-
+import ProductsManagement from "../../components/ProductsManagement/ProductsManagement";
+import SettingsSidebar from "../../components/SettingsSidebar/SettingsSidebar";
 
 import MostOrdered from "../../components/MostOrdered/MostOrdered";
 import PieChart from "../../components/PieChart/PieChart";
@@ -46,12 +47,10 @@ function HomePage() {
 
     <div>
       <div className="mainRoot">
-        <Sidebar />
         <Navbar />
-        {/* <DishesMenu addToOrder={handleAddToOrder} />
+        <DishesMenu addToOrder={handleAddToOrder} />
         <OrderConfirmation incomingFoodItems={orders} />
-        <OrderPaymentPage /> bunlar homepagede bulunması gereken elementler */}
-        <DashboardHeader />
+        <OrderPaymentPage />
 
       </div>
     </div>

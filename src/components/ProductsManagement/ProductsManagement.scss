@@ -116,14 +116,14 @@
     border: none;
     padding: 10px;
     border-radius: 0 0 15px 15px;
-    background-color: #ba7027;
+    background-color: #EA7C6942;
 
     &:hover {
-        background-color: darken(#ba7027, 10%);
+        background-color: darken(#EA7C6942, 15%);
     }
 
     &:active {
-        background-color: darken(#ba7027, 20%);
+        background-color: darken(#EA7C6942, 30%);
     }
 
 }
@@ -146,11 +146,11 @@
     align-items: center;
     background-color: #1F1D2B;
     border-radius: 15px;
-    border: 1px dotted orange;
+    border: 1px dotted #EA7C69;
     border-style: dashed;
     justify-content: center;
     gap: 20px;
-    color: orange;
+    color: #EA7C69;
 
     .segment-p-new-dish {
         text-align: center;
@@ -190,8 +190,8 @@
     }
 
     .category-tabs button.active {
-        color: #ff6a07;
-        border-bottom: 2px solid #ff6a07;
+        color: #EA7C69;
+        border-bottom: 2px solid #EA7C69;
     }
 }
 

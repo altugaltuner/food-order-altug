@@ -24,8 +24,8 @@ function SettingsSidebar() {
                 div.style.backgroundColor = '#1F1D2B'; // Diğer div'lerin arkaplanını varsayılan renge ayarla
             });
 
-            // Tıklanan '.sidebar-div' öğesinin arkaplanını turuncu yap
-            targetDiv.style.backgroundColor = 'rgb(171 44 5)';
+            // Tıklanan '.sidebar-div' öğesinin arkaplanını kahverengi yap
+            targetDiv.style.backgroundColor = '#EA7C6942';
         }
 
 

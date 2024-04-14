@@ -8,19 +8,45 @@ import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 
-const OrderReports = ({ orders }) => {
+const OrderReports = () => {
 
     const orders = [
-        { id: 1, customerAvatar: avatar1, customerName: "Eren Jaegar", menu: "Spicy seasoned seafood noodles", totalPayment: false, status: "Completed", },
-        { id: 2, customerAvatar: avatar2, customerName: "Reiner Braunn", menu: "Salted Pasta with mushroom sauce", totalPayment: false, status: "Pending" },
-        { id: 3, customerAvatar: avatar3, customerName: "Levi Ackerman", menu: "Beef dumpling in hot and sour soup", totalPayment: true, status: "Completed" },
-        { id: 4, customerAvatar: avatar4, customerName: "Historia Reiss", menu: "Healthy noodle with spinach leaf", totalPayment: false, status: "Preparing" },
-        { id: 5, customerAvatar: avatar5, customerName: "Hanji Zoe", menu: "Hot spicy fried rice with omelet", totalPayment: false, status: "Completed" },
-        { id: 6, customerAvatar: avatar1, customerName: "Jane Doe", menu: "Spicy instant noodle with special omelette", totalPayment: false, status: false },
-        { id: 7, customerAvatar: avatar2, customerName: "Jack White", menu: "Garlic Butter Shrimp Pasta", totalPayment: false, status: "Completed" },
-        { id: 8, customerAvatar: avatar3, customerName: "Albert Rose", menu: "Rosemary Citrus Roasted Chicken", totalPayment: true, status: false },
-        { id: 9, customerAvatar: avatar4, customerName: "Sane Koman", menu: "Smoky Barbecue Beef Brisket", totalPayment: true, status: true },
-        // Diğer yemeklerin bilgileri...
+        // ...sipariş verileriniz burada olmalı...
+        {
+            customerName: "Eren Jaegar",
+            customerAvatar: avatar1,
+            menu: "Spicy seasoned seafood noodles ",
+            totalPayment: 125,
+            status: "Completed",
+        },
+        {
+            customerName: "Reiner Braunn",
+            customerAvatar: avatar2,
+            menu: "Salted Pasta with mushroom sauce",
+            totalPayment: 145,
+            status: "Preparing",
+        },
+        {
+            customerName: "Levi Ackerman",
+            customerAvatar: avatar3,
+            menu: "Beef dumpling in hot and sour soup",
+            totalPayment: 105,
+            status: "Pending",
+        },
+        {
+            customerName: "Historia Reiss",
+            customerAvatar: avatar4,
+            menu: "Hot spicy fried rice with omelet",
+            totalPayment: 45,
+            status: "Completed",
+        },
+        {
+            customerName: "Hanji Zoe",
+            customerAvatar: avatar5,
+            menu: "Sichuan hot pot mixed seafood",
+            totalPayment: 245,
+            status: "Completed",
+        },
     ];
 
 
