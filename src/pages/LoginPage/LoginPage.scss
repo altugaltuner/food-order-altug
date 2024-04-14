@@ -1,0 +1,93 @@
+.login-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #242836;
+
+    .login-main-div {
+        width: 500px;
+        height: 200px;
+
+        .login-h1 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            .login-password {
+                height: 40px;
+                border: none;
+
+                border-radius: 12px
+            }
+
+            .login-email {
+                height: 40px;
+                border: none;
+
+                border-radius: 12px
+            }
+
+            .submits-of-login {
+                display: flex;
+                gap: 20px;
+
+
+                .login-submit {
+                    height: 40px;
+                    width: 85px;
+                    border: none;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    color: #242836;
+                    background-color: #fff;
+
+                    &:hover {
+                        background-color: #dddddd;
+                        color: #242836;
+                    }
+
+                    &:active {
+                        background-color: #c2c2c2;
+                        color: #242836;
+                    }
+                }
+
+
+                .login-logout {
+                    height: 40px;
+                    width: 85px;
+                    border: none;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    color: #242836;
+                    background-color: #fff;
+
+                    &:hover {
+                        background-color: #dddddd;
+                        color: #242836;
+                    }
+
+                    &:active {
+                        background-color: #c2c2c2;
+                        color: #242836;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}

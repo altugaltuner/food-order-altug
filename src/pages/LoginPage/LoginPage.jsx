@@ -37,26 +37,33 @@ function LoginPage() {
   }
 
   return (
-    <div>
-      <h1>Login page</h1>
-      <form onSubmit={(e) => handleUserLogin(e)}>
-        <input
-          onKeyUp={(e) => handleChange(e)}
-          name="password"
-          type="password"
-        />
-        <input onKeyUp={(e) => handleChange(e)} name="email" type="email" />
-        <input type="submit" value="Login" />
-      </form>
+    <div className="login-main">
+      <div className="login-main-div">
+        <h1 className="login-h1">Login page</h1>
+        <form className="login-form" onSubmit={(e) => handleUserLogin(e)}>
 
-      <button
-        onClick={() => {
-          signOut(auth);
-          console.log("clicked");
-        }}
-      >
-        Logout
-      </button>
+          <input className="login-email" placeholder="Please Enter Your E-Mail" onKeyUp={(e) => handleChange(e)} name="email" type="email" />
+          <input className="login-password"
+            onKeyUp={(e) => handleChange(e)}
+            name="password"
+            type="password"
+          />
+          <div className="submits-of-login">
+            <input className="login-submit" type="submit" value="Login" />
+
+            <button className="login-logout"
+              onClick={() => {
+                signOut(auth);
+                console.log("clicked");
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        </form>
+
+
+      </div>
     </div>
   );
 }
