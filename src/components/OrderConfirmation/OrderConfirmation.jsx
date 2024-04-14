@@ -10,7 +10,7 @@ function OrderConfirmation({ incomingFoodItems }) {
         console.log('Yeni food items alındı:', incomingFoodItems);
         setLocalFoodItems(incomingFoodItems);
         // setFoodItems(prevItems => [...prevItems, incomingFoodItems]);
-        if (incomingFoodItems && incomingFoodItems.length > 0) {
+        if (incomingFoodItems) {
             // Assuming incomingFoodItems is an array of food items
             setFoodItems(incomingFoodItems);
         }
@@ -24,13 +24,7 @@ function OrderConfirmation({ incomingFoodItems }) {
 
 
     // foodItems artık bir state
-    const [foodItems, setFoodItems] = useState([
-        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.69, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-        { id: 3, name: "Beef Dumpling in hot and sour soup", price: 2.99, imageSrc: "../src/assets/food1.png", quantity: 1, totalPrice: 0, OrderNote: "" },
-    ]);
-
-
+    const [foodItems, setFoodItems] = useState([]);
 
     // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
     // ! operatörü, isNaN fonksiyonunun sonucunu tersine çevirir. Yani, eğer parsedQuantity NaN değilse, !isNaN(parsedQuantity) ifadesi true olur.
@@ -77,6 +71,7 @@ function OrderConfirmation({ incomingFoodItems }) {
 
     // Silme işlevi : DeleteMeal Fonksiyonu: deleteMeal fonksiyonu, aldığı id değerine göre hangi yemeğin silineceğini anlar. Fonksiyon, filter metoduyla foodItems dizisinde dolaşır ve her bir öğenin id değeri ile fonksiyona argüman olarak verilen id değerini karşılaştırır. Eşleşmeyen (yani silinmesi gerekmeyen) öğeler yeni bir dizi oluşturmak üzere kullanılır. Eşleşen öğe (silinmesi gereken yemek) bu yeni dizide yer almaz.
     const deleteMeal = (id) => {
+        console.log('Silme işlemi gerçekleşti:', id);
         const newFoodItems = foodItems.filter(item => item.id !== id);
         setFoodItems(newFoodItems);
     };
@@ -123,7 +118,7 @@ function OrderConfirmation({ incomingFoodItems }) {
                     {/* OnClick Olayı: Çöp kutusu butonuna tıklandığında tetiklenen onClick olayında, deleteMeal(foodItem.id) ifadesi kullanılır. Bu ifade, tıklanan butonun ait olduğu foodItem öğesinin id değerini deleteMeal fonksiyonuna argüman olarak geçirir. */}
 
                     <div className="conf-right-order-part">
-                        <p className="price-of-order-conf">${foodItem.totalPrice}</p>
+                        <p className="price-of-order-conf">${(foodItem.price) * foodItem.quantity}</p>
                         <button type="reset" className="reset-button-conf" onClick={() => deleteMeal(foodItem.id)}><img src={dustbin} alt="Reset" className="reset-button-conf-img" /></button>
                     </div>
                 </div>
