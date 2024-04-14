@@ -2,18 +2,24 @@ import { useState } from "react";
 import "./OrderReports.scss";
 import filterPhoto from "../../assets/Filter.png";
 
+import avatar1 from "../../assets/avatar1.png";
+import avatar2 from "../../assets/avatar2.png";
+import avatar3 from "../../assets/avatar3.png";
+import avatar4 from "../../assets/avatar4.png";
+import avatar5 from "../../assets/avatar5.png";
+
 const OrderReports = ({ orders }) => {
 
     const orders = [
-        { id: 1, customerAvatar: "Spicy seasoned seafood noodles", customerName: 2.29, menu: photo1, coldDish: false, soup: false, quantity: 1 },
-        { id: 2, customerAvatar: "Salted Pasta with mushroom sauce", customerName: 2.71, menu: photo2, coldDish: false, soup: true, quantity: 1 },
-        { id: 3, customerAvatar: "Beef dumpling in hot and sour soup", customerName: 2.96, menu: photo3, coldDish: true, soup: false, quantity: 1 },
-        { id: 4, customerAvatar: "Healthy noodle with spinach leaf", customerName: 3.28, menu: photo2, coldDish: false, soup: true, quantity: 1 },
-        { id: 5, customerAvatar: "Hot spicy fried rice with omelet", customerName: 3.05, menu: photo4, coldDish: false, soup: false, quantity: 1 },
-        { id: 6, customerAvatar: "Spicy instant noodle with special omelette", customerName: 5.85, menu: photo5, coldDish: false, soup: false, quantity: 1 },
-        { id: 7, customerAvatar: "Garlic Butter Shrimp Pasta", customerName: 4.52, menu: photo3, coldDish: false, soup: true, quantity: 1 },
-        { id: 8, customerAvatar: "Rosemary Citrus Roasted Chicken", customerName: 4.85, menu: photo2, coldDish: true, soup: false, quantity: 1 },
-        { id: 9, customerAvatar: "Smoky Barbecue Beef Brisket", customerName: 4.19, menu: photo1, coldDish: true, soup: true, quantity: 1 },
+        { id: 1, customerAvatar: avatar1, customerName: "Eren Jaegar", menu: "Spicy seasoned seafood noodles", totalPayment: false, status: "Completed", },
+        { id: 2, customerAvatar: avatar2, customerName: "Reiner Braunn", menu: "Salted Pasta with mushroom sauce", totalPayment: false, status: "Pending" },
+        { id: 3, customerAvatar: avatar3, customerName: "Levi Ackerman", menu: "Beef dumpling in hot and sour soup", totalPayment: true, status: "Completed" },
+        { id: 4, customerAvatar: avatar4, customerName: "Historia Reiss", menu: "Healthy noodle with spinach leaf", totalPayment: false, status: "Preparing" },
+        { id: 5, customerAvatar: avatar5, customerName: "Hanji Zoe", menu: "Hot spicy fried rice with omelet", totalPayment: false, status: "Completed" },
+        { id: 6, customerAvatar: avatar1, customerName: "Jane Doe", menu: "Spicy instant noodle with special omelette", totalPayment: false, status: false },
+        { id: 7, customerAvatar: avatar2, customerName: "Jack White", menu: "Garlic Butter Shrimp Pasta", totalPayment: false, status: "Completed" },
+        { id: 8, customerAvatar: avatar3, customerName: "Albert Rose", menu: "Rosemary Citrus Roasted Chicken", totalPayment: true, status: false },
+        { id: 9, customerAvatar: avatar4, customerName: "Sane Koman", menu: "Smoky Barbecue Beef Brisket", totalPayment: true, status: true },
         // Diğer yemeklerin bilgileri...
     ];
 
