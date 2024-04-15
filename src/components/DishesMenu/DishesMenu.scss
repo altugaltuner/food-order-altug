@@ -68,8 +68,8 @@
             gap: 20px;
             justify-content: center;
             margin-top: 30px;
-            background-color: #393C49;
-            /* Gerekli diğer stiller */
+            background: none
+                /* Gerekli diğer stiller */
         }
 
 
@@ -146,6 +146,7 @@
         background-color: #1F1D2B;
         margin-bottom: 40px;
         border-radius: 15px;
+        border: none;
 
         &:hover {
             box-shadow: 0px 0px 20px 0px #1F1D2B;
@@ -161,10 +162,10 @@
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: center;
-        background-color: #393C49;
+        background: none;
 
         .category-tabs button {
-            background-color: #393C49;
+            background: none;
             color: white;
 
             padding: 10px 20px;
