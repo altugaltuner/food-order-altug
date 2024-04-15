@@ -6,9 +6,10 @@
     padding: 15px;
     font-family: "Barlow", sans-serif;
     background-color: #1F1D2B;
-    margin-left: 20px;
-    border-radius: 15px;
 
+    border-radius: 15px;
+    margin-right: 20px;
+    margin-left: 10px;
 
     .title-order-conf {
         display: flex;
@@ -39,7 +40,7 @@
                 font-size: 18px;
                 font-weight: 600;
                 color: #ABBBC2;
-
+                padding-right: 10px;
             }
         }
     }

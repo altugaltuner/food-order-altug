@@ -1,8 +1,9 @@
 .Dishes-All {
+    width: 45%;
+    margin-left: 20px;
 
     .username-and-search-segment {
         display: flex;
-        width: 820px;
         justify-content: space-between;
         text-align: left;
 
@@ -12,7 +13,7 @@
             flex-direction: column;
             gap: 10px;
             background: none;
-
+            width: fit-content;
 
             .today-date {
                 color: #ABBBC2
@@ -25,11 +26,13 @@
                 line-height: 28px;
                 color: #FFFFFF;
                 text-align: left;
+                justify-content: flex-start;
+                width: fit-content;
             }
         }
 
         .search-bar-of-dishes {
-            width: 220px;
+            width: 100%;
             height: 48px;
             gap: 8px;
             border-radius: 8px;
@@ -44,6 +47,7 @@
         position: relative;
         height: fit-content;
         height: 100%;
+        width: 250px;
         transform: translate(-20px, 27px);
 
         .search-icon-logo {
@@ -59,7 +63,7 @@
     .dishes-main {
         display: flex;
         flex-direction: column;
-        width: 820px;
+        width: 100%;
 
 
         .dishes-container {
@@ -84,7 +88,7 @@
                 font-size: 38px;
                 font-weight: 600;
                 line-height: 28px;
-
+                padding: 10px;
                 color: #FFFFFF;
                 display: flex;
                 text-align: center;
@@ -153,16 +157,14 @@
         }
     }
 
-
-
     .category-tabs-dishes {
         display: flex;
         flex-direction: row;
-        width: 820px;
         padding-top: 20px;
         padding-bottom: 20px;
         text-align: center;
         background: none;
+        width: 100%;
 
         .category-tabs button {
             background: none;
@@ -182,6 +184,31 @@
     }
 }
 
+@media screen and (max-width: 1400px) {
+    .Dishes-All {
+        .username-and-search-segment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-bar-container {
+            transform: translate(0px, 0px);
+            margin: 5px;
+
+        }
+    }
+}
+
+@media screen and (max-width: 1285px) {
+    .Dishes-All {
+        .dish-image {
+            width: 90px;
+            top: -10px;
+        }
+    }
+}
+
 @media screen and (max-width: 975px) {
 
     .dishes-main {
@@ -197,6 +224,12 @@
     .category-tabs-dishes {
         width: 100%;
     }
+
+    .Dishes-All {
+        .dish-image {
+            width: 80px;
+        }
+    }
 }
 
 @media screen and (max-width: 660px) {
@@ -211,27 +244,55 @@
         width: 43%;
     }
 
-    .username-and-search-segment {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+    .Dishes-All {
 
-        .search-bar-of-dishes {
-            width: 90%;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: flex-end;
-            position: relative;
-            left: 12px;
+        .dish-name {
+            font-size: 10px;
         }
-    }
 
-    .search-bar-container .search-icon-logo {
-        left: 20px;
+        .username-and-search-segment {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .search-bar-of-dishes {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: flex-end;
+                position: relative;
+                left: 12px;
+
+            }
+        }
+
+        .search-bar-container {
+            width: 80%;
+
+            .search-icon-logo {
+                left: 20px;
+            }
+        }
+
+        .dishes-main {
+            .top-segment-for-dishes {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }
 
 @media screen and (max-width: 500px) {
+    .Dishes-All {
+        .dish-image {
+            width: 50px;
+            top: 0px;
+        }
+    }
+
     .dish-name {
         font-size: 12px;
     }

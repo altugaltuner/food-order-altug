@@ -1,11 +1,13 @@
 @import "../../styles/abstracts/placeholders";
 
 .mainRoot {
-  @extend %main-container;
-  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   background-color: #242836;
+  color: white;
+  margin-left: 100px;
 
   .mainRoot-column {
     display: flex;
@@ -17,4 +19,10 @@
     flex-direction: column;
   }
 
+}
+
+@media screen and (max-width: 570px) {
+  .mainRoot {
+    margin-left: 50px;
+  }
 }

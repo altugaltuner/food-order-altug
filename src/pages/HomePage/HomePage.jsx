@@ -49,8 +49,8 @@ function HomePage() {
       <div className="mainRoot">
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation incomingFoodItems={orders} />
-        <OrderPaymentPage />
+        {/* <OrderConfirmation incomingFoodItems={orders} />
+        <OrderPaymentPage /> */}
 
       </div>
     </div>

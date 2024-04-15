@@ -1,20 +1,18 @@
 .mainnet-logo-second {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    height: 100%;
+    position: fixed; // Sabit pozisyon, navbar'ın kaydırmalardan etkilenmemesini sağlar
+    top: 0; // Üstten itibaren başlar
+    bottom: 0; // Alt kenara kadar uzanır
+    left: 0; // Sol taraftan başlar
     width: 100px;
+    color: white; // Metin rengi beyaz olarak ayarlanmıştır
+    overflow-y: auto; // Yatay kaydırmayı etkinleştirir, menü çok uzunsa kaydırma çubuğu ekler
     background-color: #1F1D2B;
-    justify-content: flex-start;
-    margin-right: 30px;
-    border-radius: 10px;
 
     .logo-nav {
         width: 100%;
         display: flex;
         justify-content: center;
-        height: 18vh;
+        height: 11vh;
         align-items: center;
 
         img {
@@ -28,7 +26,7 @@
         display: flex;
         width: 100%;
         justify-content: center;
-        height: 15vh;
+        height: 12vh;
         align-items: center;
 
         // &:hover {
