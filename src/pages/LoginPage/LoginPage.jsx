@@ -6,8 +6,16 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../components/AuthProvider";
 
 function LoginPage() {
+
+  const {fireStoreUser} = useAuth();
+  console.log(fireStoreUser,"FIRESTORE USER");
+
+  const navigate = useNavigate();
+
   onAuthStateChanged(auth, (currentUser) => {
     // setUser(currentUser);
     console.log(currentUser);
@@ -30,10 +38,35 @@ function LoginPage() {
     const { email, password } = formData;
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-      console.log(res);
+      if(res){
+        navigate("/homepage");
+      }
     } catch (error) {
       console.error(error);
     }
+  }
+
+  if(fireStoreUser){
+    return (
+      <div className="login-main">
+        <div className="login-main-div">
+          <h1 className="login-h1">Zaten Giriş Yaptınız</h1>
+          <form className="login-form" onSubmit={(e) => handleUserLogin(e)}>
+            <div className="submits-of-login">
+              <button
+                className="login-logout"
+                onClick={() => {
+                  signOut(auth);
+                  navigate("/login", { replace: true });
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -69,3 +102,6 @@ function LoginPage() {
 }
 
 export default LoginPage;
+
+
+<div>alperen degisiklik</div>

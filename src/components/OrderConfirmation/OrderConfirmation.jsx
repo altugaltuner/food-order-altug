@@ -80,11 +80,16 @@ function OrderConfirmation({ incomingFoodItems }) {
     return (
 
         <div className="order-conf-main">
-            <div className="part-of-title">
-                <h1 className="h1-order">Confirmation</h1>
-                <h3 className="h3-order-conf">Orders #34562</h3>
-            </div>
 
+            <div className="title-order-conf">
+                <div className="part-of-title-conf">
+                    <h1 className="h1-order-conf">Confirmation</h1>
+                    <h3 className="h3-order-conf">Orders #34562</h3>
+                </div>
+                <div className="part-of-title-conf">
+                    <img src={addingButtonImg} alt="" srcset="" className="adding-button-class" />
+                </div>
+            </div>
 
             {/* Map Metodu: foodItems.map(...) kullandığınızda, foodItems dizisindeki her bir öğe için bir döngü oluşturursunuz. Bu döngü içinde, her öğenin kendine ait bir div bloğu (ve içinde çöp kutusu butonu) oluşturulur. Her bir div ve içerdiği buton, o anki döngüdeki öğenin (foodItem) verileriyle (özellikle id değeriyle) ilişkilendirilmiş olur. */}
 

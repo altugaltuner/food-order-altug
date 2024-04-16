@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { useEffect } from "react";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
@@ -8,7 +8,6 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
-
 
 // şimdilik
 import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
@@ -27,7 +26,6 @@ import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 import { set } from "firebase/database";
 
-
 function HomePage() {
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
 
@@ -35,7 +33,7 @@ function HomePage() {
 
   const handleAddToOrder = (dish) => {
     console.log("handleAddToOrder çalıştı, eklenen yemek:", dish);
-    setOrders(prevOrders => {
+    setOrders((prevOrders) => {
       const newOrders = [...prevOrders, dish];
       console.log("Yeni siparişler:", newOrders);
       console.log("Önceki siparişler:", prevOrders);
@@ -44,19 +42,17 @@ function HomePage() {
   };
 
   return (
-
     <div>
       <div className="mainRoot">
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <div className="mainRoot-column-two">
-          <OrderConfirmation incomingFoodItems={orders} />
-          <OrderPaymentPage />
-        </div>
+        <OrderConfirmation incomingFoodItems={orders} />
+        <OrderPaymentPage />
       </div>
     </div>
-
   );
 }
 
 export default HomePage;
+
+
