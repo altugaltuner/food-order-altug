@@ -26,12 +26,15 @@
 .order-payment {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 400px;
+    justify-content: start;
+    width: 94%;
+    margin-left: 0px;
+    border-radius: 15px;
     padding: 20px;
     background-color: #1F1D2B;
     color: #ffffff;
     font-family: "Barlow", sans-serif;
+    height: fit-content;
 
     .line-form {
         width: 100%;
@@ -95,7 +98,7 @@
         flex-direction: row;
         margin-top: 100px;
         gap: 20px;
-        margin-top: 223px;
+        margin-top: 100px;
 
         .cancel-button {
             width: 50%;
@@ -344,7 +347,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 90%;
+    width: 100%;
 
     label {
         cursor: pointer;
@@ -359,7 +362,7 @@
 .payment-photo-options {
     display: flex;
     flex-direction: column;
-    width: 101px;
+    width: 33%;
     height: 64px;
     font-size: 14px;
     height: 60px;
@@ -463,22 +466,27 @@
     background-color: #3d3953;
 }
 
+@media screen and (max-width: 1100px) {
+    .order-payment {
+        width: 94%;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {}
+
 @media (max-width: 525px) {
     .order-payment {
         width: 100%;
 
-        .first-double-type {
-            justify-content: space-between;
-        }
-    }
-}
-
-@media (max-width: 505px) {
-    .order-payment {
         .buttons-div {
             .confirm-button {
                 padding: 0px;
             }
+        }
+
+        .first-double-type {
+            justify-content: space-between;
         }
     }
 }

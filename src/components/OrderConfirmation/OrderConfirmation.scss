@@ -1,53 +1,30 @@
 .order-conf-main {
     display: flex;
-    width: 25%;
+    width: 94%;
     flex-direction: column;
     height: min-content;
     padding: 15px;
     font-family: "Barlow", sans-serif;
     background-color: #1F1D2B;
-
     border-radius: 15px;
     margin-right: 20px;
     margin-left: 0px;
 
-    .title-order-conf {
+    .part-of-title {
         display: flex;
-        justify-content: space-between;
-        border-bottom: solid 1px #555555;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        padding-top: 15px;
+        flex-direction: column;
+        gap: 10px;
         width: 100%;
+        justify-content: start;
 
-        .part-of-title-conf {
-            display: flex;
-            flex-direction: column;
+        .h3-order-conf {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ABBBC2;
 
-            width: 100%;
-            justify-content: end;
-
-            .h1-order-conf {
-                //styleName: Heading/H1;
-
-                font-size: 30px;
-                font-weight: 600;
-                line-height: 39.2px;
-                text-align: left;
-                margin-bottom: 10px;
-                margin-right: 0px;
-            }
-
-            .h3-order-conf {
-                //styleName: Heading/H1;
-
-                font-size: 18px;
-                font-weight: 600;
-                color: #ABBBC2;
-
-            }
         }
     }
+
 
     .order-conf-body {
         display: flex;
@@ -145,7 +122,7 @@
 
             .reset-button-conf {
                 display: flex;
-                width: 50px;
+                width: 80%;
                 padding: 14px;
                 gap: 10px;
                 border-radius: 8px;
@@ -197,67 +174,71 @@
     }
 }
 
-.adding-button-class {
-    width: 50px;
-    height: 50px;
-}
-
-.order-conf-main {
-    .title-order-conf {
-        .part-of-title-conf {
-            .h1-order-conf {
-                margin-right: 0px;
-            }
-        }
-    }
-}
-
-@media (max-width: 900px) {
-    .part-of-title-conf {
-        display: none;
-        flex-direction: column;
-
-        .adding-button-class {
-            width: 0px;
-            height: 0px;
-            display: none;
-        }
-    }
-
-}
-
-
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 1100px) {
     .order-conf-main {
         width: 100%;
+        margin-left: 0px;
 
-        .title-order-conf {
-            .part-of-title-conf {
-                .h1-order-conf {
-                    font-size: 24px;
-                    margin-right: 0px;
-                }
+        .part-of-title {
+            gap: 10px;
 
-                .h3-order-conf {
-                    font-size: 16px;
-                }
+            .h1-order {
+                font-size: 26px;
             }
 
-            .order-conf-body {
-                display: flex;
-                flex-direction: column;
-                border-bottom: solid 1px #ABBBC2;
+            .h3-order-conf {
+                font-size: 22px;
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 800px) {
 
-                .conf-right-order-part {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-                    margin-bottom: 10px;
-                }
+    .order-conf-main {
+        width: 90%;
+        margin-left: 0px;
+
+        .part-of-title-conf {
+            display: flex;
+            flex-direction: column;
+
+            .h3-order-conf {
+                font-size: 16px;
             }
         }
 
+        .order-conf-body {
+            display: flex;
+            margin: 0px;
 
+            .conf-right-order-part {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                margin-bottom: 10px;
+
+                .reset-button-conf {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 512px) {
+
+    .order-conf-main {
+        width: 92%;
+        margin-left: 0px;
+
+        .order-conf-body {
+            .conf-left-order-part {
+                .total-piece-of-food {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
     }
 }

@@ -49,9 +49,10 @@ function HomePage() {
       <div className="mainRoot">
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation incomingFoodItems={orders} />
-        {/*<OrderPaymentPage /> */}
-
+        <div className="mainRoot-column-two">
+          <OrderConfirmation incomingFoodItems={orders} />
+          <OrderPaymentPage />
+        </div>
       </div>
     </div>
 
