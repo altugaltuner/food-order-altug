@@ -7,9 +7,16 @@ import photo5 from "../../assets/food5.png";
 
 import filterPhoto from "../../assets/Filter.png";
 import plusLogo from "../../assets/plus.png";
+import NewDishModal from "./NewDishModal/NewDishModal";
 
 
 function ProductsManagement() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    function handleModalState() {
+        setIsModalOpen((prevModalState) => !prevModalState);
+    }
 
     const dishes = [
         { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo5, coldDish: false, soup: false },
@@ -76,10 +83,10 @@ function ProductsManagement() {
                 {/* dishes.filter(filterDishes): dishes dizisindeki her bir dish öğesini filterDishes
                 fonksiyonuna gönderir. filterDishes fonksiyonu, aktif tab'a göre bir yemeğin koşulları karşılayıp karşılamadığını kontrol eder.Koşulları karşılayan (true dönen) yemekler yeni bir dizi içinde bir araya getirilir.  .map(dish => { ... }): Filtrelenmiş dizi üzerinde iterasyon yaparak, her bir dish öğesi için JSX kod bloğu oluşturur. Oluşturulan bu JSX kod blokları, kullanıcı arayüzünde ilgili yemeklerin gösterilmesini sağlar. */}
 
-                <div className="dish-card-adding-segment">
+                <button onClick={handleModalState} className="dish-card-adding-segment">
                     <img src={plusLogo} alt="plus logo" />
                     <p className="segment-p-new-dish">Add New Dish</p>
-                </div>
+                </button>
                 {
                     dishes.filter(filterDishes).map(dish => (
                         <div className="dish-card" key={dish.id}>
@@ -97,7 +104,9 @@ function ProductsManagement() {
             <button className="discard-changes-btn">Discard Changes</button>
             <button className="save-changes-btn">Save Changes</button>
         </div>
-
+        {isModalOpen && (
+            <NewDishModal handleModalState={handleModalState} />
+        )}
     </div>);
 }
 export default ProductsManagement;

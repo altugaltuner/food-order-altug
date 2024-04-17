@@ -3,8 +3,9 @@
     flex-direction: column;
     background-color: #1F1D2B;
     color: white;
-    width: 240px;
+    width: 305px;
     height: 95vh;
+    margin-left: 100px;
 
     .sidebar-div {
         display: flex;
@@ -13,7 +14,8 @@
         opacity: 0px;
         transition: all 0.3s ease-in-out;
         justify-content: center;
-        padding-top: 25px;
+        padding: 20px;
+        padding-top: 40px;
         padding-bottom: 20px;
 
         gap: 10px;
@@ -29,7 +31,7 @@
             color: #ABBBC2;
             //styleName: Body / Small - Regular;
             font-family: Barlow, sans-serif;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
             line-height: 16.8px;
             text-align: left;
@@ -41,7 +43,7 @@
             display: flex;
             justify-content: flex-start;
             font-family: Barlow, sans-serif;
-            font-size: 14px;
+            font-size: 22px;
             font-weight: 500;
             line-height: 18.2px;
             text-align: left;

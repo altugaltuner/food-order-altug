@@ -1,6 +1,6 @@
 .order-conf-main {
     display: flex;
-    width: 94%;
+    width: 25%;
     flex-direction: column;
     height: min-content;
     padding: 15px;
@@ -176,7 +176,7 @@
 
 @media screen and (max-width: 1100px) {
     .order-conf-main {
-        width: 100%;
+        width: 30%;
         margin-left: 0px;
 
         .part-of-title {
@@ -196,7 +196,7 @@
 @media screen and (max-width: 800px) {
 
     .order-conf-main {
-        width: 90%;
+        width: 30%;
         margin-left: 0px;
 
         .part-of-title-conf {
@@ -226,10 +226,16 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .order-conf-main {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 512px) {
 
     .order-conf-main {
-        width: 92%;
+        width: 88%;
         margin-left: 0px;
 
         .order-conf-body {
@@ -240,5 +246,9 @@
                 }
             }
         }
+    }
+
+    .order-conf-main {
+        width: 88%;
     }
 }

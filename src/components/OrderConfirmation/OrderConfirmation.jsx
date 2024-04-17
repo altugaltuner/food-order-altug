@@ -8,11 +8,12 @@ function OrderConfirmation({
   handleCustomerNoteChange,
 }) {
   const [localFoodItems, setLocalFoodItems] = useState([]);
+  // foodItems artık bir state
+  const [foodItems, setFoodItems] = useState([]);
 
   useEffect(() => {
     console.log("Yeni food items alındı:", incomingFoodItems);
     setLocalFoodItems(incomingFoodItems);
-    // setFoodItems(prevItems => [...prevItems, incomingFoodItems]);
     if (incomingFoodItems) {
       // Assuming incomingFoodItems is an array of food items
       setFoodItems(incomingFoodItems);
@@ -24,8 +25,7 @@ function OrderConfirmation({
 
   let discountPercentage = 20;
 
-  // foodItems artık bir state
-  const [foodItems, setFoodItems] = useState([]);
+
 
   // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
   // ! operatörü, isNaN fonksiyonunun sonucunu tersine çevirir. Yani, eğer parsedQuantity NaN değilse, !isNaN(parsedQuantity) ifadesi true olur.

@@ -3,7 +3,7 @@ import "./MostOrdered.scss";
 import MostOrderedModal from "../MostOrderedModal/MostOrderedModal";
 
 function MostOrdered() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleModalState() {
     setIsModalOpen((prevModalState) => !prevModalState);
@@ -91,10 +91,7 @@ function MostOrdered() {
       <div className="discount-subtotal-div-line"></div>
 
       {isModalOpen && (
-        <MostOrderedModal
-          mostOrderedFoods={foodItems}
-          handleModalState={handleModalState}
-        />
+        <MostOrderedModal mostOrderedFoods={foodItems} handleModalState={handleModalState} />
       )}
     </div>
   );
