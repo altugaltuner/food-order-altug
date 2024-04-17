@@ -33,20 +33,52 @@ function HomePage() {
 
   const handleAddToOrder = (dish) => {
     console.log("handleAddToOrder çalıştı, eklenen yemek:", dish);
-    setOrders((prevOrders) => {
-      const newOrders = [...prevOrders, dish];
-      console.log("Yeni siparişler:", newOrders);
-      console.log("Önceki siparişler:", prevOrders);
-      return newOrders;
-    });
+    const isAdded = orders.some((order) => order.id === dish.id);
+
+    if(!isAdded){
+      setOrders((prevOrders) => {
+        const newOrders = [...prevOrders, dish];
+        console.log("Yeni siparişler:", newOrders);
+        console.log("Önceki siparişler:", prevOrders);
+        return newOrders;
+      });
+    } else {
+      alert("Yemek zaten ekli");
+    }
   };
+
+  // Silme işlevi : DeleteMeal Fonksiyonu: deleteMeal fonksiyonu, aldığı id değerine göre hangi yemeğin silineceğini anlar. Fonksiyon, filter metoduyla foodItems dizisinde dolaşır ve her bir öğenin id değeri ile fonksiyona argüman olarak verilen id değerini karşılaştırır. Eşleşmeyen (yani silinmesi gerekmeyen) öğeler yeni bir dizi oluşturmak üzere kullanılır. Eşleşen öğe (silinmesi gereken yemek) bu yeni dizide yer almaz.
+    const deleteMeal = (id) => {
+        console.log('Silme işlemi gerçekleşti:', id);
+        const newFoodItems = orders.filter(item => item.id !== id);
+        console.log(newFoodItems, "NEW FOOD ITEMS");
+        setOrders(newFoodItems);
+    };
+
+
+    // not değiştirme
+    const handleCustomerNoteChange = (id, note) => {
+      setOrders(
+        orders.map((item) => {
+          if (item.id === id) {
+            return { ...item, orderNote: note };
+          }
+          return item;
+        })
+      );
+      console.log(orders, "BÜTÜN ORDERS NOTLU");
+    };
 
   return (
     <div>
       <div className="mainRoot">
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation incomingFoodItems={orders} />
+        <OrderConfirmation
+          handleCustomerNoteChange={handleCustomerNoteChange}
+          deleteMeal={deleteMeal}
+          incomingFoodItems={orders}
+        />
         <OrderPaymentPage />
       </div>
     </div>
@@ -54,5 +86,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
