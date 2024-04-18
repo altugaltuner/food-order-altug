@@ -35,7 +35,7 @@ function HomePage() {
     console.log("handleAddToOrder çalıştı, eklenen yemek:", dish);
     const isAdded = orders.some((order) => order.id === dish.id);
 
-    if(!isAdded){
+    if (!isAdded) {
       setOrders((prevOrders) => {
         const newOrders = [...prevOrders, dish];
         console.log("Yeni siparişler:", newOrders);
@@ -48,38 +48,41 @@ function HomePage() {
   };
 
   // Silme işlevi : DeleteMeal Fonksiyonu: deleteMeal fonksiyonu, aldığı id değerine göre hangi yemeğin silineceğini anlar. Fonksiyon, filter metoduyla foodItems dizisinde dolaşır ve her bir öğenin id değeri ile fonksiyona argüman olarak verilen id değerini karşılaştırır. Eşleşmeyen (yani silinmesi gerekmeyen) öğeler yeni bir dizi oluşturmak üzere kullanılır. Eşleşen öğe (silinmesi gereken yemek) bu yeni dizide yer almaz.
-    const deleteMeal = (id) => {
-        console.log('Silme işlemi gerçekleşti:', id);
-        const newFoodItems = orders.filter(item => item.id !== id);
-        console.log(newFoodItems, "NEW FOOD ITEMS");
-        setOrders(newFoodItems);
-    };
+  const deleteMeal = (id) => {
+    console.log('Silme işlemi gerçekleşti:', id);
+    const newFoodItems = orders.filter(item => item.id !== id);
+    console.log(newFoodItems, "NEW FOOD ITEMS");
+    setOrders(newFoodItems);
+  };
 
 
-    // not değiştirme
-    const handleCustomerNoteChange = (id, note) => {
-      setOrders(
-        orders.map((item) => {
-          if (item.id === id) {
-            return { ...item, orderNote: note };
-          }
-          return item;
-        })
-      );
-      console.log(orders, "BÜTÜN ORDERS NOTLU");
-    };
+  // not değiştirme
+  const handleCustomerNoteChange = (id, note) => {
+    setOrders(
+      orders.map((item) => {
+        if (item.id === id) {
+          return { ...item, orderNote: note };
+        }
+        return item;
+      })
+    );
+    console.log(orders, "BÜTÜN ORDERS NOTLU");
+  };
 
   return (
     <div>
       <div className="mainRoot">
         <Navbar />
         <DishesMenu addToOrder={handleAddToOrder} />
-        <OrderConfirmation
-          handleCustomerNoteChange={handleCustomerNoteChange}
-          deleteMeal={deleteMeal}
-          incomingFoodItems={orders}
-        />
-        <OrderPaymentPage />
+        <div className="new-div">
+          <OrderConfirmation
+            handleCustomerNoteChange={handleCustomerNoteChange}
+            deleteMeal={deleteMeal}
+            incomingFoodItems={orders}
+          />
+          <OrderPaymentPage />
+        </div>
+
       </div>
     </div>
   );

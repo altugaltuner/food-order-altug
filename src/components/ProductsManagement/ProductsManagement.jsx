@@ -7,26 +7,44 @@ import photo5 from "../../assets/food5.png";
 
 import filterPhoto from "../../assets/Filter.png";
 import plusLogo from "../../assets/plus.png";
-import NewDishModal from "./NewDishModal/NewDishModal";
+import DishModal from "./NewDishModal/NewDishModal";
 
 
 function ProductsManagement() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    function handleModalState() {
-        setIsModalOpen((prevModalState) => !prevModalState);
-    }
-
-    const dishes = [
+    const [selectedDish, setSelectedDish] = useState(null);
+    const [dishes, setDishes] = useState([
         { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo5, coldDish: false, soup: false },
         { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.70, imageSrc: photo5, coldDish: false, soup: true },
         { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo4, coldDish: true, soup: false },
         { id: 4, name: "Healthy noodle with spinach leaf", price: 3.20, imageSrc: photo4, coldDish: false, soup: true },
         { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo5, coldDish: false, soup: false },
+    ]);
 
-    ];
+    const handleModalState = () => {
+        if (isModalOpen) {
+            setSelectedDish(null);  // Modal kapatılırken seçilen yemeği temizle
+        }
+        setIsModalOpen(prev => !prev);
+    };
 
+    const onSave = (updatedDish) => {
+        let updatedDishes;
+        if (updatedDish.id <= dishes.length) {
+            // Düzenlenen yemek için
+            updatedDishes = dishes.map(d => d.id === updatedDish.id ? updatedDish : d);
+        } else {
+            // Yeni yemek için
+            updatedDishes = [...dishes, updatedDish];
+        }
+        setDishes(updatedDishes);
+    };
+
+    const handleEdit = (dish) => {
+        setSelectedDish(dish);
+        setIsModalOpen(true);
+    };
 
     const [activeTab, setActiveTab] = useState('hot-dishes');
 
@@ -48,7 +66,6 @@ function ProductsManagement() {
     }
 
     return (<div className="products-managements-main">
-
 
         <div className="left-top-of-dishes">
             <h2 className="username-of-hello">Products Management</h2>
@@ -93,7 +110,7 @@ function ProductsManagement() {
                             <img className="dish-image" src={dish.imageSrc} alt={dish.name} />
                             <h3 className="dish-name">{dish.name}</h3>
                             <p className="dish-price">${dish.price}</p>
-                            <button className="edit-dish-btn">Edit Dish</button>
+                            <button className="edit-dish-btn" onClick={() => handleEdit(dish)}>Edit Dish</button>
                         </div>
                     ))
                 }
@@ -105,7 +122,7 @@ function ProductsManagement() {
             <button className="save-changes-btn">Save Changes</button>
         </div>
         {isModalOpen && (
-            <NewDishModal handleModalState={handleModalState} />
+            <DishModal dish={selectedDish} handleModalState={handleModalState} onSave={onSave} />
         )}
     </div>);
 }
