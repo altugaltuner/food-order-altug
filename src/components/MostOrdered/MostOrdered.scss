@@ -1,6 +1,6 @@
 .order-conf-main {
     display: flex;
-    width: 100%;
+    width: 400px;
     flex-direction: column;
     height: min-content;
     padding: 15px;
@@ -12,7 +12,7 @@
 
     .title-order-conf {
         display: flex;
-        justify-content: space-between;
+
         border-bottom: solid 1px #555555;
 
         margin-bottom: 15px;
@@ -34,7 +34,7 @@
                 line-height: 39.2px;
                 text-align: left;
                 margin-bottom: 10px;
-                margin-right: 110px;
+                margin-right: 0px;
             }
         }
     }
@@ -224,7 +224,7 @@
 
 @media screen and (max-width: 512px) {
     .order-conf-main {
-        width: 100%;
+        width: 86%;
 
         .title-order-conf {
             display: flex;
@@ -272,21 +272,6 @@
                             width: 75%;
                         }
                     }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 502px) {
-    .order-conf-main {
-        .title-order-conf {
-            .part-of-title-conf {
-                display: flex;
-                flex-direction: column;
-
-                .h1-order-conf {
-                    margin-right: 0px;
                 }
             }
         }

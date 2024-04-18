@@ -1,6 +1,6 @@
 .chart-container {
     width: 400px;
-    height: 450px;
+    height: 400px;
     padding: 20px;
     background-color: #1F1D2B;
     position: relative;
@@ -36,27 +36,25 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1300px) {
     .chart-container {
-        width: 350px;
-        height: 350px;
-
-        .top-donut {
-            .top-donut-h2 {
-                font-size: 25px;
-            }
-        }
+        width: 294px;
+        height: 313px;
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 410px) {
     .chart-container {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
 
         .top-donut {
+            .most-type-of-order-button {
+                width: 20px;
+            }
+
             .top-donut-h2 {
-                font-size: 15px;
+                font-size: 16px;
             }
         }
     }
