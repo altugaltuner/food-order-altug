@@ -184,10 +184,10 @@
     }
 }
 
-@media(max-width: 950px) {
+@media(max-width: 1300px) {
     .order-conff-main {
-        flex: 0.46;
-        margin-left: 100px;
+
+        margin-left: 120px;
     }
 }
 
@@ -195,5 +195,20 @@
     .order-conff-main {
         margin-right: 27px;
         margin-left: 70px;
+    }
+}
+
+@media(max-width: 335px) {
+    .order-conff-main {
+        margin-right: 27px;
+        margin-left: 70px;
+
+        .title-order-conf {
+            .part-of-title-conf {
+                .h1-order-conf {
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }

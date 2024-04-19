@@ -1,7 +1,7 @@
 .Dishes-All {
     margin-left: 0px;
     flex: 1;
-    padding-left: 100px;
+    padding-left: 110px;
 
     .username-and-search-segment {
         display: flex;
@@ -14,7 +14,7 @@
             flex-direction: column;
             gap: 10px;
             background: none;
-            width: fit-content;
+
 
             .today-date {
                 color: #ABBBC2
@@ -25,10 +25,10 @@
                 font-size: 44px;
                 font-weight: 600;
                 line-height: 28px;
-                color: #FFFFFF;
+                color: #ff8e42;
                 text-align: left;
                 justify-content: flex-start;
-                width: fit-content;
+
             }
         }
 
@@ -293,12 +293,26 @@
 @media screen and (max-width: 700px) {
     .Dishes-All {
         width: 100%;
+        padding-left: 65px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .Dishes-All {
         width: 100%;
+
+        .username-and-search-segment {
+            .left-top-of-dishes {
+                .username-of-hello {
+                    font-size: 30px;
+
+                    .username-of-hello-color {
+
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
 
         .dish-image {
             width: 50px;
