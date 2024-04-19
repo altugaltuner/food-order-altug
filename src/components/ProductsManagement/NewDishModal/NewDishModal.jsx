@@ -41,7 +41,7 @@ function DishModal({ dish, handleModalState, onSave, dishes }) {
         <div className="mainContainer">
             <div className="innerCont">
                 <h1>{dish ? "Edit Dish" : "New Dish"}</h1>
-                <form onSubmit={handleSubmit}>
+                <form className="modal-form" onSubmit={handleSubmit}>
                     <input type="file" onChange={e => setImage(URL.createObjectURL(e.target.files[0]))} />
                     <input type="text" placeholder="Enter dish name" value={dishName} onChange={e => setDishName(e.target.value)} />
                     <input type="text" placeholder="Enter it's price" value={price} onChange={e => setPrice(e.target.value)} />

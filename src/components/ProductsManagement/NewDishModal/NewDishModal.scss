@@ -15,23 +15,34 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: white;
+        background-color: rgb(255 255 255);
         color: black;
         padding: 20px;
         align-items: center;
+        gap: 20px;
 
-        h3 {
-            font-size: 15px;
+        .modal-form {
+            display: flex;
+            gap: 10px;
+
+            input {
+                padding-left: 10px;
+            }
+        }
+
+        h1 {
+            font-size: 40px;
             font-family: "Barlow", sans-serif;
             font-weight: 500;
         }
 
         button {
             padding: 10px 10px;
-            background-color: #181515;
+            background-color: #754434;
             border: none;
             cursor: pointer;
             width: 100px;
+            color: white;
 
         }
     }
