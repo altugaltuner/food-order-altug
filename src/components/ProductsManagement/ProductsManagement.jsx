@@ -9,18 +9,34 @@ import filterPhoto from "../../assets/Filter.png";
 import plusLogo from "../../assets/plus.png";
 import DishModal from "./NewDishModal/NewDishModal";
 
-
+const initialDishes = [
+    { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo5, coldDish: false, soup: false },
+    { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.70, imageSrc: photo5, coldDish: false, soup: true },
+    { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo4, coldDish: true, soup: false },
+    { id: 4, name: "Healthy noodle with spinach leaf", price: 3.20, imageSrc: photo4, coldDish: false, soup: true },
+    { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo5, coldDish: false, soup: false },
+];
 function ProductsManagement() {
 
+
+
+    const [dishes, setDishes] = useState([...initialDishes]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDish, setSelectedDish] = useState(null);
-    const [dishes, setDishes] = useState([
-        { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo5, coldDish: false, soup: false },
-        { id: 2, name: "Salted Pasta with mushroom sauce", price: 2.70, imageSrc: photo5, coldDish: false, soup: true },
-        { id: 3, name: "Beef dumpling in hot and sour soup", price: 2.96, imageSrc: photo4, coldDish: true, soup: false },
-        { id: 4, name: "Healthy noodle with spinach leaf", price: 3.20, imageSrc: photo4, coldDish: false, soup: true },
-        { id: 5, name: "Hot spicy fried rice with omelet", price: 3.05, imageSrc: photo5, coldDish: false, soup: false },
-    ]);
+
+    // Veriyi localStorage'dan yükleyen useEffect
+    useEffect(() => {
+        const savedDishes = JSON.parse(localStorage.getItem('dishes'));
+        if (savedDishes) {
+            setDishes(savedDishes);
+            // Başlangıç durumunu ayrıca kaydedin
+            localStorage.setItem('initialDishes', JSON.stringify(savedDishes));
+        }
+    }, []);
+
+    const handleDiscardChanges = () => {
+        setDishes([...initialDishes]);
+    };
 
     const handleModalState = () => {
         if (isModalOpen) {
@@ -39,6 +55,9 @@ function ProductsManagement() {
             updatedDishes = [...dishes, updatedDish];
         }
         setDishes(updatedDishes);
+        localStorage.setItem('dishes', JSON.stringify(updatedDishes));
+        console.log("Updated dishes list:", updatedDishes);
+
     };
 
     const handleEdit = (dish) => {
@@ -118,12 +137,14 @@ function ProductsManagement() {
 
         </div>
         <div className="discard-or-save-changes">
-            <button className="discard-changes-btn">Discard Changes</button>
+            <button className="discard-changes-btn" onClick={handleDiscardChanges}>Discard Changes</button>
+
             <button className="save-changes-btn">Save Changes</button>
         </div>
         {isModalOpen && (
-            <DishModal dish={selectedDish} handleModalState={handleModalState} onSave={onSave} />
+            <DishModal dish={selectedDish} handleModalState={handleModalState} onSave={onSave} dishes={dishes} />
         )}
+
     </div>);
 }
 export default ProductsManagement;

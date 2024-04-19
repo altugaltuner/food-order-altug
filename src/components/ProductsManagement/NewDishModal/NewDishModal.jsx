@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./NewDishModal.scss";
 
-function DishModal({ dish, handleModalState, onSave }) {
+function DishModal({ dish, handleModalState, onSave, dishes }) {
     const [dishName, setDishName] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
