@@ -13,7 +13,7 @@ function MostOrderedModal({ mostOrderedFoods, handleModalState }) {
             </h3>
           ))}
         </div>
-        <button onClick={handleModalState}>KAPAT(X)</button>
+        <button onClick={handleModalState}>Close (X)</button>
       </div>
     </div>
   );

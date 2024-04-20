@@ -2,7 +2,7 @@
 
 .order-report-container {
     color: $font-color;
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #1F1D2B;
@@ -175,6 +175,15 @@
         .order-report-header {
             display: flex;
             flex-direction: column;
+
+            .order-report-h1 {
+                margin-bottom: 10px;
+                font-size: 25px;
+            }
+
+            .filter-order-select {
+                width: 74px;
+            }
         }
     }
 }
