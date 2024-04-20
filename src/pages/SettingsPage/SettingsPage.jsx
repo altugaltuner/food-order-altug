@@ -16,8 +16,10 @@ function SettingsPage() {
   return (
     <main className="settings-page">
       <Navbar />
-      <SettingsSidebar />
-      <ProductsManagement addingNewDish={handleAddingNewDish} />
+      <div className="set-product-div">
+        <SettingsSidebar />
+        <ProductsManagement addingNewDish={handleAddingNewDish} />
+      </div>
     </main>
   );
 }

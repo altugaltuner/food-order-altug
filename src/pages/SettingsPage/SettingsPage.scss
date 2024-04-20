@@ -3,4 +3,27 @@
     flex-direction: row;
     color: white;
     background-color: #242836;
+
+    .set-product-div {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .settings-page {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .set-product-div {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 11px;
+                padding: 0px;
+            }
+        }
+    }
 }

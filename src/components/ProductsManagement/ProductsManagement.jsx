@@ -24,6 +24,9 @@ function ProductsManagement() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDish, setSelectedDish] = useState(null);
 
+
+
+
     // Veriyi localStorage'dan yükleyen useEffect
     useEffect(() => {
         const savedDishes = JSON.parse(localStorage.getItem('dishes'));
