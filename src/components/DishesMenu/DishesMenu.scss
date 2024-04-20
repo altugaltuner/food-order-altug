@@ -4,6 +4,7 @@
     padding-left: 110px;
 
     .username-and-search-segment {
+        padding-top: 20px;
         display: flex;
         justify-content: space-between;
         text-align: left;
@@ -84,6 +85,7 @@
             flex-direction: row;
             justify-content: space-between;
             margin-top: 20px;
+            margin-bottom: 25px;
 
             .dishes-title {
                 font-family: "Barlow", sans-serif;
@@ -101,13 +103,13 @@
                 width: 126px;
                 height: 48px;
                 font-family: "Barlow", sans-serif;
-                padding: 14px;
+                padding: 12px;
                 gap: 10px;
                 border-radius: 8px;
                 border: 1px solid #979797;
                 background-color: #1F1D2B;
                 color: white;
-                margin-right: 10px;
+                margin-right: 80px;
             }
         }
     }
@@ -234,6 +236,21 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+    .Dishes-All {
+        padding-left: 70px;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .Dishes-All {
+        width: 100%;
+        padding-left: 65px;
+    }
+}
+
 @media screen and (max-width: 660px) {
 
     .dish-image {
@@ -241,8 +258,6 @@
         position: relative;
         top: -15px;
     }
-
-
 
     .Dishes-All {
         width: 100%;
@@ -287,13 +302,6 @@
                 align-items: center;
             }
         }
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .Dishes-All {
-        width: 100%;
-        padding-left: 65px;
     }
 }
 

@@ -191,17 +191,24 @@
     }
 }
 
+@media(max-width: 900px) {
+    .order-conff-main {
+
+        margin-left: 0px;
+    }
+}
+
 @media(max-width: 585px) {
     .order-conff-main {
         margin-right: 27px;
-        margin-left: 70px;
+        margin-left: 0px;
     }
 }
 
 @media(max-width: 335px) {
     .order-conff-main {
         margin-right: 27px;
-        margin-left: 70px;
+        margin-left: 0px;
 
         .title-order-conf {
             .part-of-title-conf {
