@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Link komponentini import edin
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Link ve location komponentini import ettim.
 import './Navbar.scss';
 
 function Navbar() {
     const logoNav = "/src/assets/Logo.png";
     const [activeNavId, setActiveNavId] = useState(null);
+    const location = useLocation();  // Mevcut konumu almak için hook
 
     const navItems = [
         { id: 'home-nav-id', to: '/homepage', logo: "/src/assets/Home.png" },
         { id: 'about-nav-id', to: '/dashboard', logo: "/src/assets/Discount.png" },
         { id: 'services-nav-id', to: '/settings', logo: "/src/assets/Graph.png" },
         // Diğer nav itemlarınızı buraya ekleyin...
-        { id: 'contact-nav-id-message', to: '/homepage', logo: "/src/assets/Message.png" },
-        { id: 'contact-nav-id-notification', to: '/dashboard', logo: "/src/assets/Notification.png" },
-        { id: 'contact-nav-id-settings', to: '/settings', logo: "/src/assets/Setting.png" },
+        { id: 'contact-nav-id-message', to: '', logo: "/src/assets/Message.png" },
+        { id: 'contact-nav-id-notification', to: '', logo: "/src/assets/Notification.png" },
+        { id: 'contact-nav-id-settings', to: '', logo: "/src/assets/Setting.png" },
         { id: 'contact-nav-id-logout', to: '/login', logo: "/src/assets/Logout.png" },
     ];
+
+    // Konum değiştiğinde aktif sınıfı güncelle
+    useEffect(() => {
+        const activeItem = navItems.find(item => item.to === location.pathname);
+        if (activeItem) {
+            setActiveNavId(activeItem.id);
+        }
+    }, [location, navItems]);
 
     const handleNavClick = (id) => {
         setActiveNavId(id);

@@ -16,6 +16,7 @@
             color: #fff;
             font-size: 3rem;
             margin-bottom: 1rem;
+            font-family: "Barlow", sans-serif;
         }
 
         .login-form {
@@ -25,17 +26,47 @@
             align-items: center;
             gap: 10px;
 
+
+            .password-input-container {
+                margin-left: 40px;
+                gap: 10px;
+                display: flex;
+                align-items: center;
+
+                .toggle-password-visibility {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 30px;
+                    width: 30px;
+                    border: none;
+                    border-radius: 10px;
+
+                    .eye-logo {
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .error-message {
+                color: white;
+                padding: 5px;
+
+            }
+
             .login-password {
                 height: 40px;
                 border: none;
-
+                padding-left: 10px;
                 border-radius: 12px
             }
 
             .login-email {
                 height: 40px;
                 border: none;
-
+                padding-left: 10px;
                 border-radius: 12px
             }
 
