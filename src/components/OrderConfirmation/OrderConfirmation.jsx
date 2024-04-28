@@ -74,13 +74,14 @@ function OrderConfirmation({
         <img
           src={addingButtonImg}
           alt=""
-          srcset=""
+          srcSet=""
           className="adding-button-class"
         />
 
       </div>
 
       {/* Map Metodu: foodItems.map(...) kullandığınızda, foodItems dizisindeki her bir öğe için bir döngü oluşturursunuz. Bu döngü içinde, her öğenin kendine ait bir div bloğu (ve içinde çöp kutusu butonu) oluşturulur. Her bir div ve içerdiği buton, o anki döngüdeki öğenin (foodItem) verileriyle (özellikle id değeriyle) ilişkilendirilmiş olur. */}
+
 
       {incomingFoodItems.map((foodItem) => (
         <div className="order-conf-body" key={foodItem.id}>

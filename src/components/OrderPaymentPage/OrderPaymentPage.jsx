@@ -6,7 +6,6 @@ function OrderPaymentPage() {
     const cCard = "/src/assets/Card.png";
     const paypalPhoto = "/src/assets/Paypal.png";
     const cashPhoto = "/src/assets/Wallet.png";
-    const downArrow = "/src/assets/down-arrow.png";
 
     // Ödeme sayfası için gerekli olan form bilgilerini oluşturun
 
@@ -17,7 +16,6 @@ function OrderPaymentPage() {
         tableNo: '',
         PaymentOption: '',
         OrderType: ''
-
     });
 
     //useState hookları :
@@ -172,13 +170,11 @@ function OrderPaymentPage() {
         }
     }
 
-
     return (
 
         <div className="order-payment" onSubmit={handleSubmit}>
-            <h1 className="payment-head">
-                Payment
-            </h1>
+            <h1 className="payment-head">Payment</h1>
+
             <p className="payment-explanations">3 payment method available</p>
             <div className="line-form"></div>
 
@@ -189,21 +185,20 @@ function OrderPaymentPage() {
                         <input className="input-type-radio" type="radio" id="option1" name="options" value="option1" checked={PaymentOption === "option1"}
                             onChange={handleOptionChange} />
                         <img src={cCard} alt="" srcSet="" />
-                        Credit Card
+                        <p>Credit Card</p>
                     </label>
                     <label htmlFor="option2" className={`payment-photo-options ${PaymentOption === "option2" ? "selected" : ""}`}>
                         <input className="input-type-radio" type="radio" id="option2" name="options" value="option2" checked={PaymentOption === "option2"}
                             onChange={handleOptionChange} />
                         <img src={paypalPhoto} alt="" srcSet="" />
-                        Paypal
+                        <p>Paypal</p>
                     </label>
                     <label htmlFor="option3" className={`payment-photo-options ${PaymentOption === "option3" ? "selected" : ""}`}>
                         <input className="input-type-radio" type="radio" id="option3" name="options" value="option3" checked={PaymentOption === "option3"}
                             onChange={handleOptionChange} />
                         <img src={cashPhoto} alt="" srcSet="" />
-                        Cash
+                        <p>Cash</p>
                     </label>
-
                 </div>
 
                 <div className="rest-is-history">
@@ -215,33 +210,29 @@ function OrderPaymentPage() {
 
                     <div className="double-form-type">
                         <div className="first-double-type">
-                            <p className="card-text">Expiration Date</p>
-                            <label htmlFor="expiration-input">
-                                <input
-                                    type="text"
-                                    className="half-width-input"
-                                    id="expiration-input"
-                                    name="expiration"
-                                    value={expiration}
-                                    onChange={handleExpirationChange}
-                                    placeholder="MM/YY"
-                                />
-                            </label>
+                            <label className="card-text" htmlFor="expiration-input">Expiration Date</label>
+                            <input
+                                type="text"
+                                className="half-width-input"
+                                id="expiration-input"
+                                name="expiration"
+                                value={expiration}
+                                onChange={handleExpirationChange}
+                                placeholder="MM/YY"
+                            />
+
                         </div>
                         <div className="first-double-type">
-                            <p className="card-text">CVV</p>
-                            <input type="password"
+                            <label className="card-text" htmlFor="cvv-input">CVV</label>
+                            <input type="password" id="cvv-input"
                                 className="half-width-input" name="cvv" value={formData.cvv} onChange={handleInputChange} />
                         </div>
                     </div>
                     <div className="line-form"></div>
                     <div className="double-form-type">
-
                         <div className="first-double-type">
 
-                            {/* buraya bir dropdown ekleyin ve seçilen değeri state'e kaydedin */}
-                            <label className="card-text" for="order-types">
-                                <img src={downArrow} alt="Down arrow" className="drop-down-img" />
+                            <label className="card-text" htmlFor="order-types">
                                 Order Type</label>
 
                             <select name="order-types" id="order-types" onChange={handleSelectChange} value={selectedDropDownOption}>
@@ -250,7 +241,6 @@ function OrderPaymentPage() {
                                 <option value="dine-on">Dine On</option>
                                 <option value="dine-under">Dine Under</option>
                             </select>
-                            {/* <p> selected option is : {selectedDropDownOption}</p> */}
 
                         </div>
                         <div className="first-double-type">
@@ -266,7 +256,6 @@ function OrderPaymentPage() {
                 </div>
             </form>
         </div>
-
     );
 }
 
