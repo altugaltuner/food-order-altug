@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/variables" as *;
+
 .mainContainer {
   position: fixed;
   left: 0;
@@ -9,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Barlow", sans-serif;
 
   .innerCont {
     display: flex;
@@ -26,14 +29,12 @@
 
     h3 {
       font-size: 15px;
-      font-family: "Barlow", sans-serif;
       font-weight: 500;
       color: #313131;
       line-height: 25px;
     }
 
     button {
-      padding: 10px 10px;
       background-color: #4b4b4b;
       border: none;
       cursor: pointer;

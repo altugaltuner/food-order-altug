@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./OrderReports.scss";
 import filterPhoto from "../../assets/Filter.png";
-
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
@@ -49,9 +48,6 @@ const OrderReports = () => {
         },
     ];
 
-
-
-
     const [sortedOrders, setSortedOrders] = useState(orders);
 
     const statusClass = (status) => {
@@ -60,8 +56,9 @@ const OrderReports = () => {
 
     const handleFilterChange = (e) => {
         const filter = e.target.value;
-
+        const statusPriority = { Completed: 1, Preparing: 2, Pending: 3 };
         let sortedOrders;
+
         switch (filter) {
             case "highest":
                 sortedOrders = [...orders].sort((a, b) => b.totalPayment - a.totalPayment);
@@ -70,7 +67,6 @@ const OrderReports = () => {
                 sortedOrders = [...orders].sort((a, b) => a.totalPayment - b.totalPayment);
                 break;
             case "status":
-                const statusPriority = { Completed: 1, Preparing: 2, Pending: 3 };
                 sortedOrders = [...orders].sort((a, b) => {
                     return statusPriority[a.status] - statusPriority[b.status];
                 });
@@ -78,7 +74,6 @@ const OrderReports = () => {
             default:
                 sortedOrders = [...orders];
         }
-
         setSortedOrders(sortedOrders);
     };
 
@@ -106,8 +101,8 @@ const OrderReports = () => {
                     </tr>
                 </thead>
                 <tbody className="order-tbody">
-                    {sortedOrders.map((order, index) => (
-                        <tr className="order-body-tr" key={index}>
+                    {sortedOrders.map((order) => (
+                        <tr className="order-body-tr" key={order.customerName}>
                             <td className="order-report-td">
                                 <div className="customer-info">
                                     <img src={order.customerAvatar} alt={order.customerName} />

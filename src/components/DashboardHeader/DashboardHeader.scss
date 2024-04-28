@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/variables" as *;
+
 .dashboard-header-main {
     display: flex;
     flex-direction: column;
@@ -5,6 +7,7 @@
     height: max-content;
     gap: 15px;
     padding-bottom: 20px;
+    font-family: "Barlow", sans-serif;
 
     .dashboards-parts-all {
         display: flex;
@@ -16,7 +19,6 @@
         margin-top: 20px;
 
         .dashboard-h1 {
-            font-family: "Barlow", sans-serif;
             font-size: 40px;
             font-weight: 600;
             line-height: 39.2px;
@@ -27,7 +29,6 @@
         }
 
         .dashboard-p {
-            font-family: "Barlow", sans-serif;
             font-size: 18px;
             font-weight: 300;
             line-height: 39.2px;
@@ -62,7 +63,6 @@
             }
 
             .percentage-dashboard-text {
-                font-family: "Barlow", sans-serif;
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 16.8px;
@@ -76,7 +76,6 @@
         }
 
         .price-of-dashboard {
-            font-family: "Barlow", sans-serif;
             font-size: 25px;
             font-weight: 600;
             line-height: 39.2px;
@@ -86,7 +85,6 @@
 
         .dashboard-text {
             height: 33%;
-            font-family: Barlow;
             font-size: 14px;
             font-weight: 500;
             line-height: 18.2px;

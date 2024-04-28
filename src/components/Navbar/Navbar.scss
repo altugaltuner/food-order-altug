@@ -1,11 +1,13 @@
+@use "../../styles/abstracts/variables" as *;
+
 .mainnet-logo-second {
-    position: fixed; // Sabit pozisyon, navbar'ın kaydırmalardan etkilenmemesini sağlar
-    top: 0; // Üstten itibaren başlar
-    bottom: 0; // Alt kenara kadar uzanır
-    left: 0; // Sol taraftan başlar
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
     width: 100px;
-    color: white; // Metin rengi beyaz olarak ayarlanmıştır
-    overflow-y: auto; // Yatay kaydırmayı etkinleştirir, menü çok uzunsa kaydırma çubuğu ekler
+    color: white;
+    overflow-y: auto;
     background-color: #1F1D2B;
 
     .logo-nav {
@@ -22,16 +24,11 @@
     }
 
     .single-nav {
-
         display: flex;
         width: 100%;
         justify-content: center;
         height: 12vh;
         align-items: center;
-
-        // &:hover {
-        //     background-color: #363050; // İstediğiniz arkaplan rengi
-        // }
 
         .parent-inner-container-for-nav {
             display: flex;
@@ -44,9 +41,6 @@
             background-color: #1F1D2B;
             transition: all 0.3s ease-in-out;
 
-
-
-
             .inner-container-for-nav {
                 display: flex;
                 justify-content: center;
@@ -55,18 +49,15 @@
                 height: 65%;
                 width: 65%;
                 cursor: pointer;
-
                 border-radius: 10px;
                 z-index: 1;
                 transition: all 0.3s ease-in-out;
-
             }
         }
 
         .parent-inner-container-for-nav.active {
             background-color: #252836;
             border-radius: 10px;
-
         }
 
         .inner-container-for-nav.active {
@@ -78,13 +69,10 @@
             }
         }
 
-
-
         .a-logo-nav-photo {
             display: flex;
             justify-content: center;
             height: min-content;
-
         }
 
         .logo-nav-photo {
@@ -98,13 +86,7 @@
             height: 25px;
             cursor: pointer;
             justify-content: center;
-
-
         }
-    }
-
-    .single-nav.active {
-        // background-color: #393C49;
     }
 }
 
@@ -120,5 +102,4 @@
             }
         }
     }
-
 }
