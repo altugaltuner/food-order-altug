@@ -7,7 +7,7 @@
     .left-top-of-dishes {
         display: flex;
         justify-content: space-between;
-        background-color: #1F1D2B;
+        background-color: $dashboard-divs;
         display: flex;
         flex-direction: row;
         padding: 20px 20px 0px 20px;
@@ -25,14 +25,14 @@
             border-radius: 10px;
             color: wheat;
             cursor: pointer;
-            border: 1px solid #8D8D8D;
+            border: 1px solid $font-color-light;
 
             .filter-order-select {
                 padding: 10px;
                 cursor: pointer;
-                color: white;
+                color: $font-color-white;
                 border: none;
-                background-color: #1F1D2B;
+                background-color: $dashboard-divs;
                 margin: 3px;
             }
 
@@ -61,20 +61,20 @@
         flex-direction: row;
         padding: 20px 0px 20px 20px;
         text-align: center;
-        background-color: #1F1D2B;
+        background-color: $dashboard-divs;
 
         .category-tabs {
             button {
                 color: white;
-                background-color: #1F1D2B;
+                background-color: $dashboard-divs;
                 padding: 10px 20px;
                 cursor: pointer;
                 border: none;
-                border-bottom: 2px solid #7e7e7e;
+                border-bottom: 2px solid $font-color-light;
 
                 &:hover {
-                    color: #EA7C69;
-                    border-bottom: 2px solid #EA7C69;
+                    color: $accent-color;
+                    border-bottom: 2px solid $accent-color;
                 }
             }
         }
@@ -90,7 +90,7 @@
             gap: 15px;
             justify-content: center;
             padding: 20px 10px 10px 10px;
-            background-color: #1F1D2B;
+            background-color: $dashboard-divs;
 
             .dish-card-adding-segment {
                 cursor: pointer;
@@ -98,12 +98,12 @@
                 flex-direction: column;
                 width: 31%;
                 align-items: center;
-                background-color: #1F1D2B;
+                background-color: $dashboard-divs;
                 border-radius: 15px;
-                border: 1px dashed #EA7C69;
+                border: 1px dashed $accent-color;
                 justify-content: center;
                 gap: 20px;
-                color: #EA7C69;
+                color: $accent-color;
 
                 .segment-p-new-dish {
                     text-align: center;
@@ -117,9 +117,9 @@
                 width: 32%;
                 padding-top: 20px;
                 align-items: center;
-                background-color: #1F1D2B;
+                background-color: $dashboard-divs;
                 border-radius: 15px;
-                border: 1px solid #474747;
+                border: 1px solid $font-color-light;
             }
 
             .dish-image {
@@ -141,21 +141,21 @@
             .edit-dish-btn {
                 border-radius: 10px;
                 width: 100%;
-                color: #ffdada;
+                color: $font-color-white;
                 cursor: pointer;
                 border: none;
                 padding: 10px;
                 border-radius: 0px 0px 15px 15px;
-                background-color: #EA7C6942;
+                background-color: $accent-color;
                 position: absolute;
                 bottom: 0;
 
                 &:hover {
-                    background-color: darken(#EA7C6942, 15%);
+                    background-color: darken($accent-color, 15%);
                 }
 
                 &:active {
-                    background-color: darken(#EA7C6942, 30%);
+                    background-color: darken($accent-color, 30%);
                 }
             }
 
@@ -174,26 +174,26 @@
         display: flex;
         justify-content: center;
         padding: 20px 0px 20px 10px;
-        background-color: #1F1D2B;
+        background-color: $dashboard-divs;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
 
         .discard-changes-btn {
             background: none;
             border-radius: 8px;
-            color: #EA7C69;
+            color: $accent-color;
             cursor: pointer;
-            border: 1px solid #EA7C69;
+            border: 1px solid $accent-color;
             padding: 10px 20px;
             margin-right: 10px;
 
             &:hover {
-                background-color: darken(#EA7C69, 10%);
+                background-color: darken($accent-color, 10%);
                 color: white;
             }
 
             &:active {
-                background-color: darken(#EA7C69, 20%);
+                background-color: darken($accent-color, 20%);
                 color: white;
             }
         }
@@ -205,19 +205,19 @@
             width: 172px;
             height: 48px;
             padding: 20px;
-            border: 1px solid #EA7C69;
-            background-color: #EA7C69;
+            border: 1px solid $accent-color;
+            background-color: $accent-color;
             color: white;
             box-shadow: 0px 8px 24px 0px #EA7C6966;
             align-items: center;
             justify-content: center;
 
             &:hover {
-                background-color: darken(#EA7C69, 10%);
+                background-color: darken($accent-color, 10%);
             }
 
             &:active {
-                background-color: darken(#EA7C69, 20%);
+                background-color: darken($accent-color, 20%);
             }
         }
     }
@@ -237,9 +237,9 @@
                 .filter-order-select {
                     padding: 10px;
                     cursor: pointer;
-                    color: white;
+                    color: $font-color-white;
                     border: none;
-                    background-color: #1F1D2B;
+                    background-color: $dashboard-divs;
                     margin: 3px;
                 }
             }

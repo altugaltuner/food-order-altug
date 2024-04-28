@@ -27,15 +27,15 @@
     margin: 0px 25px 0px 0px;
     border-radius: 15px;
     padding: 20px;
-    background-color: #1F1D2B;
-    color: #ffffff;
+    background-color: $dashboard-divs;
+    color: $font-color-white;
     font-family: "Barlow", sans-serif;
     height: fit-content;
 
     .line-form {
         width: 100%;
         height: 1px;
-        background-color: #ffffff;
+        background-color: $font-color-white;
         margin: 20px 0px 20px 0px;
         opacity: 0.2;
     }
@@ -56,7 +56,7 @@
         font-weight: 500;
         line-height: 22.4px;
         text-align: left;
-        color: #ABBBC2;
+        color: $font-color-light;
         padding: 0px 0px 15px 0px;
         width: fit-content;
     }
@@ -92,8 +92,8 @@
             gap: 8px;
             border-radius: 8px;
             background: none;
-            border: 1px solid #EA7C69;
-            color: #EA7C69;
+            border: 1px solid $accent-color;
+            color: $accent-color;
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
@@ -102,7 +102,7 @@
             transition: transform 0.3s ease, border-color 0.01s ease, background-color 0.3s ease;
 
             &:hover {
-                border-color: #f5a091;
+                border-color: $accent-color;
                 border: solid 2px;
                 transform: translateY(3px);
                 background-color: #434055;
@@ -110,7 +110,7 @@
 
             &:active {
                 border: solid 2px;
-                background-color: #1F1D2B;
+                background-color: $dashboard-divs;
             }
         }
 
@@ -120,8 +120,8 @@
             padding: 0px;
             gap: 8px;
             border-radius: 8px;
-            background: #EA7C69;
-            border: 1px solid #EA7C69;
+            background: $accent-color;
+            border: 1px solid $accent-color;
             color: #ffffff;
             cursor: pointer;
             box-shadow: 0px 8px 24px 0px #EA7C6966;
@@ -137,7 +137,7 @@
             }
 
             &:active {
-                background-color: #EA7C69;
+                background-color: $accent-color;
             }
         }
     }
@@ -156,8 +156,8 @@
                 width: 100%;
                 height: 48px;
                 border-radius: 8px;
-                border: solid 1px #9c9c9c;
-                color: rgb(255, 255, 255);
+                border: solid 1px $font-color-light;
+                color: $font-color-white;
                 background-color: #2D303E;
                 font-size: 14px;
                 font-weight: 400;
@@ -166,7 +166,7 @@
                 padding-left: 15px;
 
                 option {
-                    color: #ffffff;
+                    color: $font-color-white;
                 }
             }
 
@@ -174,8 +174,8 @@
                 width: 100%;
                 height: 48px;
                 border-radius: 8px;
-                border: solid 1px #9c9c9c;
-                color: rgb(255, 255, 255);
+                border: solid 1px $font-color-light;
+                color: $font-color-white;
                 background-color: #2D303E;
                 font-size: 14px;
                 font-weight: 400;
@@ -184,7 +184,7 @@
                 padding-left: 15px;
 
                 &::placeholder {
-                    color: white;
+                    color: $font-color-white;
                 }
             }
 
@@ -223,7 +223,7 @@
     border-radius: 8px;
     border: 1px;
     background: none;
-    color: white;
+    color: $font-color-white;
 }
 
 .right-first-type-number {
@@ -231,8 +231,8 @@
     height: 48px;
     border-radius: 8px;
     border: 1px;
-    background-color: #2D303E;
-    color: white;
+    background-color: $dashboard-divs;
+    color: $font-color-white;
 }
 
 .full-width-input {
@@ -241,8 +241,8 @@
     border-radius: 8px;
     border: 1px;
     padding-left: 15px;
-    background-color: #2D303E;
-    color: white;
+    background-color: $dashboard-divs;
+    color: $font-color-white;
     margin: 10px 0px;
 }
 
@@ -268,7 +268,7 @@
     height: 60px;
     justify-content: center;
     align-items: center;
-    border: solid 1px #6f6f6f;
+    border: solid 1px $font-color-light;
     border-radius: 10px;
     font-size: 12px;
     font-weight: 500;
@@ -276,7 +276,7 @@
     text-align: center;
 
     &.selected {
-        border-color: rgb(255, 255, 255);
+        border-color: $font-color-white;
     }
 }
 

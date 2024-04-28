@@ -3,8 +3,8 @@
 .settings-page {
     display: flex;
     flex-direction: row;
-    color: white;
-    background-color: #242836;
+    color: $font-color-white;
+    background-color: $primary-bg;
 
     .set-product-div {
         display: flex;

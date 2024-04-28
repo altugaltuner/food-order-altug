@@ -1,3 +1,5 @@
+@use "../../styles/abstracts/variables" as *;
+
 .login-main {
     width: 100%;
     height: 100vh;
@@ -6,7 +8,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #242836;
+    background-color: $primary-bg;
     font-family: "Barlow", sans-serif;
 
     .login-main-div {
@@ -14,7 +16,7 @@
         height: 200px;
 
         .login-h1 {
-            color: #fff;
+            color: $font-color-white;
             font-size: 3rem;
             margin-bottom: 1rem;
         }
@@ -50,7 +52,7 @@
             }
 
             .error-message {
-                color: white;
+                color: $font-color-white;
                 padding: 5px;
             }
 
@@ -78,17 +80,17 @@
                     border: none;
                     border-radius: 12px;
                     cursor: pointer;
-                    color: #242836;
-                    background-color: #fff;
+                    color: $primary-bg;
+                    background-color: $font-color-white;
 
                     &:hover {
-                        background-color: #dddddd;
-                        color: #242836;
+                        background-color: darken($font-color-white, 20%);
+                        color: $primary-bg;
                     }
 
                     &:active {
-                        background-color: #c2c2c2;
-                        color: #242836;
+                        background-color: darken($font-color-white, 35%);
+                        color: $primary-bg;
                     }
                 }
 
@@ -98,17 +100,17 @@
                     border: none;
                     border-radius: 12px;
                     cursor: pointer;
-                    color: #242836;
-                    background-color: #fff;
+                    color: $primary-bg;
+                    background-color: $font-color-white;
 
                     &:hover {
-                        background-color: #dddddd;
-                        color: #242836;
+                        background-color: darken($font-color-white, 20%);
+                        color: $primary-bg;
                     }
 
                     &:active {
-                        background-color: #c2c2c2;
-                        color: #242836;
+                        background-color: darken($font-color-white, 35%);
+                        color: $primary-bg;
                     }
                 }
             }

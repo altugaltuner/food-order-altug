@@ -4,7 +4,7 @@
     width: 400px;
     height: 400px;
     padding: 55px;
-    background-color: #1F1D2B;
+    background-color: $dashboard-divs;
     position: relative;
     margin-left: 30px;
     border-radius: 20px;
@@ -12,13 +12,13 @@
 
     .top-donut {
         width: 100%;
-        border-bottom: 1px solid #4e4e4e;
+        border-bottom: 1px solid $font-color-light;
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
 
         .top-donut-h2 {
-            color: #fff;
+            color: $font-color-white;
             font-size: 24px;
         }
 
@@ -28,7 +28,7 @@
             padding: 5px;
             border-radius: 8px;
             border: 1px solid #393C49;
-            color: white;
+            color: $font-color-white;
             background-color: rgba(31, 29, 43, 1);
             outline: none;
         }

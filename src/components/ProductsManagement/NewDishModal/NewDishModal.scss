@@ -1,3 +1,5 @@
+@use "../../../styles/abstracts/variables" as *;
+
 .mainContainer {
     display: flex;
     justify-content: center;
@@ -7,7 +9,7 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $black-color(0, 0, 0, 0.5);
     z-index: 999;
     font-family: "Barlow", sans-serif;
 
@@ -15,8 +17,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: rgb(255 255 255);
-        color: black;
+        background-color: $font-color-white;
+        color: $black-color;
         padding: 20px;
         align-items: center;
         gap: 20px;
@@ -41,7 +43,7 @@
             border: none;
             cursor: pointer;
             width: 100px;
-            color: white;
+            color: $font-color-white;
         }
     }
 }
