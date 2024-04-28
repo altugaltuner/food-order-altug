@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./DashboardHeader.scss";
-
 
 function DashboardHeader() {
 
@@ -10,10 +8,7 @@ function DashboardHeader() {
     const iconPeople = "../../src/assets/iconPeople.png"
     const iconUpArrow = "../../src/assets/iconUpArrow.png"
 
-    // toplam değerlere kod yazılacak...Henüz bitmedi.
     return (
-
-
         <div className="dashboard-header-main">
             <div className="top-header-dashboard">
                 <h1 className="dashboard-h1">Dashboard</h1>
@@ -50,10 +45,8 @@ function DashboardHeader() {
                     <h3 className="price-of-dashboard">1,234</h3>
                     <p className="dashboard-text">Total Customer</p>
                 </div>
-
             </div>
         </div>
-
     );
 }
 

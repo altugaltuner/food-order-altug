@@ -14,16 +14,17 @@ function Sidebar() {
       {/* these examples should be deleted */}
       <nav>
         <ul>
-          <li className="left-arrow" onClick={toggleSidebar}>
+          <button className="left-arrow" onClick={toggleSidebar}>
             <img
               src={leftArrow}
+              alt=""
               style={{
                 transform: !isSidebarToggled
                   ? "rotateY(180deg)"
                   : "rotateY(0deg)",
               }}
             />
-          </li>
+          </button>
           <li>Link 1</li>
           <li>Link 2</li>
           <li>Link 3</li>

@@ -1,30 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
 import OrderPaymentPage from "../../components/OrderPaymentPage/OrderPaymentPage";
-import Sidebar from "@/components/Sidebar/Sidebar";
 
 import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
-
-// şimdilik
-import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
-import OrderReports from "../../components/OrderReports/OrderReports";
-import ProductsManagement from "../../components/ProductsManagement/ProductsManagement";
-import SettingsSidebar from "../../components/SettingsSidebar/SettingsSidebar";
-
-import MostOrdered from "../../components/MostOrdered/MostOrdered";
-import PieChart from "../../components/PieChart/PieChart";
-//şimdilik son
-
-import avatar1 from "../../assets/avatar1.png";
-import avatar2 from "../../assets/avatar2.png";
-import avatar3 from "../../assets/avatar3.png";
-import avatar4 from "../../assets/avatar4.png";
-import avatar5 from "../../assets/avatar5.png";
-import { set } from "firebase/database";
 
 function HomePage() {
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz

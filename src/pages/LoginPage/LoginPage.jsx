@@ -22,7 +22,7 @@ function LoginPage() {
   const navigate = useNavigate();
 
   onAuthStateChanged(auth, (currentUser) => {
-    // setUser(currentUser);
+
     console.log(currentUser);
   });
 
@@ -121,8 +121,6 @@ function LoginPage() {
             </button>
           </div>
         </form>
-
-
       </div>
     </div>
   );

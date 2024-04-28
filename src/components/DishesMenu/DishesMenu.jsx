@@ -117,11 +117,11 @@ function DishesMenu({ addToOrder }) {
                 fonksiyonuna gönderir. filterDishes fonksiyonu, aktif tab'a göre bir yemeğin koşulları karşılayıp karşılamadığını kontrol eder.Koşulları karşılayan (true dönen) yemekler yeni bir dizi içinde bir araya getirilir.  .map(dish => { ... }): Filtrelenmiş dizi üzerinde iterasyon yaparak, her bir dish öğesi için JSX kod bloğu oluşturur. Oluşturulan bu JSX kod blokları, kullanıcı arayüzünde ilgili yemeklerin gösterilmesini sağlar. */}
                 {
                     dishes.filter(filterDishes).map(dish => (
-                        <div className="dish-card" key={dish.id} onClick={() => addToOrder(dish)}>
+                        <button className="dish-card" key={dish.id} onClick={() => addToOrder(dish)}>
                             <img className="dish-image" src={dish.imageSrc} alt={dish.name} />
                             <h3 className="dish-name">{dish.name}</h3>
                             <p className="dish-price">${dish.price}</p>
-                        </div>
+                        </button>
                     ))
                 }
             </div>

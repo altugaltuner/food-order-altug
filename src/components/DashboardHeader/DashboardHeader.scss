@@ -4,7 +4,6 @@
     width: 100%;
     height: max-content;
     gap: 15px;
-
     padding-bottom: 20px;
 
     .dashboards-parts-all {
@@ -22,7 +21,6 @@
             font-weight: 600;
             line-height: 39.2px;
             text-align: left;
-
             width: fit-content;
             padding: 10px;
             padding-left: 20px;
@@ -34,9 +32,7 @@
             font-weight: 300;
             line-height: 39.2px;
             text-align: left;
-
             width: fit-content;
-
             padding-left: 20px;
             color: #ABBBC2;
         }
@@ -71,24 +67,20 @@
                 font-weight: 500;
                 line-height: 16.8px;
                 text-align: left;
-
             }
 
             .icon-up-arrow {
                 width: 14px;
                 height: 14px;
-
             }
         }
 
         .price-of-dashboard {
-            //styleName: Heading/H1;
             font-family: "Barlow", sans-serif;
             font-size: 25px;
             font-weight: 600;
             line-height: 39.2px;
             text-align: left;
-
             height: 33%;
         }
 
@@ -134,10 +126,6 @@
 
                 .price-of-dashboard {
                     font-size: 16px;
-                }
-
-                .logos-dashboard {
-                    .icon-dolar {}
                 }
             }
         }

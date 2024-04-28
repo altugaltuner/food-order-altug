@@ -43,8 +43,8 @@ function MostOrdered() {
   return (
     <div className="order-conf-main">
       <div className="title-order-conf">
-        <div class="part-of-title-conf">
-          <h1 class="h1-order-conf">Most Ordered</h1>
+        <div className="part-of-title-conf">
+          <h1 className="h1-order-conf">Most Ordered</h1>
 
           <select
             name="order-types"

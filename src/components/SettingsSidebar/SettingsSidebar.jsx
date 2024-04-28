@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./SettingsSidebar.scss";
 
 function SettingsSidebar() {
@@ -35,40 +34,40 @@ function SettingsSidebar() {
         <div>
             <div className="settings-sidebar-main">
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="appearance-sidebar-id">
-                    <h3> <img src={likeImg} alt="" srcset="" />Appearance</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="appearance-sidebar-id" tabIndex={0}>
+                    <h3> <img src={likeImg} alt="" srcSet="" />Appearance</h3>
                     <p>Dark and Light mode, Font size</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="restaurant-sidebar-id">
-                    <h3><img src={homeImg} alt="" srcset="" />Your Restaurant</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="restaurant-sidebar-id">
+                    <h3><img src={homeImg} alt="" srcSet="" />Your Restaurant</h3>
                     <p>Dark and Light mode, Font size</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="product-sidebar-id">
-                    <h3><img src={settingImg} alt="" srcset="" />Product Management</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="product-sidebar-id">
+                    <h3><img src={settingImg} alt="" srcSet="" />Product Management</h3>
                     <p>Manage your product, pricing, etc</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="notifications-sidebar-id">
-                    <h3><img src={notificationImg} alt="" srcset="" />Notifications</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="notifications-sidebar-id">
+                    <h3><img src={notificationImg} alt="" srcSet="" />Notifications</h3>
                     <p>Customize your notifications</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="security-sidebar-id">
-                    <h3><img src={lockImg} alt="" srcset="" />Security</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="security-sidebar-id">
+                    <h3><img src={lockImg} alt="" srcSet="" />Security</h3>
                     <p>Configure Password, PIN, etc</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="configure-sidebar-id">
-                    <h3><img src={settingImg} alt="" srcset="" />Configure</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="configure-sidebar-id">
+                    <h3><img src={settingImg} alt="" srcSet="" />Configure</h3>
                     <p>Display new features</p>
-                </div>
+                </button>
 
-                <div className="sidebar-div" onClick={makeActiveDiv} id="about-us-sidebar-id">
-                    <h3><img src={foImg} alt="" srcset="" />About Us</h3>
+                <button className="sidebar-div" onClick={makeActiveDiv} id="about-us-sidebar-id">
+                    <h3><img src={foImg} alt="" srcSet="" />About Us</h3>
                     <p>Find out more about Posly</p>
-                </div>
+                </button>
             </div>
         </div>
     );
