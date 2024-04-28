@@ -161,17 +161,15 @@ function OrderPaymentPage() {
         const isFormComplete = requiredFields.every(field => formData[field]);
 
         if (!isFormComplete) {
-
             alert('Lütfen tüm alanları doldurunuz.');
-        } else {
 
+        } else {
             console.log(formData);
             // Form verilerini bir API'ye gönderme, bir veritabanına kaydetme veya başka bir işlem yapabiliriz
         }
     }
 
     return (
-
         <div className="order-payment" onSubmit={handleSubmit}>
             <h1 className="payment-head">Payment</h1>
 
@@ -201,7 +199,7 @@ function OrderPaymentPage() {
                     </label>
                 </div>
 
-                <div className="rest-is-history">
+                <div className="cardholder-div">
                     <p className="card-text">Cardholder Name</p>
                     <input type="text" name="cardHolderName" className="full-width-input" placeholder="Levi Ackermann" value={formData.cardHolderName} onChange={handleInputChange} />
 

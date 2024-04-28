@@ -19,14 +19,14 @@
             background: none;
 
             .today-date {
-                color: #ABBBC2;
+                color: $font-color-light;
             }
 
             .username-of-hello {
                 font-size: 44px;
                 font-weight: 600;
                 line-height: 28px;
-                color: #ff8e42;
+                color: $orange-color;
                 text-align: left;
                 justify-content: flex-start;
 
@@ -41,8 +41,8 @@
             height: 48px;
             gap: 8px;
             border-radius: 8px;
-            border: 1px solid #979797;
-            color: #ABBBC2;
+            border: 1px solid $font-color-light;
+            color: $font-color-light;
             background-color: #2D303E;
             padding-left: 35px;
         }
@@ -93,7 +93,7 @@
                 font-weight: 600;
                 line-height: 28px;
                 padding: 10px;
-                color: white;
+                color: $font-color-white;
                 display: flex;
                 text-align: center;
                 align-items: center;
@@ -105,9 +105,9 @@
                 padding: 12px;
                 gap: 10px;
                 border-radius: 8px;
-                border: 1px solid #979797;
-                background-color: #1F1D2B;
-                color: white;
+                border: 1px solid $font-color-light;
+                background-color: $dashboard-divs;
+                color: $font-color-white;
                 margin-right: 80px;
             }
         }
@@ -143,14 +143,14 @@
         width: 31%;
         cursor: pointer;
         align-items: center;
-        background-color: #1F1D2B;
+        background-color: $dashboard-divs;
         margin-bottom: 40px;
         border-radius: 15px;
         border: none;
-        color: white;
+        color: $font-color-white;
 
         &:hover {
-            box-shadow: 0px 0px 20px 0px #1F1D2B;
+            box-shadow: 0px 0px 20px 0px $dashboard-divs;
         }
     }
 
@@ -164,16 +164,16 @@
 
         .category-tabs button {
             background: none;
-            color: white;
+            color: $font-color-white;
             padding: 10px 20px;
             cursor: pointer;
             border: none;
-            border-bottom: 2px solid #7e7e7e;
+            border-bottom: 2px solid $font-color-light;
         }
 
         .category-tabs button.active {
-            color: #ff6a07;
-            border-bottom: 2px solid #ff6a07;
+            color: $orange-color;
+            border-bottom: 2px solid $orange-color;
         }
 
     }

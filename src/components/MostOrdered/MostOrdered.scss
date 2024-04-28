@@ -7,15 +7,15 @@
     height: min-content;
     padding: 15px;
     font-family: "Barlow", sans-serif;
-    background-color: #1F1D2B;
+    background-color: $dashboard-divs;
     margin: 110px 0 20px 20px;
     border-radius: 15px;
-    color: white;
+    color: $font-color-white;
 
     .title-order-conf {
         display: flex;
         position: relative;
-        border-bottom: solid 1px #555555;
+        border-bottom: solid 1px $font-color-light;
         margin-bottom: 15px;
 
         .part-of-title-conf {
@@ -30,9 +30,9 @@
                 right: 0;
                 padding: 5px;
                 border-radius: 8px;
-                border: 1px solid #737373;
-                background-color: rgba(31, 29, 43, 1);
-                color: white;
+                border: 1px solid $font-color-light;
+                background-color: $dashboard-divs;
+                color: $font-color-white;
             }
 
             .empty-div {
@@ -60,17 +60,6 @@
             width: 100%;
             height: min-content;
 
-            .food-customer-note {
-                width: 100%;
-                height: 48px;
-                padding: 14px;
-                gap: 8px;
-                border-radius: 8px;
-                border: 2px solid #393C49;
-                background-color: #2D303E;
-                border-color: #393C49;
-            }
-
             .conf-pic-and-name-and-price {
                 display: flex;
                 flex-direction: row;
@@ -95,7 +84,7 @@
                         font-weight: 500;
                         line-height: 18.2px;
                         text-align: left;
-                        color: rgba(224, 230, 233, 1)
+                        color: $font-color-white;
                     }
 
                     .name-and-price-p-p {
@@ -103,68 +92,13 @@
                         font-weight: 500;
                         line-height: 18.2px;
                         text-align: left;
-                        color: rgba(136, 152, 152, 1)
+                        color: $font-color-light
                     }
                 }
 
                 .food-photos-order-conf {
                     width: 40px;
                     height: 40px;
-                }
-            }
-
-            .total-piece-of-food {
-                width: 48px;
-                height: 48px;
-                padding: 14px 14px 12px 14px;
-                gap: 8px;
-                border-radius: 8px;
-                border: 2px solid #393C49;
-                background-color: #2D303E;
-                text-align: center;
-            }
-        }
-
-        .conf-right-order-part {
-            display: flex;
-            flex-direction: column;
-            width: 20%;
-            align-items: center;
-            height: 100%;
-            justify-content: start;
-
-            .price-of-order-conf {
-                width: 100%;
-                text-align: center;
-                height: 56px;
-                align-content: center;
-                font-size: 16px;
-            }
-
-            .reset-button-conf {
-                display: flex;
-                width: 50px;
-                padding: 14px;
-                gap: 10px;
-                border-radius: 8px;
-                height: 43%;
-                justify-content: center;
-                align-items: center;
-                border: 2px solid #EA7C69;
-                background-color: #1F1D2B;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: #37334b;
-                }
-
-                &:active {
-                    background-color: #111018;
-                }
-
-                .reset-button-conf-img {
-                    width: 20px;
-                    height: 20px;
                 }
             }
         }
@@ -174,16 +108,6 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-
-        .discount-subtotal-div-line {
-            display: flex;
-            justify-content: space-between;
-
-            .discount-subtotal-p {
-                font-size: 16px;
-                color: #ABBBC2;
-            }
-        }
     }
 
     .view-all-orders {

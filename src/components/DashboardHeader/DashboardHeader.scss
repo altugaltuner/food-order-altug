@@ -35,14 +35,14 @@
             text-align: left;
             width: fit-content;
             padding-left: 20px;
-            color: #ABBBC2;
+            color: $font-color-light;
         }
     }
 
     .dashboard-part {
         display: flex;
         flex-direction: column;
-        background-color: #1F1D2B;
+        background-color: $dashboard-divs;
         gap: 5px;
         padding: 16px;
         border-radius: 8px;
@@ -89,7 +89,7 @@
             font-weight: 500;
             line-height: 18.2px;
             text-align: left;
-            color: #ABBBC2;
+            color: $font-color-light;
         }
     }
 }
