@@ -56,12 +56,12 @@
         }
 
         .parent-inner-container-for-nav.active {
-            background-color: $accent-color;
+            background-color: $primary-bg;
             border-radius: 10px;
         }
 
         .inner-container-for-nav.active {
-            background-color: $orange-color;
+            background-color: $accent-color;
             box-shadow: 0px 8px 24px 0px #EA7C6952;
 
             .other-nav-logo {

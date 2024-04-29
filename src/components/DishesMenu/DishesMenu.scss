@@ -26,7 +26,7 @@
                 font-size: 44px;
                 font-weight: 600;
                 line-height: 28px;
-                color: $orange-color;
+                color: $accent-color;
                 text-align: left;
                 justify-content: flex-start;
 
@@ -172,8 +172,8 @@
         }
 
         .category-tabs button.active {
-            color: $orange-color;
-            border-bottom: 2px solid $orange-color;
+            color: $accent-color;
+            border-bottom: 2px solid $accent-color;
         }
 
     }

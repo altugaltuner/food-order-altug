@@ -1,24 +1,5 @@
 @use "../../styles/abstracts/variables" as *;
 
-.half-width-input::placeholder {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-}
-
-.full-width-input::placeholder {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-}
-
-.payment-head {
-    margin: 0;
-    padding: 0;
-}
-
 .order-payment {
     display: flex;
     flex-direction: column;
@@ -32,12 +13,24 @@
     font-family: "Barlow", sans-serif;
     height: fit-content;
 
-    .line-form {
-        width: 100%;
-        height: 1px;
-        background-color: $font-color-white;
-        margin: 20px 0px 20px 0px;
-        opacity: 0.2;
+    .input-type-radio[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+
+    .input-type-radio[type="radio"]+label {
+        cursor: pointer;
+    }
+
+    .input-type-radio[type="radio"]:checked+label::before {
+        content: '\2022';
+        font-size: 16px;
+        color: #007bff;
+        margin-right: 5px;
     }
 
     .payment-head {
@@ -49,6 +42,8 @@
         font-weight: 600;
         line-height: 39.2px;
         text-align: left;
+        margin: 0;
+        padding: 0;
     }
 
     .payment-explanations {
@@ -71,244 +66,206 @@
         padding-top: 13px;
     }
 
-    .card-text {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 18.2px;
-        text-align: left;
-        padding: 20px 0px 10px 0px;
-    }
-
-    .buttons-div {
+    .payment-form-style {
         display: flex;
-        flex-direction: row;
-        margin-top: 100px;
-        gap: 20px;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
 
-        .cancel-button {
-            width: 50%;
-            height: 48px;
-            padding: 0px;
-            gap: 8px;
-            border-radius: 8px;
-            background: none;
-            border: 1px solid $accent-color;
-            color: $accent-color;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 19.6px;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.01s ease, background-color 0.3s ease;
-
-            &:hover {
-                border-color: $accent-color;
-                border: solid 2px;
-                transform: translateY(3px);
-                background-color: #434055;
-            }
-
-            &:active {
-                border: solid 2px;
-                background-color: $dashboard-divs;
-            }
-        }
-
-        .confirm-button {
-            width: 50%;
-            height: 48px;
-            padding: 0px;
-            gap: 8px;
-            border-radius: 8px;
-            background: $accent-color;
-            border: 1px solid $accent-color;
-            color: #ffffff;
-            cursor: pointer;
-            box-shadow: 0px 8px 24px 0px #EA7C6966;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 19.6px;
-            text-align: center;
-            transition: all 0.3s ease;
-
-            &:hover {
-                background-color: #fd9f8e;
-                transform: translateY(3px);
-            }
-
-            &:active {
-                background-color: $accent-color;
-            }
-        }
-    }
-
-    .double-form-type {
-        display: flex;
-        gap: 20px;
-
-        .first-double-type {
+        .cardholder-div {
             display: flex;
-            width: 50%;
-            gap: 10px;
             flex-direction: column;
 
-            #order-types {
-                width: 100%;
-                height: 48px;
-                border-radius: 8px;
-                border: solid 1px $font-color-light;
-                color: $font-color-white;
-                background-color: #2D303E;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 19.6px;
-                text-align: left;
-                padding-left: 15px;
+            .buttons-div {
+                display: flex;
+                flex-direction: row;
+                margin-top: 100px;
+                gap: 20px;
 
-                option {
-                    color: $font-color-white;
+                .cancel-button {
+                    width: 50%;
+                    height: 48px;
+                    padding: 0px;
+                    gap: 8px;
+                    border-radius: 8px;
+                    background: none;
+                    border: 1px solid $accent-color;
+                    color: $accent-color;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 19.6px;
+                    text-align: center;
+                    transition: transform 0.3s ease, border-color 0.01s ease, background-color 0.3s ease;
+
+                    &:hover {
+                        border-color: $accent-color;
+                        border: solid 2px;
+                        transform: translateY(3px);
+                        background-color: #434055;
+                    }
+
+                    &:active {
+                        border: solid 2px;
+                        background-color: $dashboard-divs;
+                    }
+                }
+
+                .confirm-button {
+                    width: 50%;
+                    height: 48px;
+                    padding: 0px;
+                    gap: 8px;
+                    border-radius: 8px;
+                    background: $accent-color;
+                    border: 1px solid $accent-color;
+                    color: #ffffff;
+                    cursor: pointer;
+                    box-shadow: 0px 8px 24px 0px #EA7C6966;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 19.6px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: #fd9f8e;
+                        transform: translateY(3px);
+                    }
+
+                    &:active {
+                        background-color: $accent-color;
+                    }
                 }
             }
 
-            .half-width-input {
-                width: 100%;
-                height: 48px;
-                border-radius: 8px;
-                border: solid 1px $font-color-light;
-                color: $font-color-white;
-                background-color: #2D303E;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 19.6px;
-                text-align: left;
-                padding-left: 15px;
+            .double-form-type {
+                display: flex;
+                gap: 20px;
 
-                &::placeholder {
-                    color: $font-color-white;
+                .first-double-type {
+                    display: flex;
+                    width: 50%;
+                    gap: 10px;
+                    flex-direction: column;
+
+                    #order-types {
+                        width: 100%;
+                        height: 48px;
+                        border: 2px solid #393C49;
+                        background-color: #2D303E;
+                        border-radius: 8px;
+                        color: $font-color-white;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 19.6px;
+                        text-align: left;
+                        padding-left: 15px;
+
+                        option {
+                            color: $font-color-white;
+                        }
+                    }
+
+                    .half-width-input {
+                        width: 100%;
+                        height: 48px;
+                        border-radius: 8px;
+                        border: 2px solid #393C49;
+                        background-color: #2D303E;
+                        color: $font-color-white;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 19.6px;
+                        text-align: left;
+                        padding-left: 15px;
+
+                        &::placeholder {
+                            color: $font-color-white;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 19.6px;
+                            text-align: left;
+                        }
+                    }
+
+                    .card-text {
+                        font-size: 16px;
+                        display: block;
+                    }
+                }
+
+                .second-double-type {
+                    display: flex;
+                    gap: 10px;
                 }
             }
 
             .card-text {
-                font-size: 16px;
-                display: block;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18.2px;
+                text-align: left;
+                padding: 20px 0px 10px 0px;
+            }
+
+            .full-width-input {
+                width: 100%;
+                height: 48px;
+                border-radius: 8px;
+                padding-left: 15px;
+                border: 2px solid #393C49;
+                background-color: #2D303E;
+                color: $font-color-white;
+                margin: 10px 0px;
+
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 19.6px;
+                    text-align: left;
+                }
             }
         }
 
-        .second-double-type {
+        .only-labels {
             display: flex;
+            flex-direction: row;
             gap: 10px;
+
+            .payment-photo-options {
+                display: flex;
+                flex-direction: column;
+                width: 33%;
+                height: 60px;
+                justify-content: center;
+                align-items: center;
+                border: solid 1px #6e6e6e;
+                border-radius: 10px;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 18.2px;
+                text-align: center;
+                cursor: pointer;
+
+                &.selected {
+                    border-color: $font-color-white;
+                }
+
+                &::after {
+                    border: solid 1px #007bff;
+                }
+            }
         }
     }
-}
 
-.hidden-menu {
-    display: none;
-}
-
-.right-first-type {
-    width: 100%;
-
-    .right-first-type-password {
+    .line-form {
         width: 100%;
+        height: 1px;
+        background-color: $font-color-white;
+        margin: 20px 0px 20px 0px;
+        opacity: 0.2;
     }
-}
-
-.left-first-type {
-    width: 100%;
-}
-
-#menu-button {
-    width: 100%;
-    height: 48px;
-    border-radius: 8px;
-    border: 1px;
-    background: none;
-    color: $font-color-white;
-}
-
-.right-first-type-number {
-    width: 100%;
-    height: 48px;
-    border-radius: 8px;
-    border: 1px;
-    background-color: $dashboard-divs;
-    color: $font-color-white;
-}
-
-.full-width-input {
-    width: 100%;
-    height: 48px;
-    border-radius: 8px;
-    border: 1px;
-    padding-left: 15px;
-    background-color: $dashboard-divs;
-    color: $font-color-white;
-    margin: 10px 0px;
-}
-
-.payment-form-style {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-
-    label {
-        cursor: pointer;
-
-        &::after {
-            border: solid 1px #007bff;
-        }
-    }
-}
-
-.payment-photo-options {
-    display: flex;
-    flex-direction: column;
-    width: 33%;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px $font-color-light;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18.2px;
-    text-align: center;
-
-    &.selected {
-        border-color: $font-color-white;
-    }
-}
-
-.input-type-radio[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 0;
-    height: 0;
-    position: absolute;
-}
-
-.input-type-radio[type="radio"]+label {
-    cursor: pointer;
-}
-
-.input-type-radio[type="radio"]:checked+label::before {
-    content: '\2022';
-    font-size: 16px;
-    color: #007bff;
-    margin-right: 5px;
-}
-
-.cardholder-div {
-    display: flex;
-    flex-direction: column;
-}
-
-.only-labels {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
 }
 
 @media screen and (max-width: 950px) {
