@@ -2,7 +2,6 @@
 
 .products-managements-main {
     margin: 30px 20px 0px 30px;
-    font-family: "Barlow", sans-serif;
 
     .left-top-of-dishes {
         display: flex;
@@ -16,8 +15,9 @@
 
         .username-of-hello {
             display: flex;
-            font-size: 40px;
+            font-size: 30px;
             justify-content: center;
+            margin-right: 15px;
         }
 
         .filter-order-btn {
@@ -225,6 +225,8 @@
 
 @media screen and (max-width: 1000px) {
     .products-managements-main {
+
+
         .left-top-of-dishes {
             display: flex;
             flex-direction: column;

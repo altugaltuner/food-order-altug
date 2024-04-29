@@ -24,10 +24,8 @@ function SettingsSidebar() {
             });
 
             // Tıklanan '.sidebar-div' öğesinin arkaplanını kahverengi yap
-            targetDiv.style.backgroundColor = '#EA7C6942';
+            targetDiv.style.backgroundColor = '#EA7C69';
         }
-
-
     }
 
     return (
