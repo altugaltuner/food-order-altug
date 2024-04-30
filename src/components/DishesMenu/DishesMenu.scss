@@ -19,6 +19,7 @@
 
             .today-date {
                 color: $font-color-light;
+                padding-left: 20px;
             }
 
             .username-of-hello {
@@ -28,6 +29,7 @@
                 color: $accent-color;
                 text-align: left;
                 justify-content: flex-start;
+                padding-left: 20px;
 
                 .username-of-hello-color {
                     color: bisque;
