@@ -3,6 +3,10 @@ import { useState } from "react";
 import { auth, db } from "@/config/firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import Navbar from "../../components/Navbar/Navbar";
+
+import eyeShow from "../../assets/eye-show.svg";
+import eyeHide from "../../assets/eye-hide.png";
 
 function SignupPage() {
   const [formData, setFormData] = useState({
@@ -12,6 +16,12 @@ function SignupPage() {
     password: "",
     confirmPassword: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false); // Şifre gösterim durumu için yeni state
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const signupUser = async (e) => {
     e.preventDefault();
@@ -58,42 +68,54 @@ function SignupPage() {
   }
 
   return (
-    <main className="signup-page">
-      <h1>Signup Page</h1>
-      <form onSubmit={(e) => signupUser(e)}>
-        <input
-          type="text"
-          placeholder="Full Name"
-          name="fullName"
-          onKeyUp={handleChange}
-        />
-        <input
-          type="tel"
-          placeholder="Phone number"
-          name="phoneNumber"
-          onKeyUp={handleChange}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          onKeyUp={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onKeyUp={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          name="confirmPassword"
-          onKeyUp={handleChange}
-        />
-        <input type="submit" value="Signup" />
-      </form>
-    </main>
+    <div className="test">
+      <Navbar />
+      <main className="signup-page">
+        <div className="signup-main-div">
+          <h1>Signup Page</h1>
+          <form className="login-form" onSubmit={(e) => signupUser(e)}>
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="fullName"
+              onKeyUp={handleChange}
+            />
+            <input
+              type="tel"
+              placeholder="Phone number"
+              name="phoneNumber"
+              onKeyUp={handleChange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onKeyUp={handleChange}
+            />
+            <div className="password-section-signup">
+              <input
+                type={showPassword ? "text" : "password"} // Input tipini dinamik olarak güncelle
+                placeholder="Password"
+                name="password"
+                onKeyUp={handleChange}
+              />
+              <button type="button" onClick={togglePasswordVisibility} className="toggle-password-visibility">
+                {showPassword ? <img className="eye-logo" src={eyeHide} alt="Hide" /> : <img src={eyeShow} alt="Show" className="eye-logo" />}
+              </button>
+            </div>
+            <div className="password-section-signup">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                onKeyUp={handleChange}
+              />
+            </div>
+            <input className="signup-btn" type="submit" value="Sign Up" />
+          </form>
+        </div>
+      </main>
+    </div>
   );
 }
 

@@ -19,14 +19,9 @@ const initialDishes = [
 ];
 function ProductsManagement() {
 
-
-
     const [dishes, setDishes] = useState([...initialDishes]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDish, setSelectedDish] = useState(null);
-
-
-
 
     // Veriyi localStorage'dan yükleyen useEffect
     useEffect(() => {
@@ -71,21 +66,17 @@ function ProductsManagement() {
 
     const [activeTab, setActiveTab] = useState('hot-dishes');
 
+    const filters = {
+        'hot-dishes': dish => true, // Tüm yemekleri döndürür
+        'cold-dishes': dish => dish.coldDish && !dish.soup, //soldakiler string olarak tanımlanmış anahtarlar (keys) dir.
+        'soup': dish => !dish.coldDish && dish.soup, // sağdakiler ise fonksiyonlardır. true döndüren yemekler, ilgili tabda gösterilir.
+        'grill': dish => dish.coldDish && !dish.soup,
+        'appetizer': dish => !dish.coldDish && dish.soup,
+        'dessert': dish => true,
+    };
+
     function filterDishes(dish) {
-        if (activeTab === 'hot-dishes') {
-            return !dish.coldDish || dish.coldDish; //hepsi
-        } else if (activeTab === 'cold-dishes') {
-            return dish.coldDish && !dish.soup;
-        } else if (activeTab === 'soup') {
-            return !dish.coldDish && dish.soup;
-        } else if (activeTab === 'grill') {
-            return dish.coldDish && !dish.soup;
-        } else if (activeTab === 'appetizer') {
-            return !dish.coldDish && dish.soup;
-        } else if (activeTab === 'dessert') {
-            return !dish.coldDish || dish.coldDish;
-        }
-        return true;
+        return filters[activeTab](dish);
     }
 
     return (

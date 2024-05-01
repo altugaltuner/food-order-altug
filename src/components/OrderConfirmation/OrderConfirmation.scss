@@ -79,7 +79,7 @@
                             font-weight: 500;
                             line-height: 18.2px;
                             text-align: left;
-                            color: $font-color-light;
+                            color: $font-color-white;
                         }
                     }
                 }
@@ -90,7 +90,7 @@
                     padding: 14px 14px 12px 14px;
                     gap: 8px;
                     border-radius: 8px;
-                    border: 2px solid #393C49;
+                    border: 2px solid $border-color;
                     background-color: #2D303E;
                     text-align: center;
                     color: $font-color-white;
@@ -103,7 +103,7 @@
                 padding: 14px;
                 gap: 8px;
                 border-radius: 8px;
-                border: 2px solid #393C49;
+                border: 2px solid $border-color;
                 background-color: #2D303E;
                 color: $font-color-white;
             }

@@ -37,7 +37,7 @@
         }
 
         .border-line-order-report {
-            border-bottom: 2px solid #393C49;
+            border-bottom: 2px solid $border-color;
 
         }
 
@@ -83,7 +83,7 @@
 
     .filter-order-btn-for-order-report {
         background: none;
-        border: 1px solid #393C49;
+        border: 1px solid $border-color;
         border-radius: 8px;
         color: $font-color;
         cursor: pointer;

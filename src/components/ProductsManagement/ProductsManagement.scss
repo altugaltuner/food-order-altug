@@ -71,7 +71,7 @@
                 padding: 10px 20px;
                 cursor: pointer;
                 border: none;
-                border-bottom: 1px solid #393C49;
+                border-bottom: 1px solid $border-color;
 
                 &:hover {
                     color: $accent-color;
@@ -120,7 +120,7 @@
                 align-items: center;
                 background-color: $dashboard-divs;
                 border-radius: 10px;
-                border: 1px solid #393C49;
+                border: 1px solid $border-color;
             }
 
             .dish-image {

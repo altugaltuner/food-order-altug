@@ -38,27 +38,24 @@
         }
 
         .search-bar-of-dishes {
-            width: 100%;
+            margin-right: 70px;
             height: 48px;
             gap: 8px;
             border-radius: 8px;
-            border: 1px solid $font-color-light;
+            border: 1px solid $border-color;
             color: $font-color-light;
             background-color: #2D303E;
-            padding-left: 35px;
+            padding: 0px 10px 0px 45px;
         }
     }
 
     .search-bar-container {
         position: relative;
         height: fit-content;
-        height: 100%;
-        width: 250px;
-        transform: translate(-20px, 27px);
 
         .search-icon-logo {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 10px;
             transform: translateY(-70%);
             width: 25px;
@@ -106,7 +103,7 @@
                 padding: 12px;
                 gap: 10px;
                 border-radius: 8px;
-                border: 1px solid $font-color-light;
+                border: 1px solid $border-color;
                 background-color: $dashboard-divs;
                 color: $font-color-white;
                 margin-right: 80px;
@@ -169,7 +166,7 @@
             padding: 10px 20px;
             cursor: pointer;
             border: none;
-            border-bottom: 2px solid $font-color-light;
+            border-bottom: 1px solid $border-color;
         }
 
         .category-tabs button.active {
@@ -186,6 +183,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 15px;
         }
 
         .search-bar-container {

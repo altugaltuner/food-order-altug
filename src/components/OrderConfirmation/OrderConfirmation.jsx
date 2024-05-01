@@ -19,12 +19,9 @@ function OrderConfirmation({
     }
   }, [incomingFoodItems]);
 
-  const addingButtonImg = "../src/assets/adding-button.png";
   const dustbin = "../src/assets/dustbin-logo.png";
 
   let discountPercentage = 20;
-
-
 
   // isNaN fonksiyonu, bir değerin NaN olup olmadığını kontrol eder. Eğer parametre olarak verilen değer NaN ise, true döner; aksi halde false döner.
   // ! operatörü, isNaN fonksiyonunun sonucunu tersine çevirir. Yani, eğer parsedQuantity NaN değilse, !isNaN(parsedQuantity) ifadesi true olur.

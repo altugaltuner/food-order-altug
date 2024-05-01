@@ -12,6 +12,8 @@ import { useAuth } from "../../components/AuthProvider";
 import eyeShow from "../../assets/eye-show.svg";
 import eyeHide from "../../assets/eye-hide.png";
 
+import Navbar from "../../components/Navbar/Navbar";
+
 function LoginPage() {
 
   const [error, setError] = useState("");
@@ -50,7 +52,7 @@ function LoginPage() {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
       if (res) {
-        navigate("/homepage");
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -60,7 +62,8 @@ function LoginPage() {
 
   if (fireStoreUser) {
     return (
-      <div className="login-main">
+      <main className="login-main">
+        <Navbar />
         <div className="login-main-div">
           <h1 className="login-h1">Zaten Giriş Yaptınız</h1>
           <form className="login-form" onSubmit={(e) => handleUserLogin(e)}>
@@ -80,13 +83,15 @@ function LoginPage() {
             </div>
           </form>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
+
     <div className="login-main">
       <div className="login-main-div">
+        <Navbar />
         <h1 className="login-h1">Login page</h1>
         <form className="login-form" onSubmit={(e) => handleUserLogin(e)}>
           {/* Hata mesajını göster Bu kontrol, JavaScript'in mantıksal AND operatörü (&&) ile yapılır. Bu operatör, sol tarafı (error) doğru (truthy) ise sağ tarafı (<p className="error-message">{error}</p>) değerlendirir ve döndürür. Eğer sol taraf yanlışsa (falsy, bu durumda boş bir string), ifade yanlış olarak değerlendirilir ve hiçbir şey render edilmez.*/}

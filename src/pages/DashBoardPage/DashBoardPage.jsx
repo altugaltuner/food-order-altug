@@ -41,17 +41,15 @@ function DashboardPage() {
 
     const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
     return (
-        <div>
-            <div className="mainRoot">
-                <Navbar />
-                <div className="mainContent">
-                    <DashboardHeader />
-                    <OrderReports />
-                </div>
-                <div className="secondDiv">
-                    <MostOrdered foodItemsMost={foodItemsMost} setFoodItems={setFoodItems} />
-                    <PieChart />
-                </div>
+        <div className="mainRoot">
+            <Navbar />
+            <div className="mainContent">
+                <DashboardHeader />
+                <OrderReports />
+            </div>
+            <div className="secondDiv">
+                <MostOrdered foodItemsMost={foodItemsMost} setFoodItems={setFoodItems} />
+                <PieChart />
             </div>
         </div>
     );

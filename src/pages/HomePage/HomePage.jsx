@@ -51,19 +51,16 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <div className="mainRoot">
-        <Navbar />
-        <DishesMenu addToOrder={handleAddToOrder} />
-        <div className="new-div">
-          <OrderConfirmation
-            handleCustomerNoteChange={handleCustomerNoteChange}
-            deleteMeal={deleteMeal}
-            incomingFoodItems={orders}
-          />
-          <OrderPaymentPage />
-        </div>
-
+    <div className="mainRoot">
+      <Navbar />
+      <DishesMenu addToOrder={handleAddToOrder} />
+      <div className="new-div">
+        <OrderConfirmation
+          handleCustomerNoteChange={handleCustomerNoteChange}
+          deleteMeal={deleteMeal}
+          incomingFoodItems={orders}
+        />
+        <OrderPaymentPage />
       </div>
     </div>
   );

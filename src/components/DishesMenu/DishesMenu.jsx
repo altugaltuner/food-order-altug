@@ -1,6 +1,6 @@
 import "./DishesMenu.scss";
 import React, { useState, useEffect } from 'react';
-
+import { useAuth } from "../AuthProvider";
 import photo1 from "../../assets/food1.png";
 import photo2 from "../../assets/food2.png";
 import photo3 from "../../assets/food3.png";
@@ -10,6 +10,9 @@ import searchlogo from "../../assets/search.png";
 
 
 function DishesMenu({ addToOrder }) {
+
+    const auth = useAuth();
+    const { fireStoreUser } = useAuth();
 
     const dishes = [
         { id: 1, name: "Spicy seasoned seafood noodles", price: 2.29, imageSrc: photo1, coldDish: false, soup: false, quantity: 1 },
@@ -50,38 +53,30 @@ function DishesMenu({ addToOrder }) {
 
     const [activeTab, setActiveTab] = useState('hot-dishes');
 
+    const filters = {
+        'hot-dishes': dish => true, // Tüm yemekleri döndürür
+        'cold-dishes': dish => dish.coldDish && !dish.soup, //soldakiler string olarak tanımlanmış anahtarlar (keys) dir.
+        'soup': dish => !dish.coldDish && dish.soup, // sağdakiler ise fonksiyonlardır. true döndüren yemekler, ilgili tabda gösterilir.
+        'grill': dish => dish.coldDish && !dish.soup,
+        'appetizer': dish => !dish.coldDish && dish.soup,
+        'dessert': dish => true,
+    };
     function filterDishes(dish) {
-        const matchesSearch = dish.name.toLowerCase().includes(searchQuery); // Yemek isminin arama sorgusunu içerip içermediğini kontrol et
-        if (!matchesSearch) return false;
-
-        if (activeTab === 'hot-dishes') {
-            return !dish.coldDish || dish.coldDish; //hepsi
-        } else if (activeTab === 'cold-dishes') {
-            return dish.coldDish && !dish.soup;
-        } else if (activeTab === 'soup') {
-            return !dish.coldDish && dish.soup;
-        } else if (activeTab === 'grill') {
-            return dish.coldDish && !dish.soup;
-        } else if (activeTab === 'appetizer') {
-            return !dish.coldDish && dish.soup;
-        } else if (activeTab === 'dessert') {
-            return dish.coldDish && !dish.soup;
-        }
-        return true;
+        return filters[activeTab](dish);
     }
+
     const [searchQuery, setSearchQuery] = useState("");
 
-
     function searchMeal(event) {
-        setSearchQuery(event.target.value.toLowerCase()); // Kullanıcının girdiğini küçük harfe çevirerek state'i güncelle
+        setSearchQuery(event.target.value.toLowerCase());
     }
-
 
     return (<div className="Dishes-All">
 
         <div className="username-and-search-segment">
             <div className="left-top-of-dishes">
-                <h2 className="username-of-hello">Hello, <span className="username-of-hello-color">John Doe</span></h2>
+                <h2 className="username-of-hello">Hello, <span className="username-of-hello-color">{fireStoreUser?.fullName}</span>
+                </h2>
                 <p className="today-date">{formatDate(currentDateTime)}</p>
             </div>
             <div className="search-bar-container">
