@@ -14,7 +14,8 @@
         margin-bottom: 20px;
 
         .order-report-title {
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 30px;
         }
     }
 
@@ -25,18 +26,18 @@
         overflow: hidden;
 
         .order-report-order-report-title {
-            padding: 15px;
+            padding: 15px 15px 15px 0px;
             text-align: left;
             font-weight: 600;
         }
 
         .order-report-table-data {
-            padding: 15px 0 26px;
+            padding: 10px 0 25px;
             text-align: left;
         }
 
         .border-line-order-report {
-            border-bottom: 2px solid #585858;
+            border-bottom: 2px solid #393C49;
 
         }
 
@@ -48,30 +49,31 @@
                 .order-report-table-data {
                     vertical-align: middle;
                     font-weight: 200;
-                    text-align: center;
+
 
                     .order-status {
                         padding: 5px 10px;
                         border-radius: 16px;
                         color: $font-color-white;
-                        font-weight: 600;
                         text-align: center;
                         font-weight: 200;
 
-                        .order-status-opacitylow {
-                            opacity: 1;
-                        }
-
                         &.completed {
                             background-color: $completed-color;
+                            color: #50D1AA;
+                            font-weight: 400;
                         }
 
                         &.preparing {
                             background-color: $preparing-color;
+                            color: #9290FE;
+                            font-weight: 400;
                         }
 
                         &.pending {
                             background-color: $pending-color;
+                            color: #FFB572;
+                            font-weight: 400;
                         }
                     }
                 }
@@ -81,8 +83,8 @@
 
     .filter-order-btn-for-order-report {
         background: none;
-        border: 1px solid rgb(141, 141, 141);
-        border-radius: 4px;
+        border: 1px solid #393C49;
+        border-radius: 8px;
         color: $font-color;
         cursor: pointer;
 
@@ -109,7 +111,7 @@
     color: $font-color-white;
     border: none;
     cursor: pointer;
-    padding: 15px;
+    padding: 15px 10px;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;

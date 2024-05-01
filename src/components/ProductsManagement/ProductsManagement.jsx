@@ -4,6 +4,7 @@ import "./NewDishModal/NewDishModal.scss";
 
 import photo4 from "../../assets/food4.png";
 import photo5 from "../../assets/food5.png";
+import pencilImg from "../../assets/edit-pencil.png";
 
 import filterPhoto from "../../assets/Filter.png";
 import plusLogo from "../../assets/plus.png";
@@ -133,7 +134,8 @@ function ProductsManagement() {
                                 <img className="dish-image" src={dish.imageSrc} alt={dish.name} />
                                 <h3 className="dish-name">{dish.name}</h3>
                                 <p className="dish-price">${dish.price}</p>
-                                <button className="edit-dish-btn" onClick={() => handleEdit(dish)}>Edit Dish</button>
+                                <button className="edit-dish-btn" onClick={() => handleEdit(dish)}>
+                                    <img src={pencilImg} alt="" srcset="" /> Edit Dish</button>
                             </div>
                         ))
                     }

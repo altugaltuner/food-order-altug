@@ -21,10 +21,12 @@ function SettingsSidebar() {
             const allDivs = document.querySelectorAll('.sidebar-div');
             allDivs.forEach(div => {
                 div.style.backgroundColor = '#1F1D2B'; // Diğer div'lerin arkaplanını varsayılan renge ayarla
+                div.querySelector('h3').style.color = '#fff'; // Diğer div'lerin h3'ün rengini beyaz yap
             });
 
             // Tıklanan '.sidebar-div' öğesinin arkaplanını kahverengi yap
-            targetDiv.style.backgroundColor = '#EA7C69';
+            targetDiv.style.backgroundColor = '#EA7C6942';
+            targetDiv.querySelector('h3').style.color = '#EA7C69'; // h3'ün rengini yeşil yap
         }
     }
 

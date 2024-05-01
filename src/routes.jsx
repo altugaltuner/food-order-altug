@@ -8,7 +8,7 @@ import DashboardPage from "./pages/DashBoardPage/DashBoardPage.jsx";
 
 const routes = [
   {
-    path: "/homepage",
+    path: "/",
     element: (
       <ProtectedRoute>
         <HomePage />

@@ -7,14 +7,15 @@
     height: min-content;
     padding: 15px;
     background-color: $dashboard-divs;
-    margin: 110px 0 20px 20px;
+    margin: 20px 0 20px 20px;
     border-radius: 15px;
     color: $font-color-white;
 
     .title-order-conf {
         display: flex;
         position: relative;
-        border-bottom: solid 1px $font-color-light;
+        border-bottom: solid 1px #393C49;
+        padding-bottom: 10px;
         margin-bottom: 15px;
 
         .part-of-title-conf {
@@ -29,7 +30,7 @@
                 right: 0;
                 padding: 5px;
                 border-radius: 8px;
-                border: 1px solid $font-color-light;
+                border: 1px solid #393C49;
                 background-color: $dashboard-divs;
                 color: $font-color-white;
             }
@@ -63,16 +64,16 @@
                 .conf-pic-and-name-and-price-2 {
                     display: flex;
                     flex-direction: row;
-                    gap: 5px;
+                    gap: 20px;
                     width: 100%;
-                    margin: 0;
+                    margin-bottom: 15px;
                     padding: 0;
                 }
 
                 .conf-name-and-price {
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    gap: 5px;
 
                     .conf-name-and-price-p {
                         font-size: 14px;
@@ -92,8 +93,8 @@
                 }
 
                 .food-photos-order-conf {
-                    width: 40px;
-                    height: 40px;
+                    width: 60px;
+                    height: 60px;
                 }
             }
         }
@@ -113,6 +114,7 @@
         border: 2px solid #EA7C69;
         background: transparent;
         color: #EA7C69;
+        margin-top: 30px;
         cursor: pointer;
     }
 
@@ -137,7 +139,7 @@
 
         .title-order-conf {
             display: flex;
-            border-bottom: solid 1px #555555;
+            border-bottom: solid 1px #393C49;
             margin-bottom: 15px;
             padding-bottom: 10px;
             justify-content: center;

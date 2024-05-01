@@ -8,13 +8,12 @@ function Navbar() {
     const location = useLocation();  // Mevcut konumu almak için hook
 
     const navItems = [
-        { id: 'home-nav-id', to: '/homepage', logo: "/src/assets/Home.png" },
+        { id: 'home-nav-id', to: '/', logo: "/src/assets/Home.png" },
         { id: 'about-nav-id', to: '/dashboard', logo: "/src/assets/Discount.png" },
         { id: 'services-nav-id', to: '/settings', logo: "/src/assets/Graph.png" },
-        // Diğer nav itemlarınızı buraya ekleyin...
         { id: 'contact-nav-id-message', to: '', logo: "/src/assets/Message.png" },
         { id: 'contact-nav-id-notification', to: '', logo: "/src/assets/Notification.png" },
-        { id: 'contact-nav-id-settings', to: '', logo: "/src/assets/Setting.png" },
+        { id: 'contact-nav-id-settings', to: '/signup', logo: "/src/assets/Setting.png" },
         { id: 'contact-nav-id-logout', to: '/login', logo: "/src/assets/Logout.png" },
     ];
 
@@ -33,7 +32,7 @@ function Navbar() {
     return (
         <nav className='mainnet-logo-second'>
             <li className='logo-nav'>
-                <Link to="/homepage"><img src={logoNav} alt="Site Logo" /></Link>
+                <Link to="/"><img src={logoNav} alt="Site Logo" /></Link>
             </li>
             {navItems.map(item => (
                 <li key={item.id} className="single-nav" id={item.id} onClick={() => handleNavClick(item.id)}>
