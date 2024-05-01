@@ -7,8 +7,6 @@ function OrderPaymentPage() {
     const paypalPhoto = "/src/assets/Paypal.png";
     const cashPhoto = "/src/assets/Wallet.png";
 
-    // Ödeme sayfası için gerekli olan form bilgilerini oluşturun
-
     const [formData, setFormData] = useState({
         cardHolderName: '',
         cardNumber: '',
@@ -18,93 +16,56 @@ function OrderPaymentPage() {
         OrderType: ''
     });
 
-    //useState hookları :
-
-    // useState kullanarak bir state değişkeni ve onu güncellemek için bir fonksiyon oluşturuyoruz.
-    // Başlangıç değeri olarak isteğe bağlı 'dine-in' belirledik
     const [selectedDropDownOption, setSelectedDropDownOption] = useState('dine-in');
 
-    // Seçilen ödeme yöntemini saklamak için bir durum oluşturun
     const [PaymentOption, setSelectedPaymentOption] = useState(null);
 
     const [expiration, setExpiration] = useState('');
 
-    // İnput alanındaki değeri düzenlemek için bir fonksiyon
-    // Kullanıcının girdiği değeri kontrol edin ve gerektiğinde formatlayın
     const formatCardNumber = (input) => {
-        // Girilen değeri sadece rakamlara dönüştür
         let cardNumber = input.replace(/\D/g, '');
-        // Maksimum 16 karaktere sınırlandır
         cardNumber = cardNumber.slice(0, 16);
-        // Her 4 karakterden sonra bir boşluk ekleyerek formatı düzenle
         cardNumber = cardNumber.replace(/(.{4})/g, '$1 ');
-        console.log(cardNumber, "cardNumber");
-        // Son 1 karaktere kadar olan kısmı alarak input alanına yaz
         return cardNumber.trim();
     };
 
     const formatCvv = (input) => {
-        // Girilen değeri sadece rakamlara dönüştür
         let cardCvv = input.replace(/\D/g, '');
-        // Maksimum 3 karaktere sınırlandır
         cardCvv = cardCvv.slice(0, 3);
 
         return cardCvv;
     };
 
     const formatTableNo = (input) => {
-        // Girilen değeri sadece rakamlara dönüştür
         let tableNo = input.replace(/\D/g, '');
-        // Maksimum 3 karaktere sınırlandır
         tableNo = tableNo.slice(0, 3);
 
         return tableNo;
     }
 
     const formatCardHolderName = (input) => {
-        // Sadece harfleri kabul et ve diğer karakterleri kaldır
         let formattedName = input.replace(/[^a-zA-ZğüşöçıİĞÜŞÖÇ\s]/g, '');
 
         return formattedName;
     };
 
-    // Form girdileri değiştiğinde state'i güncelleyecek fonksiyonlar, NAME ve VALUE'yu alır ve state'i günceller. NAME E BAKARAK HANGİ INPUT OLDUĞUNU ANLARIZ.
-    const handleInputChange = (e) => {
-        let { name, value } = e.target;
-        //const name = e.target.name;
-        //const value = e.target.value; üstteki let{} ile aynı işlemi yapar
-        //console.log(name, value); // Hangi inputun değiştiğini ve değerini görmek için yazdırın
+    const formatInput = (name, value) => {
+        const formatters = {
+            cardNumber: formatCardNumber,
+            cardHolderName: formatCardHolderName,
+            cvv: formatCvv,
+            tableNo: formatTableNo
+        };
 
-        if (name === 'cardNumber') {
-            // Girilen değeri formatlayın ve input alanına yazın
-            value = formatCardNumber(value);
-            setFormData({ ...formData, [name]: value });
-
-        }
-        else if (name === 'cardHolderName') {
-            // Girilen değeri formatlayın ve input alanına yazın
-            value = formatCardHolderName(value);
-            setFormData({ ...formData, [name]: value });
-
-        }
-        else if (name === 'cvv') {
-            // Girilen değeri formatlayın ve input alanına yazın
-            value = formatCvv(value);
-            setFormData({ ...formData, [name]: value });
-        }
-        else if (name === 'tableNo') {
-            value = formatTableNo(value);
-            setFormData({ ...formData, [name]: value });
-        }
-        else if (name === 'PaymentOption') {
-            setFormData({ ...formData, [name]: value });
-        }
-        else if (name === 'orderType') {
-            setFormData({ ...formData, [name]: value });
-        }
+        return formatters[name] ? formatters[name](value) : value;
     };
 
-    // Seçenek değiştiğinde durumu güncelleyen bir fonksiyon oluşturun
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        const formattedValue = formatInput(name, value);
+        setFormData({ ...formData, [name]: formattedValue });
+    };
+
     const handleOptionChange = (e) => {
 
         setFormData({ ...formData, PaymentOption: e.target.value });
@@ -114,22 +75,18 @@ function OrderPaymentPage() {
 
     const handleExpirationChange = (e) => {
         const { value } = e.target;
-        // Kullanıcının girdiği değeri kontrol edin ve gerektiğinde formatlayın
-        let formattedValue = value.replace(/\D/g, '').slice(0, 6); // Sadece rakamları alın ve maksimum 6 karaktere sınırlandırın
+        let formattedValue = value.replace(/\D/g, '').slice(0, 6);
 
         if (formattedValue.length > 2) {
-            formattedValue = formattedValue.replace(/(\d{2})/, '$1/'); // İlk iki rakamın sonuna "/" ekleyin
+            formattedValue = formattedValue.replace(/(\d{2})/, '$1/');
         }
 
         setExpiration(formattedValue);
     };
 
-    // Kullanıcı bir option seçtiğinde çağrılacak fonksiyon.
-    // Event parametresinden seçilen option'ın değerini alıp state değişkenini güncelliyoruz.
     const handleSelectChange = (e) => {
         setSelectedDropDownOption(e.target.value);
         setFormData({ ...formData, OrderType: e.target.value });
-        console.log(e.target.value);
     };
 
     const handleCancel = () => {
@@ -147,17 +104,11 @@ function OrderPaymentPage() {
         setSelectedDropDownOption('');
     };
 
-    // Form gönderildiğinde yapılacak işlemler
     function handleSubmit(e) {
         e.preventDefault();
 
-        // Gerekli alanların isimlerini bir array olarak listeliyoruz.
-        const requiredFields = ['cardHolderName', 'cardNumber', 'cvv', 'tableNo', 'PaymentOption', 'OrderType'];  //Gerekli alanlar
+        const requiredFields = ['cardHolderName', 'cardNumber', 'cvv', 'tableNo', 'PaymentOption', 'OrderType'];
 
-        // Her bir gerekli alan için, formData içinde bir değer olup olmadığını kontrol ediyoruz.
-        //every metodunun içinde bir arrow fonksiyonu (field => formData[field]) kullanılıyor. Bu fonksiyon, requiredFields dizisindeki her bir field için çağrılıyor.
-        //formData[field] ifadesi, formData objesinde, o anki field ismine karşılık gelen değeri alıyor. Örneğin, field değişkeni "firstName" olduğunda, formData['firstName'] ifadesi, formData objesindeki firstName anahtarının değerini verir.
-        //Eğer formData[field] ifadesi bir değer döndürüyorsa (yani bu alan boş değilse ve dolayısıyla bir değer içeriyorsa), o alan için kontrol başarılı sayılır. Değer undefined, null, boş bir string (""), ya da başka bir "falsy" değerse, bu kontrol başarısız sayılır ve every metodu false döndürür.
         const isFormComplete = requiredFields.every(field => formData[field]);
 
         if (!isFormComplete) {
@@ -165,7 +116,6 @@ function OrderPaymentPage() {
 
         } else {
             console.log(formData);
-            // Form verilerini bir API'ye gönderme, bir veritabanına kaydetme veya başka bir işlem yapabiliriz
         }
     }
 
@@ -174,11 +124,11 @@ function OrderPaymentPage() {
             <h1 className="payment-head">Payment</h1>
 
             <p className="payment-explanations">3 payment method available</p>
-            <div className="line-form"></div>
+            <div className="line-form-payment-page"></div>
 
             <h2 className="payment-methods-text">Payment Methods</h2>
-            <form className="payment-form-style">
-                <div className="only-labels">
+            <form className="payment-form-area">
+                <div className="only-labels-payment-form">
                     <label htmlFor="option1" className={`payment-photo-options ${PaymentOption === "option1" ? "selected" : ""}`}>
                         <input className="input-type-radio" type="radio" id="option1" name="options" value="option1" checked={PaymentOption === "option1"}
                             onChange={handleOptionChange} />
@@ -199,16 +149,16 @@ function OrderPaymentPage() {
                     </label>
                 </div>
 
-                <div className="cardholder-div">
-                    <p className="card-text">Cardholder Name</p>
-                    <input type="text" name="cardHolderName" className="full-width-input" placeholder="Levi Ackermann" value={formData.cardHolderName} onChange={handleInputChange} />
+                <div className="cardholder-division-for-payment">
+                    <p className="card-text-for-order">Cardholder Name</p>
+                    <input type="text" name="cardHolderName" className="full-width-input-names" placeholder="Levi Ackermann" value={formData.cardHolderName} onChange={handleInputChange} />
 
-                    <p className="card-text">Card Number</p>
-                    <input type="text" name="cardNumber" className="full-width-input" placeholder="2564 1421 0897 1244" value={formData.cardNumber} onChange={handleInputChange} />
+                    <p className="card-text-for-order">Card Number</p>
+                    <input type="text" name="cardNumber" className="full-width-input-names" placeholder="2564 1421 0897 1244" value={formData.cardNumber} onChange={handleInputChange} />
 
-                    <div className="double-form-type">
-                        <div className="first-double-type">
-                            <label className="card-text" htmlFor="expiration-input">Expiration Date</label>
+                    <div className="double-form-type-payment">
+                        <div className="first-double-type-payment">
+                            <label className="card-text-for-order" htmlFor="expiration-input">Expiration Date</label>
                             <input
                                 type="text"
                                 className="half-width-input"
@@ -220,17 +170,17 @@ function OrderPaymentPage() {
                             />
 
                         </div>
-                        <div className="first-double-type">
-                            <label className="card-text" htmlFor="cvv-input">CVV</label>
+                        <div className="first-double-type-payment">
+                            <label className="card-text-for-order" htmlFor="cvv-input">CVV</label>
                             <input type="password" id="cvv-input"
                                 className="half-width-input" name="cvv" value={formData.cvv} onChange={handleInputChange} />
                         </div>
                     </div>
-                    <div className="line-form"></div>
-                    <div className="double-form-type">
-                        <div className="first-double-type">
+                    <div className="line-form-payment-page"></div>
+                    <div className="double-form-type-payment">
+                        <div className="first-double-type-payment">
 
-                            <label className="card-text" htmlFor="order-types">
+                            <label className="card-text-for-order" htmlFor="order-types">
                                 Order Type</label>
 
                             <select name="order-types" id="order-types" onChange={handleSelectChange} value={selectedDropDownOption}>
@@ -241,15 +191,15 @@ function OrderPaymentPage() {
                             </select>
 
                         </div>
-                        <div className="first-double-type">
-                            <p className="card-text">Table No</p>
+                        <div className="first-double-type-payment">
+                            <p className="card-text-for-order">Table No</p>
                             <input type="text" className="half-width-input" name="tableNo" value={formData.tableNo} onChange={handleInputChange} />
                         </div>
                     </div>
 
-                    <div className="buttons-div">
-                        <button type="button" className="cancel-button" onClick={handleCancel}>Cancel</button>
-                        <button type="submit" className="confirm-button">Confirm Payment</button>
+                    <div className="buttons-payment-area">
+                        <button type="button" className="cancel-button-payment" onClick={handleCancel}>Cancel</button>
+                        <button type="submit" className="confirm-button-payment">Confirm Payment</button>
                     </div>
                 </div>
             </form>
