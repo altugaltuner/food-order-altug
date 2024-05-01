@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./MostOrderedModal.scss";
 
 function MostOrderedModal({ mostOrderedFoods, handleModalState }) {
