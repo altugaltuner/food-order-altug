@@ -35,6 +35,7 @@ function ProductsManagement() {
 
     const handleDiscardChanges = () => {
         setDishes([...initialDishes]);
+        localStorage.setItem('dishes', JSON.stringify(initialDishes));
     };
 
     const handleModalState = () => {

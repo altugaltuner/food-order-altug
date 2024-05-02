@@ -5,16 +5,15 @@
     flex-direction: column;
     background: none;
     color: $font-color-white;
-    margin: 30px 0px 0px 120px;
+    margin: 30px 0px 0px 130px;
+    width: 20%;
 
     .sidebar-div {
         display: flex;
         background-color: $dashboard-divs;
         flex-direction: column;
-        opacity: 0px;
-        transition: all 0.3s ease-in-out;
         justify-content: center;
-        padding: 40px 70px 38px 20px;
+        padding: 40px 0px 38px 20px;
         border: none;
         gap: 10px;
         cursor: pointer;
@@ -75,11 +74,10 @@
         }
 
         .sidebar-div {
-            padding: 10px 0 20px 5px;
-
+            padding: 30px 0 30px 10px;
 
             h3 {
-                font-size: 20px;
+                font-size: 17px;
 
             }
 
@@ -99,10 +97,28 @@
         flex-direction: row;
         margin-right: 20px;
         gap: 10px;
+        width: 90%;
+
+        #about-us-sidebar-id {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #appearance-sidebar-id {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
 
         .sidebar-div {
             padding: 7px 7px 7px 7px;
             border-radius: 10px;
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .settings-sidebar-main {
+
+        width: 75%;
     }
 }

@@ -1,8 +1,9 @@
 @use "../../styles/abstracts/variables" as *;
 
 .products-managements-main {
-    margin: 30px 20px 0px 30px;
+    margin: 30px 30px 0px 30px;
     height: auto;
+    width: 80%;
 
     .left-top-of-dishes {
         display: flex;
@@ -10,7 +11,7 @@
         background-color: $dashboard-divs;
         display: flex;
         flex-direction: row;
-        padding: 20px 20px 0px 20px;
+        padding: 16px 20px 0px 20px;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
 
@@ -25,7 +26,6 @@
         .filter-order-btn {
             background: none;
             border-radius: 10px;
-            color: wheat;
             cursor: pointer;
             border: 1px solid $font-color-light;
 
@@ -36,6 +36,14 @@
                 border: none;
                 background-color: $dashboard-divs;
                 margin: 3px;
+
+                &:hover {
+                    background-color: lighten($dashboard-divs, 10%);
+                }
+
+                &:active {
+                    background-color: lighten($dashboard-divs, 20%);
+                }
             }
 
             .filter-order-btn-img {
@@ -48,11 +56,11 @@
             }
 
             &:hover {
-                background-color: darken(rgb(141, 141, 141), 10%);
+                background-color: lighten($dashboard-divs, 10%);
             }
 
             &:active {
-                background-color: darken(rgb(141, 141, 141), 20%);
+                background-color: lighten($dashboard-divs, 20%);
             }
         }
     }
@@ -72,7 +80,7 @@
                 padding: 10px 20px;
                 cursor: pointer;
                 border: none;
-                border-bottom: 1px solid $border-color;
+                border-bottom: 2px solid $border-color;
 
                 &:hover {
                     color: $accent-color;
@@ -229,7 +237,7 @@
 
 @media screen and (max-width: 1000px) {
     .products-managements-main {
-
+        width: 80%;
 
         .left-top-of-dishes {
             display: flex;
@@ -256,6 +264,12 @@
 @media screen and (max-width: 1000px) {
     .products-managements-main {
         .left-top-of-dishes {
+            .filter-order-btn {
+                .filter-order-select {
+                    width: 175px;
+                }
+            }
+
             .username-of-hello {
                 display: flex;
                 font-size: 32px;
@@ -269,13 +283,29 @@
 @media screen and (max-width: 900px) {
     .products-managements-main {
         margin-left: 60px;
+        width: 75%;
     }
 }
 
 @media screen and (max-width: 600px) {
     .products-managements-main {
+        .discard-or-save-changes {
+            .discard-changes-btn {
+                padding: 0px;
+                margin-right: 10px;
+                width: 73px;
+            }
+
+            .save-changes-btn {
+                width: 75px;
+                padding: 0px;
+            }
+        }
+
         .dishes-main {
             .dishes-container {
+                gap: 5px;
+
                 .dish-image {
                     width: 100px;
                     padding-bottom: 135px;
@@ -283,6 +313,7 @@
 
                 .dish-name {
                     font-size: 12px;
+                    width: 100%;
                 }
             }
         }
@@ -296,16 +327,24 @@
 
                 .edit-dish-btn {
                     font-size: 14px;
-                    padding: 4px;
+                    padding: 0px;
                 }
 
                 .dish-image {
-                    width: 60px;
+                    width: 45px;
                     padding-bottom: 160px;
                 }
 
                 .dish-name {
                     font-size: 12px;
+                }
+            }
+        }
+
+        .left-top-of-dishes {
+            .filter-order-btn {
+                .filter-order-select {
+                    width: 85px;
                 }
             }
         }
