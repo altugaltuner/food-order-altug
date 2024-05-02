@@ -42,7 +42,7 @@ function OrderConfirmation({
   function subTotal() {
     let total = 0;
     for (const element of foodItems) {
-      total += element.price;
+      total += element.price * element.quantity;
     }
     console.log(total, "BU TOTAL");
     let discountMoney = 100 - discountPercentage;
@@ -53,7 +53,7 @@ function OrderConfirmation({
   function discountedMoney() {
     let total = 0;
     for (const element of foodItems) {
-      total += element.price;
+      total += element.price * element.quantity;
     }
     let discountMoney = total * (discountPercentage / 100);
     return discountMoney;
@@ -110,7 +110,7 @@ function OrderConfirmation({
 
           <div className="conf-right-order-part">
             <p className="price-of-order-conf">
-              ${foodItem.price * foodItem.quantity}
+              ${(foodItem.price * foodItem.quantity).toFixed(2)}
             </p>
             <button
               type="reset"
