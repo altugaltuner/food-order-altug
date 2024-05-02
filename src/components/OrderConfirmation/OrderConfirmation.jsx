@@ -38,10 +38,10 @@ function OrderConfirmation({
     );
   };
 
+
   function subTotal() {
-    // subtotal okay
     let total = 0;
-    for (const element of incomingFoodItems) {
+    for (const element of foodItems) {
       total += element.price;
     }
     console.log(total, "BU TOTAL");
@@ -51,9 +51,8 @@ function OrderConfirmation({
   }
 
   function discountedMoney() {
-    // discountedmoney okay
     let total = 0;
-    for (const element of incomingFoodItems) {
+    for (const element of foodItems) {
       total += element.price;
     }
     let discountMoney = total * (discountPercentage / 100);
@@ -72,7 +71,7 @@ function OrderConfirmation({
       {/* Map Metodu: foodItems.map(...) kullandığınızda, foodItems dizisindeki her bir öğe için bir döngü oluşturursunuz. Bu döngü içinde, her öğenin kendine ait bir div bloğu (ve içinde çöp kutusu butonu) oluşturulur. Her bir div ve içerdiği buton, o anki döngüdeki öğenin (foodItem) verileriyle (özellikle id değeriyle) ilişkilendirilmiş olur. */}
 
 
-      {incomingFoodItems.map((foodItem) => (
+      {foodItems.map((foodItem) => (
         <div className="order-conf-body" key={foodItem.id}>
           <div className="conf-left-order-part">
             <div className="conf-pic-and-name-and-price">

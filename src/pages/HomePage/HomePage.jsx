@@ -47,7 +47,7 @@ function HomePage() {
         return item;
       })
     );
-    console.log(orders, "BÜTÜN ORDERS NOTLU");
+    console.log(orders, "ORDERS");
   };
 
   return (

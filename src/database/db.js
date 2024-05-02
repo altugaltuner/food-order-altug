@@ -6,7 +6,7 @@ export const dishes = [
     imageSrc: photo1,
     coldDish: false,
     soup: false,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const dishes = [
     imageSrc: photo2,
     coldDish: false,
     soup: true,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const dishes = [
     imageSrc: photo3,
     coldDish: true,
     soup: false,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const dishes = [
     imageSrc: photo2,
     coldDish: false,
     soup: true,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const dishes = [
     imageSrc: photo4,
     coldDish: false,
     soup: false,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const dishes = [
     imageSrc: photo5,
     coldDish: false,
     soup: false,
-    quantity: 1,
+    quantity: "",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const dishes = [
     imageSrc: photo3,
     coldDish: false,
     soup: true,
-    quantity: 1,
+    quantity: 2,
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const dishes = [
     imageSrc: photo2,
     coldDish: true,
     soup: false,
-    quantity: 1,
+    quantity: 2,
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const dishes = [
     imageSrc: photo1,
     coldDish: true,
     soup: true,
-    quantity: 1,
+    quantity: "",
   },
   // Diğer yemeklerin bilgileri...
 ];
