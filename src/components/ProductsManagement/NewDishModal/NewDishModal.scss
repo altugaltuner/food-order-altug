@@ -13,22 +13,77 @@
     z-index: 999;
     font-family: "Barlow", sans-serif;
 
-    .innerCont {
+    .innerContNew {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: $font-color-white;
-        color: $black-color;
+        color: $font-color-white;
         padding: 20px;
         align-items: center;
         gap: 20px;
+        background-color: $dashboard-divs;
+        border-radius: 15px;
+        width: 50%;
+        height: 50%;
 
         .modal-form {
             display: flex;
             gap: 10px;
+            flex-direction: column;
 
             input {
-                padding-left: 10px;
+                padding: 10px;
+            }
+
+            .buttons-modal {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                .submit-of-modal {
+                    width: 150px;
+                    height: 48px;
+                    padding: 14px;
+                    gap: 8px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    background-color: $accent-color;
+                    color: $font-color-white;
+                    border: none;
+
+                    &:hover {
+                        background-color: darken($accent-color, 10%);
+
+                    }
+
+                    &:active {
+                        background-color: darken($accent-color, 20%);
+
+                    }
+                }
+
+                .close-of-modal {
+                    width: 150px;
+                    height: 48px;
+                    padding: 14px;
+                    gap: 8px;
+                    color: $accent-color;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    background: none;
+                    border: 1px solid $accent-color;
+
+                    &:hover {
+                        background-color: $accent-color;
+                        color: $dashboard-divs;
+                    }
+
+                    &:active {
+                        background-color: darken($accent-color, 10%);
+                        color: $dashboard-divs;
+                    }
+
+                }
             }
         }
 
@@ -37,13 +92,5 @@
             font-weight: 500;
         }
 
-        button {
-            padding: 10px 10px;
-            background-color: #754434;
-            border: none;
-            cursor: pointer;
-            width: 100px;
-            color: $font-color-white;
-        }
     }
 }

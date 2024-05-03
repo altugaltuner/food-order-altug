@@ -39,15 +39,17 @@ function DishModal({ dish, handleModalState, onSave, dishes }) {
 
     return (
         <div className="mainContainer">
-            <div className="innerCont">
+            <div className="innerContNew">
                 <h1>{dish ? "Edit Dish" : "New Dish"}</h1>
                 <form className="modal-form" onSubmit={handleSubmit}>
                     <input type="file" onChange={e => setImage(URL.createObjectURL(e.target.files[0]))} />
                     <input type="text" placeholder="Enter dish name" value={dishName} onChange={e => setDishName(e.target.value)} />
                     <input type="text" placeholder="Enter it's price" value={price} onChange={e => setPrice(e.target.value)} />
-                    <button type="submit">{dish ? "Save Changes" : "Add Dish"}</button>
+                    <div className="buttons-modal">
+                        <button className="close-of-modal" onClick={handleModalState}>Close (X)</button>
+                        <button className="submit-of-modal" type="submit">{dish ? "Save Changes" : "Add Dish"}</button>
+                    </div>
                 </form>
-                <button onClick={handleModalState}>Close (X)</button>
             </div>
         </div>
     );
