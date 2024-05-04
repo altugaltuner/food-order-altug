@@ -127,7 +127,7 @@ function ProductsManagement() {
                                 <h3 className="dish-name">{dish.name}</h3>
                                 <p className="dish-price">${dish.price}</p>
                                 <button className="edit-dish-btn" onClick={() => handleEdit(dish)}>
-                                    <img src={pencilImg} alt="" srcset="" /> Edit Dish</button>
+                                    <img src={pencilImg} alt="" srcSet="" /> Edit Dish</button>
                             </div>
                         ))
                     }
@@ -143,7 +143,6 @@ function ProductsManagement() {
             {isModalOpen && (
                 <DishModal dish={selectedDish} handleModalState={handleModalState} onSave={onSave} dishes={dishes} />
             )}
-
         </div>);
 }
 export default ProductsManagement;

@@ -1,7 +1,6 @@
 import "./SettingsSidebar.scss";
 
 function SettingsSidebar() {
-
     const homeImg = "/src/assets/home.png";
     const likeImg = "/src/assets/like.png";
     const foImg = "/src/assets/foImg.png";
@@ -9,9 +8,9 @@ function SettingsSidebar() {
     const lockImg = "/src/assets/lock.png";
     const settingImg = "/src/assets/setting.png";
 
+
     function makeActiveDiv(e) {
         e.stopPropagation(); // Olayın kabarcıklanmasını durdurur, 2 kere konsola yazdırmayı engeller
-        console.log("clicked");
 
         // Tıklanan öğeden en yakın '.sidebar-div' öğesini bul
         const targetDiv = e.target.closest('.sidebar-div');
@@ -28,17 +27,22 @@ function SettingsSidebar() {
             targetDiv.style.backgroundColor = '#EA7C6942';
             targetDiv.querySelector('h3').style.color = '#EA7C69'; // h3'ün rengini yeşil yap
         }
+
+        const clickedButtonId = e.currentTarget.id; // Use currentTarget instead of target to get the id of the clicked button
+        console.log(clickedButtonId);
+
+        return clickedButtonId;
     }
 
     return (
         <div className="settings-sidebar-main">
 
-            <button className="sidebar-div" onClick={makeActiveDiv} id="appearance-sidebar-id" tabIndex={0}>
+            <button className="sidebar-div" onClick={makeActiveDiv} id="appearance-sidebar-id" >
                 <h3> <img src={likeImg} alt="" srcSet="" />Appearance</h3>
                 <p>Dark and Light mode, Font size</p>
             </button>
 
-            <button className="sidebar-div" onClick={makeActiveDiv} id="restaurant-sidebar-id">
+            <button className="sidebar-div" onClick={makeActiveDiv} id="restaurant-sidebar-id" >
                 <h3><img src={homeImg} alt="" srcSet="" />Your Restaurant</h3>
                 <p>Dark and Light mode, Font size</p>
             </button>
