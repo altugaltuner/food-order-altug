@@ -10,7 +10,7 @@ function Navbar() {
     const navItems = [
         { id: 'home-nav-id', to: '/', logo: "/src/assets/Home.png" },
         { id: 'about-nav-id', to: '/dashboard', logo: "/src/assets/Discount.png" },
-        { id: 'services-nav-id', to: '/settings', logo: "/src/assets/Graph.png" },
+        { id: 'services-nav-id', to: '/settings/products', logo: "/src/assets/Graph.png" },
         { id: 'contact-nav-id-message', to: '', logo: "/src/assets/Message.png" },
         { id: 'contact-nav-id-notification', to: '', logo: "/src/assets/Notification.png" },
         { id: 'contact-nav-id-settings', to: '/signup', logo: "/src/assets/Setting.png" },

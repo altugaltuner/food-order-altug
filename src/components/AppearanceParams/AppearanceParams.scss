@@ -1,0 +1,58 @@
+.appearance-main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    justify-content: space-between;
+    background-color: #1F1D2B;
+    display: flex;
+    padding: 16px 20px 0px 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Üç sütun oluştur */
+        grid-gap: 10px;
+        /* Izgaradaki hücreler arasında boşluk */
+        width: 90%;
+        margin: auto;
+    }
+
+    .grid-item {
+        background: none;
+        border: 1px solid #393C49;
+        border-radius: 50px;
+        /* Hücreler için arka plan rengi */
+        padding: 20px;
+        /* Hücre içi boşluk */
+        text-align: center;
+        /* Metin ortalanmış */
+    }
+
+    img {
+        width: 100%;
+        /* Resimlerin genişliği, kapsayıcısına sığacak şekilde ayarlanmış */
+        height: auto;
+        /* Resim yüksekliği, orijinal en-boy oranını koruyacak şekilde otomatik */
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 200;
+        margin-top: 20px;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        display: flex;
+        font-size: 30px;
+        justify-content: left;
+        margin-right: 15px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+}

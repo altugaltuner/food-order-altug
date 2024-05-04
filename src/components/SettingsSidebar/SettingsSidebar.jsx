@@ -1,6 +1,6 @@
 import "./SettingsSidebar.scss";
 
-function SettingsSidebar() {
+function SettingsSidebar({ handleButtonClick }) {
     const homeImg = "/src/assets/home.png";
     const likeImg = "/src/assets/like.png";
     const foImg = "/src/assets/foImg.png";
@@ -29,9 +29,7 @@ function SettingsSidebar() {
         }
 
         const clickedButtonId = e.currentTarget.id; // Use currentTarget instead of target to get the id of the clicked button
-        console.log(clickedButtonId);
-
-        return clickedButtonId;
+        handleButtonClick(clickedButtonId); // Pass the clickedButtonId to the handleButtonClick function
     }
 
     return (
@@ -47,7 +45,7 @@ function SettingsSidebar() {
                 <p>Dark and Light mode, Font size</p>
             </button>
 
-            <button className="sidebar-div" onClick={makeActiveDiv} id="product-sidebar-id">
+            <button className="sidebar-div" onClick={makeActiveDiv} id="products-sidebar-id">
                 <h3><img src={settingImg} alt="" srcSet="" />Product Management</h3>
                 <p>Manage your product, pricing, etc</p>
             </button>
@@ -68,7 +66,7 @@ function SettingsSidebar() {
             </button>
 
             <button className="sidebar-div" onClick={makeActiveDiv} id="about-us-sidebar-id">
-                <h3><img src={foImg} alt="" srcSet="" />About Us</h3>
+                <h3><img src={foImg} alt="" srcSet="" />About Me</h3>
                 <p>Find out more about Posly</p>
             </button>
         </div>
