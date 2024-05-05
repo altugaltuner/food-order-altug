@@ -12,6 +12,7 @@ import MostOrdered from "@/components/MostOrdered/MostOrdered";
 import PieChart from "@/components/PieChart/PieChart";
 import AboutUsParams from "@/components/AboutUsParams/AboutUsParams";
 import OrderReports from "@/components/OrderReports/OrderReports";
+import RestaurantAPI from "@/components/RestaurantAPI/RestaurantAPI";
 
 function SettingsPage() {
 
@@ -60,7 +61,7 @@ function SettingsPage() {
         {activeComponent === "appearance" && <AppearanceParams />}
         {activeComponent === "restaurant" && <RestaurantParams />}
         {activeComponent === "products" && <ProductsManagement addingNewDish={handleAddingNewDish} />}
-        {activeComponent === "notifications" && <AppearanceParams />}
+        {activeComponent === "notifications" && <RestaurantAPI />}
         {activeComponent === "security" && <div className="add-to-settings-sidebar"><OrderPaymentPage /><PieChart /></div>}
         {activeComponent === "configure" && <OrderReports />}
         {activeComponent === "about-us" && <AboutUsParams />}
