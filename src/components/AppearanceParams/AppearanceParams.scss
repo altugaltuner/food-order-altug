@@ -6,9 +6,8 @@
     justify-content: space-between;
     background-color: #1F1D2B;
     display: flex;
-    padding: 16px 20px 0px 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    padding: 20px;
+    border-radius: 20px;
 
     .grid-container {
         display: grid;
@@ -32,7 +31,7 @@
     }
 
     img {
-        width: 100%;
+        width: 55%;
         /* Resimlerin genişliği, kapsayıcısına sığacak şekilde ayarlanmış */
         height: auto;
         /* Resim yüksekliği, orijinal en-boy oranını koruyacak şekilde otomatik */

@@ -52,7 +52,7 @@ function SettingsPage() {
   }, [tabName]);
 
   return (
-    <main className="settings-page">
+    <main className="settings-page" >
       <Navbar />
       <div className="set-product-div">
 

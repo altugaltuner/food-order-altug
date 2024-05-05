@@ -13,10 +13,20 @@
         padding-bottom: 28px;
         width: 100%;
 
+        .order-report-container {
+            margin: 30px;
+        }
+
         .add-to-settings-sidebar {
             display: flex;
             flex-direction: row;
             justify-content: center;
+
+            .order-payment {
+                display: flex;
+                flex: 1.0;
+                margin: 30px 25px 0px 25px;
+            }
         }
     }
 }
@@ -30,6 +40,7 @@
         .set-product-div {
             display: flex;
             flex-direction: column;
+            align-items: center;
 
             h3 {
                 font-size: 11px;
