@@ -19,8 +19,18 @@
         cursor: pointer;
         transition: all 0.3s ease-in-out;
 
+        &:hover {
+            background-color: #EA7C69;
+        }
+
+
+        .sidebar-btn-class {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
         p {
-            padding-left: 25px;
             color: $font-color-light;
             font-size: 12px;
             font-weight: 400;
@@ -50,6 +60,53 @@
         }
     }
 
+    .sidebar-div-active {
+        background-color: rgba(234, 124, 105, 0.26);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 0px 38px 20px;
+        border: none;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        .sidebar-btn-class {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        h3 {
+            display: flex;
+            justify-content: flex-start;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 18.2px;
+            text-align: left;
+            padding-right: 15px;
+            color: #EA7C69;
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                position: relative;
+                top: 2px;
+            }
+        }
+
+        p {
+            padding-left: 25px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16.8px;
+            text-align: left;
+            padding-right: 15px;
+            color: #EA7C69;
+        }
+    }
+
     #appearance-sidebar-id {
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
@@ -58,10 +115,6 @@
     #about-us-sidebar-id {
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-    }
-
-    #products-sidebar-id {
-        background-color: #EA7C6942;
     }
 }
 

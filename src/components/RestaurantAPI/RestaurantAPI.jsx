@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 function RestaurantAPI() {
     const [products, setProducts] = useState([]); // Use an array to store multiple products
     const id = products.length; // Get the number of products to generate a new ID
+    const [visibleCount, setVisibleCount] = useState(6); // Başlangıçta görünen ürün sayısı
+
 
     const randomObject = {
         id: id + 1,
@@ -39,6 +41,10 @@ function RestaurantAPI() {
         return products;
     };
 
+    function handleSeeMore() {
+        setVisibleCount(prevCount => prevCount + 3); // Önceki sayıya 3 ekleyerek yeni sayıyı ayarla
+    };
+
     console.log(products);
 
     return (
@@ -46,21 +52,25 @@ function RestaurantAPI() {
             {products.length === 0 ? (
                 <p className="products-api-loading">Downloading...</p>
             ) : (
-                products.slice(0, 25).map((product) => (
-                    <div className="products-api-div" key={product.id}>
-                        <p className="products-api-product-id">{product.id}</p>
-                        <p className="products-api-product-title">{product.title}</p>
-                        <p className="products-api-product-price">{product.price}</p>
-                        <button className="delete-from-api" onClick={() => deleteFromApi(product.id)}>Delete</button>
-                        <p className="products-api-product-description">{truncateDescription(product.description)}</p>
-                        <img className="products-api-product-image" src={product.image} alt={product.title} />
-                    </div>
-                ))
+                <>
+                    {products.slice(0, visibleCount).map((product) => (
+                        <div className="products-api-div" key={product.id}>
+                            <p className="products-api-product-id">{product.id}</p>
+                            <p className="products-api-product-title">{product.title}</p>
+                            <p className="products-api-product-price">{product.price}$</p>
+                            <button className="delete-from-api" onClick={() => deleteFromApi(product.id)}>Delete</button>
+                            <p className="products-api-product-description">{truncateDescription(product.description)}</p>
+                            <img className="products-api-product-image" src={product.image} alt={product.title} />
+                        </div>
+                    ))}
+                    {products.length > visibleCount && (
+                        <button className="see-more-button" onClick={handleSeeMore}>See More</button>
+                    )}
+                </>
             )}
             <div className="deleting-area-products">
                 <button className="products-api-adding-new-item" onClick={handleAddingNewProduct}>EKLE</button>
             </div>
-
         </div>
     );
 }

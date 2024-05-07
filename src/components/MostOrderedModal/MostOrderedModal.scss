@@ -24,6 +24,7 @@
 
     h1 {
       color: $black-color;
+      margin-bottom: 10px;
     }
 
     h3 {
@@ -38,6 +39,9 @@
       border: none;
       cursor: pointer;
       width: 100px;
+      height: 50px;
+      color: white;
+      margin-top: 10px;
       border-radius: 10px;
     }
   }

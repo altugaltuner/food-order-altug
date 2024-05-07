@@ -7,7 +7,23 @@
     width: 80%;
     position: relative;
 
-
+    .see-more-button {
+        display: flex;
+        flex-direction: column;
+        width: 32%;
+        background-color: #EA7C69;
+        border: 2px solid #393C49;
+        border-radius: 20px;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        height: 500px;
+        justify-content: center;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+    }
 
     .products-api-loading {
         display: flex;
@@ -62,6 +78,7 @@
             height: 150px;
             position: absolute;
             bottom: 5px;
+            border-radius: 30px;
         }
 
     }

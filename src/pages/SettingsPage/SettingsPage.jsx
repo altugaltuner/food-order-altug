@@ -15,42 +15,23 @@ import OrderReports from "@/components/OrderReports/OrderReports";
 import RestaurantAPI from "@/components/RestaurantAPI/RestaurantAPI";
 
 function SettingsPage() {
-
-  function handleAddingNewDish() {
-    console.log("addingNewDish çalıştı");
-  }
-  //param kısmı
   const { tabName } = useParams(); // Extract the tabName value from the URL
-  const [activeComponent, setActiveComponent] = useState(tabName || "products");
+
+  const activeComponents = {
+    appearance: <AppearanceParams />,
+    restaurant: <RestaurantParams />,
+    products: <ProductsManagement />,
+    notifications: <RestaurantAPI />,
+    security: <div className="add-to-settings-sidebar"><OrderPaymentPage /><PieChart /></div>,
+    configure: <OrderReports />,
+    "about-us": <AboutUsParams />
+  }
+
+  console.log(activeComponents[tabName]);
 
   const handleButtonClick = (clickedButtonId) => {
     console.log(clickedButtonId + " çalıştı"); // Console'da hangi butonun tıklandığını gösterir
-    if (clickedButtonId === "appearance-sidebar-id") {
-      setActiveComponent("appearance"); // Tıklanan buton "appearance" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "restaurant-sidebar-id") {
-      setActiveComponent("restaurant"); // Tıklanan buton "restaurant" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "products-sidebar-id") {
-      setActiveComponent("products"); // Tıklanan buton "products" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "notifications-sidebar-id") {
-      setActiveComponent("notifications"); // Tıklanan buton "notifications" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "security-sidebar-id") {
-      setActiveComponent("security"); // Tıklanan buton "security" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "configure-sidebar-id") {
-      setActiveComponent("configure"); // Tıklanan buton "configure" ise, görüntülenecek bileşeni güncelle
-    }
-    else if (clickedButtonId === "about-us-sidebar-id") {
-      setActiveComponent("about-us"); // Tıklanan buton "about-us" ise, görüntülenecek bileşeni güncelle
-    }
-  }
-
-  useEffect(() => {
-    setActiveComponent(tabName);
-  }, [tabName]);
+  };
 
   return (
     <main className="settings-page" >
@@ -58,13 +39,7 @@ function SettingsPage() {
       <div className="set-product-div">
 
         <SettingsSidebar handleButtonClick={handleButtonClick} />
-        {activeComponent === "appearance" && <AppearanceParams />}
-        {activeComponent === "restaurant" && <RestaurantParams />}
-        {activeComponent === "products" && <ProductsManagement addingNewDish={handleAddingNewDish} />}
-        {activeComponent === "notifications" && <RestaurantAPI />}
-        {activeComponent === "security" && <div className="add-to-settings-sidebar"><OrderPaymentPage /><PieChart /></div>}
-        {activeComponent === "configure" && <OrderReports />}
-        {activeComponent === "about-us" && <AboutUsParams />}
+        {activeComponents[tabName]}
       </div>
     </main>
   );
