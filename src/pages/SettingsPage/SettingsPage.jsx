@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./SettingsPage.scss";
-import ProductsManagement from "../../components/ProductsManagement/ProductsManagement";
-import Navbar from "../../components/Navbar/Navbar";
-import SettingsSidebar from "../../components/SettingsSidebar/SettingsSidebar";
-import AppearanceParams from "../../components/AppearanceParams/AppearanceParams";
-import RestaurantParams from "../../components/RestaurantParams/RestaurantParams";
-
+import ProductsManagement from "@/components/ProductsManagement/ProductsManagement";
+import Navbar from "@/components/Navbar/Navbar";
+import SettingsSidebar from "@/components/SettingsSidebar/SettingsSidebar";
+import AppearanceSection from "@/components/SettingsSections/AppearanceSection/AppearanceSection";
+import RestaurantSection from "@/components/SettingsSections/RestaurantSection/RestaurantSection";
 import OrderPaymentPage from "@/components/OrderPaymentPage/OrderPaymentPage";
-import MostOrdered from "@/components/MostOrdered/MostOrdered";
 import PieChart from "@/components/PieChart/PieChart";
-import AboutUsParams from "@/components/AboutUsParams/AboutUsParams";
+import AboutUsSection from "@/components/SettingsSections/AboutUsSection/AboutUsSection";
 import OrderReports from "@/components/OrderReports/OrderReports";
-import RestaurantAPI from "@/components/RestaurantAPI/RestaurantAPI";
+import RestaurantApiSection from "@/components/SettingsSections/RestaurantApiSection/RestaurantApiSection";
 
 function SettingsPage() {
   const { tabName } = useParams(); // Extract the tabName value from the URL
 
   const activeComponents = {
-    appearance: <AppearanceParams />,
-    restaurant: <RestaurantParams />,
+    appearance: <AppearanceSection />,
+    restaurant: <RestaurantSection />,
     products: <ProductsManagement />,
-    notifications: <RestaurantAPI />,
+    notifications: <RestaurantApiSection />,
     security: <div className="add-to-settings-sidebar"><OrderPaymentPage /><PieChart /></div>,
     configure: <OrderReports />,
-    "about-us": <AboutUsParams />
+    "about-us": <AboutUsSection />
   }
 
   console.log(activeComponents[tabName]);
@@ -37,7 +34,6 @@ function SettingsPage() {
     <main className="settings-page" >
       <Navbar />
       <div className="set-product-div">
-
         <SettingsSidebar handleButtonClick={handleButtonClick} />
         {activeComponents[tabName]}
       </div>

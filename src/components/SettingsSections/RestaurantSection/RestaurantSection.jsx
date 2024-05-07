@@ -1,5 +1,5 @@
 import React from 'react';
-import "./RestaurantParams.scss";
+import "@/components/SettingsSections/RestaurantSection/RestaurantSection.scss"
 import restaurantImg from "@/assets/restaurant.jpg";
 
 function RestaurantParams() {

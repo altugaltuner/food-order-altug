@@ -1,4 +1,4 @@
-import "@/components/RestaurantAPI/RestaurantAPI.scss";
+import "@/components/SettingsSections/RestaurantApiSection/RestaurantApiSection.scss";
 import React, { useState, useEffect } from 'react';
 
 function RestaurantAPI() {

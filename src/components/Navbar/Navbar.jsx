@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom'; // Link ve location komponentini import ettim.
 import './Navbar.scss';
+const logoNav = "/src/assets/Logo.png";
 
 function Navbar() {
-    const logoNav = "/src/assets/Logo.png";
+
     const [activeNavId, setActiveNavId] = useState(null);
     const location = useLocation();  // Mevcut konumu almak için hook
 

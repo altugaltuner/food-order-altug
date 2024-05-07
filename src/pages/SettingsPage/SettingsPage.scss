@@ -7,10 +7,12 @@
     background-color: $primary-bg;
     font-family: "Barlow", sans-serif;
 
+    .mainnet-logo-second {}
+
     .set-product-div {
         display: flex;
         flex-direction: row;
-        padding-bottom: 28px;
+        padding-bottom: 104px;
         width: 100%;
 
         .order-report-container {

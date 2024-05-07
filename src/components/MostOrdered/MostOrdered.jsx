@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./MostOrdered.scss";
-import MostOrderedModal from "../MostOrderedModal/MostOrderedModal";
+import MostOrderedModal from "@/components/MostOrdered/MostOrderedModal/MostOrderedModal";
 
 function MostOrdered({ foodItemsMost, setFoodItems }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

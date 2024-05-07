@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./OrderPaymentPage.scss";
+const cCard = "/src/assets/Card.png";
+const paypalPhoto = "/src/assets/Paypal.png";
+const cashPhoto = "/src/assets/Wallet.png";
 
 function OrderPaymentPage() {
-
-    const cCard = "/src/assets/Card.png";
-    const paypalPhoto = "/src/assets/Paypal.png";
-    const cashPhoto = "/src/assets/Wallet.png";
 
     const [formData, setFormData] = useState({
         cardHolderName: '',

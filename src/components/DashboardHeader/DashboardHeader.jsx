@@ -1,12 +1,11 @@
 import "./DashboardHeader.scss";
+const iconCard = "../../src/assets/iconCard.png"
+const iconDolar = "../../src/assets/iconDolar.png"
+const iconDownArrow = "../../src/assets/iconDownArrow.png"
+const iconPeople = "../../src/assets/iconPeople.png"
+const iconUpArrow = "../../src/assets/iconUpArrow.png"
 
 function DashboardHeader() {
-
-    const iconCard = "../../src/assets/iconCard.png"
-    const iconDolar = "../../src/assets/iconDolar.png"
-    const iconDownArrow = "../../src/assets/iconDownArrow.png"
-    const iconPeople = "../../src/assets/iconPeople.png"
-    const iconUpArrow = "../../src/assets/iconUpArrow.png"
 
     return (
         <div className="dashboard-header-main">

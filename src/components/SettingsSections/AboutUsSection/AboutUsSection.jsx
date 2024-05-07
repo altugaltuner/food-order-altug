@@ -1,4 +1,4 @@
-import "@/components/AboutUsParams/AboutUsParams.scss";
+import "@/components/SettingsSections/AboutUsSection/AboutUsSection.scss";
 import AltugCV from "@/assets/AltugCV.pdf";
 
 function AboutUsParams() {

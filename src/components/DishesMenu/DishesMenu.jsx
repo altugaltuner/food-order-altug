@@ -8,7 +8,6 @@ import photo4 from "../../assets/food4.png";
 import photo5 from "../../assets/food5.png";
 import searchlogo from "../../assets/search.png";
 
-
 function DishesMenu({ addToOrder }) {
 
     const auth = useAuth();
