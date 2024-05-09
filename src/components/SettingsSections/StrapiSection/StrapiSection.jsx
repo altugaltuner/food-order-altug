@@ -38,13 +38,14 @@ function StrapiSection() {
                             <p>No image available</p>
                         )}
                         <h2 className='restaurant-name-strapi'>{restaurant.attributes.name}</h2>
+
                         {restaurant.attributes.description.map((desc, index) => (
                             <p className='restaurant-desc-strapi' key={index}>{desc.children[0].text}</p>
                         ))}
-                        <div>------</div>
-
-
-
+                        <div>--------------</div>
+                        {restaurant.attributes.comments.data.map((dt, index) => (
+                            <p className='restaurant-comment-strapi' key={index}>{dt.attributes.content}</p>
+                        ))}
                     </div>
                 ))
             ) : (
