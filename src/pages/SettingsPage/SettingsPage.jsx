@@ -8,7 +8,7 @@ import RestaurantSection from "@/components/SettingsSections/RestaurantSection/R
 import OrderPaymentPage from "@/components/OrderPaymentPage/OrderPaymentPage";
 import PieChart from "@/components/PieChart/PieChart";
 import AboutUsSection from "@/components/SettingsSections/AboutUsSection/AboutUsSection";
-import OrderReports from "@/components/OrderReports/OrderReports";
+import StrapiSection from "@/components/SettingsSections/StrapiSection/StrapiSection";
 import RestaurantApiSection from "@/components/SettingsSections/RestaurantApiSection/RestaurantApiSection";
 
 function SettingsPage() {
@@ -20,7 +20,7 @@ function SettingsPage() {
     products: <ProductsManagement />,
     notifications: <RestaurantApiSection />,
     security: <div className="add-to-settings-sidebar"><OrderPaymentPage /><PieChart /></div>,
-    configure: <OrderReports />,
+    configure: <StrapiSection />,
     "about-us": <AboutUsSection />
   }
 
