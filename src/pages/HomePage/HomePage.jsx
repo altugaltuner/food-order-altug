@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import "./HomePage.scss";
 import { useAuth } from "../../components/AuthProvider";
 import OrderPaymentPage from "../../components/OrderPaymentPage/OrderPaymentPage";
-
 import Navbar from "../../components/Navbar/Navbar";
 import DishesMenu from "../../components/DishesMenu/DishesMenu";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
 
+import { useTheme } from "../../components/Contexts/Context";
+
 function HomePage() {
+
+  const { theme, toggleTheme } = useTheme();
+
   const auth = useAuth(); // auth'u const {fireStoreUser} = useAuth() şeklinde alırsanız user bilgilerine ulaşabilirsiniz
 
   const [orders, setOrders] = useState([]);
@@ -51,7 +55,7 @@ function HomePage() {
   };
 
   return (
-    <div className="mainRoot">
+    <div className={`mainRoot ${theme}`}>
       <Navbar />
       <DishesMenu addToOrder={handleAddToOrder} />
       <div className="new-div">
@@ -62,6 +66,7 @@ function HomePage() {
         />
         <OrderPaymentPage />
       </div>
+      <button className="toggle-btn-theme" onClick={toggleTheme}>Toggle Theme</button>
     </div>
   );
 }

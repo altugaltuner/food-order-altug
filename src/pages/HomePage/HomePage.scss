@@ -9,6 +9,243 @@
   background-color: $primary-bg;
   color: $font-color-white;
   font-family: "Barlow", sans-serif;
+  transition: 0.2s;
+
+  .toggle-btn-theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: $font-color-white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.2s;
+  }
+
+  &.light {
+    background-color: $font-color-light-blue-2;
+    color: $font-color-dark-blue;
+
+    .toggle-btn-theme {
+      background-color: #242836;
+    }
+
+    .mainnet-logo-second {
+      background-color: $font-color-dark-blue;
+
+      .single-nav {
+        background-color: $font-color-dark-blue;
+        color: $font-color-light-blue-2;
+
+        .inner-container-for-nav.active {
+          background-color: $font-color-blue;
+        }
+
+        .parent-inner-container-for-nav {
+          background-color: $font-color-dark-blue;
+          color: $font-color-light-blue-2;
+        }
+
+        .parent-inner-container-for-nav.active {
+          background-color: $font-color-light-blue;
+          color: $font-color-light-blue-2;
+        }
+      }
+    }
+
+    .Dishes-All {
+
+      .dish-name {
+        color: $font-color-white;
+      }
+
+      .dish-price {
+        color: $font-color-white;
+      }
+
+      .dish-card {
+        color: $font-color-dark-blue;
+        background-color: $font-color-blue;
+      }
+
+      .dishes-main {
+        .top-segment-for-dishes {
+          .dishes-title {
+            color: $font-color-dark-blue;
+          }
+
+          .options-for-dishes {
+            background-color: $font-color-blue;
+            color: $font-color-light-blue-2;
+          }
+        }
+      }
+
+      .category-tabs-dishes .category-tabs button {
+        color: $font-color-blue;
+      }
+
+      .username-and-search-segment {
+
+        .search-bar-of-dishes {
+          background-color: $font-color-blue;
+          color: $font-color-light-blue-2;
+        }
+
+        ::placeholder {
+          color: $font-color-light-blue-2;
+        }
+
+        .left-top-of-dishes {
+          .today-date {
+            color: $font-color-dark-blue;
+          }
+
+          .username-of-hello {
+            color: $font-color-dark-blue;
+
+            .username-of-hello-color {
+              color: $font-color-dark-blue;
+            }
+          }
+        }
+      }
+    }
+
+    .order-payment {
+      background-color: $font-color-blue;
+      color: $font-color-dark-blue;
+
+      .payment-methods-text {
+        color: $font-color-white;
+      }
+
+      .payment-head {
+        color: $font-color-white;
+      }
+
+      .payment-explanations {
+        color: $font-color-white;
+      }
+
+      .payment-form-area {
+
+        .only-labels-payment-form .payment-photo-options {
+          border: solid 1px #1a2124;
+        }
+
+        .cardholder-division-for-payment {
+
+          .card-text-for-order {
+            color: $font-color-white;
+          }
+
+          .buttons-payment-area {
+            .confirm-button-payment {
+              background-color: $font-color-dark-blue;
+              color: $font-color-light-blue-2;
+              border-color: $font-color-light-blue;
+              box-shadow: 0px 8px 24px 0px $font-color-light-blue;
+
+            }
+
+            .cancel-button-payment {
+              background-color: $font-color-dark-blue;
+              color: $font-color-light-blue-2;
+              border-color: $font-color-light-blue;
+            }
+          }
+
+          .full-width-input-names {
+            background-color: $font-color-light-blue-2;
+            color: $font-color-blue;
+          }
+
+          .double-form-type-payment {
+            .first-double-type-payment {
+              #order-types {
+                background-color: $font-color-light-blue-2;
+                color: $font-color-blue;
+              }
+
+              .half-width-input {
+                background-color: $font-color-light-blue-2;
+                color: $font-color-blue;
+              }
+
+              ::placeholder {
+                color: $font-color-blue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .order-conff-main {
+      background-color: $font-color-blue;
+
+      .order-conf-body {
+        .conf-right-order-part {
+          .reset-button-conf {
+            border: 2px solid $font-color-dark-blue;
+            background-color: $font-color-light-blue-2;
+          }
+
+          .price-of-order-conf {
+            color: $font-color-white;
+          }
+        }
+
+        .conf-left-order-part {
+          .food-customer-note {
+            background-color: $font-color-light-blue-2;
+            color: $font-color-blue;
+          }
+        }
+
+        .conf-pic-and-name-and-price {
+          .total-piece-of-food {
+            background-color: $font-color-light-blue-2;
+            color: $font-color-blue;
+          }
+        }
+      }
+
+      .discount-subtotal-div {
+        .discount-subtotal-p {
+          color: $font-color-white;
+        }
+      }
+
+      .title-order-conf {
+        .part-of-title-conf {
+          .h1-order-conf {
+            color: $font-color-white;
+          }
+
+          .h3-order-conf {
+            color: $font-color-white;
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    background-color: $primary-bg;
+    color: $font-color-white;
+
+    .toggle-btn-theme {
+      background-color: $font-color-blue;
+    }
+  }
 
   .new-div {
     display: flex;
@@ -32,40 +269,41 @@
     display: flex;
     flex-direction: column;
   }
-}
 
-@media screen and (max-width: 950px) {
-  .mainRoot {
-    display: flex;
-    flex-direction: column;
 
-    .new-div {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-    }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .mainRoot {
-    .new-div {
-      padding-left: 70px;
-
-    }
-  }
-}
-
-@media screen and (max-width: 585px) {
-  .mainRoot {
-    display: flex;
-    flex-direction: column;
-
-    .new-div {
+  @media screen and (max-width: 950px) {
+    .mainRoot {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      padding-top: 20px;
+
+      .new-div {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .mainRoot {
+      .new-div {
+        padding-left: 70px;
+
+      }
+    }
+  }
+
+  @media screen and (max-width: 585px) {
+    .mainRoot {
+      display: flex;
+      flex-direction: column;
+
+      .new-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+      }
     }
   }
 }
